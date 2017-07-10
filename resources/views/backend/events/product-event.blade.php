@@ -1,15 +1,15 @@
-@extends('layout.backend')
+@extends('backend.layout')
 @section('content')
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Sản phẩm khuyến mãi
+    Game khuyến mãi
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
     <li><a href="{{ route( 'events.index' ) }}">Chương trình khuyến mãi</a></li>
-    <li class="active">Sản phẩm</li>
+    <li class="active">Game</li>
   </ol>
 </section>
 
@@ -20,7 +20,7 @@
       @if(Session::has('message'))
       <p class="alert alert-info" >{{ Session::get('message') }}</p>
       @endif      
-       <button class="btn btn-warning btn-sm btnLienQuan" data-value="tuongtu" type="button" id="btnTuongTu">Thêm sản phẩm</button>
+       <button class="btn btn-warning btn-sm btnLienQuan" data-value="tuongtu" type="button" id="btnTuongTu">Thêm game</button>
       <div class="box">
 
         <div class="box-header with-border">
@@ -150,7 +150,7 @@ $(document).on('click', 'button.btnSaveSearch',function(){
     $('#form-product').submit();
     
   }else{
-    alert('Vui lòng chọn ít nhất 1 sản phẩm.');
+    alert('Vui lòng chọn ít nhất 1 game.');
     return false;
   }
 
@@ -168,7 +168,7 @@ $(document).ready(function(){
       $('#str_sp_id').val(str_sp_id);      
   });
   $('.btnLienQuan').click(function(){
-    $('#label-search').html("sản phẩm khuyến mãi");
+    $('#label-search').html("game khuyến mãi");
     filterAjax();
   }); 
   $(document).on('change', '#loai_id_search, #cate_id_search', function(){

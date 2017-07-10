@@ -1,4 +1,4 @@
-@extends('layout.backend')
+@extends('backend.layout')
 @section('content')
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
@@ -52,7 +52,7 @@
               <th style="width: 1%">#</th>
               <th style="width: 1%;white-space:nowrap">Thứ tự</th>
               <th>Tên</th>
-              <th style="text-align:center">Sản phẩm</th>              
+              <th style="text-align:center">Game</th>              
               <th width="1%;" style="white-space:nowrap">Thao tác</th>
             </tr>
             <tbody>

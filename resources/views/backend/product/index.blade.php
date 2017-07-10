@@ -1,14 +1,14 @@
-@extends('layout.backend')
+@extends('backend.layout')
 @section('content')
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Sản phẩm
+    Game
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="{{ route( 'product.index' ) }}">Sản phẩm</a></li>
+    <li><a href="{{ route( 'product.index' ) }}">Game</a></li>
     <li class="active">Danh sách</li>
   </ol>
 </section>
@@ -74,7 +74,7 @@
       <div class="box">
 
         <div class="box-header with-border">
-          <h3 class="box-title">Danh sách ( {{ $items->total() }} sản phẩm )</h3>
+          <h3 class="box-title">Danh sách ( {{ $items->total() }} game )</h3>
         </div>
         
         <!-- /.box-header -->
@@ -89,7 +89,7 @@
               <th style="width: 1%;white-space:nowrap">Thứ tự</th>
               @endif
               <th width="100px">Hình ảnh</th>
-              <th style="text-align:center">Thông tin sản phẩm</th>                              
+              <th style="text-align:center">Thông tin game</th>                              
               <th width="1%;white-space:nowrap">Thao tác</th>
             </tr>
             <tbody>

@@ -1,14 +1,14 @@
-@extends('layout.backend')
+@extends('backend.layout')
 @section('content')
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Sản phẩm    
+      Game    
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-      <li><a href="{{ route('product.index') }}">Sản phẩm</a></li>
+      <li><a href="{{ route('product.index') }}">Game</a></li>
       <li class="active">Chỉnh sửa</li>
     </ol>
   </section>

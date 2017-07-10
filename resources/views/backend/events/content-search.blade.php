@@ -36,7 +36,7 @@
       <div class="box">
 
         <div class="box-header with-border">
-          <h3 class="box-title">Danh sách ( {{ $items->total() }} sản phẩm )</h3>
+          <h3 class="box-title">Danh sách ( {{ $items->total() }} game )</h3>
           <button type="button" class="btn btn-primary btnSaveSearch" style='float:right'>Save</button>
         </div>
         
@@ -47,7 +47,7 @@
             	<th style="width: 1%">#</th>              
               <th style="width: 1%">No.</th>              
               <th>Hình ảnh</th>
-              <th style="text-align:center">Thông tin sản phẩm</th>                  
+              <th style="text-align:center">Thông tin game</th>                  
               
             </tr>
             <tbody>

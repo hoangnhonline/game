@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 04, 2017 at 10:44 AM
+-- Generation Time: Jul 10, 2017 at 04:45 PM
 -- Server version: 5.6.30-1+deb.sury.org~wily+2
 -- PHP Version: 5.6.11-1ubuntu3.4
 
@@ -142,11 +142,20 @@ CREATE TABLE `cate` (
 --
 
 INSERT INTO `cate` (`id`, `name`, `alias`, `slug`, `description`, `loai_id`, `display_order`, `created_user`, `updated_user`, `created_at`, `updated_at`, `meta_id`, `is_hot`, `status`) VALUES
-(1, 'Thùng Carton 3 Lớp', 'Thung Carton 3 Lop', 'thung-carton-3-lop', '', 1, 1, 1, 1, '2017-06-09 14:24:44', '2017-06-09 14:24:44', 9, 0, 1),
-(2, 'Thùng Carton 5 Lớp', 'Thung Carton 5 Lop', 'thung-carton-5-lop', '', 1, 1, 1, 1, '2017-06-09 14:24:52', '2017-06-09 14:24:53', 10, 0, 1),
-(3, 'Thùng Carton 7 Lớp', 'Thung Carton 7 Lop', 'thung-carton-7-lop', '', 1, 1, 1, 1, '2017-06-09 14:25:00', '2017-06-09 14:25:00', 11, 0, 1),
-(4, 'Bao Bì Hộp Offset', 'Bao Bi Hop Offset', 'bao-bi-hop-offset', '', 1, 1, 1, 1, '2017-06-09 14:25:08', '2017-06-09 14:25:08', 12, 0, 1),
-(5, 'Pallet Giấy Tổ Ong', 'Pallet Giay To Ong', 'pallet-giay-to-ong', '', 1, 1, 1, 1, '2017-06-09 14:25:15', '2017-06-09 14:25:15', 13, 0, 1);
+(1, 'Action', 'Action', 'action', '', 1, 1, 1, 1, '2017-07-10 15:30:26', '2017-07-10 15:30:27', 1, 0, 1),
+(2, 'Adventure', 'Adventure', 'adventure', '', 1, 1, 1, 1, '2017-07-10 15:30:36', '2017-07-10 15:30:36', 2, 0, 1),
+(3, 'Arcade', 'Arcade', 'arcade', '', 1, 1, 1, 1, '2017-07-10 15:32:58', '2017-07-10 15:32:58', 3, 0, 1),
+(4, 'Board', 'Board', 'board', '', 1, 1, 1, 1, '2017-07-10 15:33:08', '2017-07-10 15:33:08', 4, 0, 1),
+(5, 'Card', 'Card', 'card', '', 1, 1, 1, 1, '2017-07-10 15:33:17', '2017-07-10 15:33:17', 5, 0, 1),
+(6, 'Casino', 'Casino', 'casino', '', 1, 1, 1, 1, '2017-07-10 15:33:31', '2017-07-10 15:33:31', 6, 0, 1),
+(7, 'Art & Design', 'Art & Design', 'art-design', '', 2, 1, 1, 1, '2017-07-10 15:34:17', '2017-07-10 15:34:17', 7, 0, 1),
+(8, 'Auto & Vehicles', 'Auto & Vehicles', 'auto-vehicles', '', 2, 1, 1, 1, '2017-07-10 15:34:28', '2017-07-10 15:34:28', 8, 0, 1),
+(9, 'Beauty', 'Beauty', 'beauty', '', 2, 1, 1, 1, '2017-07-10 15:34:37', '2017-07-10 15:34:37', 9, 0, 1),
+(10, 'Books & Reference', 'Books & Reference', 'books-reference', '', 2, 1, 1, 1, '2017-07-10 15:34:49', '2017-07-10 15:34:49', 10, 0, 1),
+(11, 'Business', 'Business', 'business', '', 2, 1, 1, 1, '2017-07-10 15:34:59', '2017-07-10 15:35:00', 11, 0, 1),
+(12, 'Comics', 'Comics', 'comics', '', 2, 1, 1, 1, '2017-07-10 15:35:09', '2017-07-10 15:35:09', 12, 0, 1),
+(13, 'Communication', 'Communication', 'communication', '', 2, 1, 1, 1, '2017-07-10 15:35:19', '2017-07-10 15:35:19', 13, 0, 1),
+(14, 'Dating', 'Dating', 'dating', '', 2, 1, 1, 1, '2017-07-10 15:35:29', '2017-07-10 15:35:30', 14, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -227,6 +236,14 @@ CREATE TABLE `loai_sp` (
   `meta_id` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `loai_sp`
+--
+
+INSERT INTO `loai_sp` (`id`, `name`, `alias`, `slug`, `description`, `display_order`, `is_hot`, `status`, `created_user`, `updated_user`, `created_at`, `updated_at`, `meta_id`) VALUES
+(1, 'GAME', 'game', 'game', 'Game', 1, 1, 1, 1, 1, '2017-07-10 00:00:00', '2017-07-10 00:00:00', 0),
+(2, 'APPS', 'apps', 'apps', 'Apps', 2, 1, 1, 1, 1, '2017-07-10 00:00:00', '2017-07-10 00:00:00', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -244,6 +261,26 @@ CREATE TABLE `meta_data` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `meta_data`
+--
+
+INSERT INTO `meta_data` (`id`, `title`, `description`, `keywords`, `custom_text`, `created_user`, `updated_user`, `created_at`, `updated_at`) VALUES
+(1, 'Action', '', '', '', 1, 1, '2017-07-10 15:30:26', '2017-07-10 15:30:26'),
+(2, 'Adventure', '', '', '', 1, 1, '2017-07-10 15:30:36', '2017-07-10 15:30:36'),
+(3, 'Arcade', '', '', '', 1, 1, '2017-07-10 15:32:58', '2017-07-10 15:32:58'),
+(4, 'Board', '', '', '', 1, 1, '2017-07-10 15:33:08', '2017-07-10 15:33:08'),
+(5, 'Card', '', '', '', 1, 1, '2017-07-10 15:33:17', '2017-07-10 15:33:17'),
+(6, 'Casino', '', '', '', 1, 1, '2017-07-10 15:33:31', '2017-07-10 15:33:31'),
+(7, 'Art & Design', '', '', '', 1, 1, '2017-07-10 15:34:17', '2017-07-10 15:34:17'),
+(8, 'Auto & Vehicles', '', '', '', 1, 1, '2017-07-10 15:34:28', '2017-07-10 15:34:28'),
+(9, 'Beauty', '', '', '', 1, 1, '2017-07-10 15:34:37', '2017-07-10 15:34:37'),
+(10, 'Books & Reference', '', '', '', 1, 1, '2017-07-10 15:34:49', '2017-07-10 15:34:49'),
+(11, 'Business', '', '', '', 1, 1, '2017-07-10 15:35:00', '2017-07-10 15:35:00'),
+(12, 'Comics', '', '', '', 1, 1, '2017-07-10 15:35:09', '2017-07-10 15:35:09'),
+(13, 'Communication', '', '', '', 1, 1, '2017-07-10 15:35:19', '2017-07-10 15:35:19'),
+(14, 'Dating', '', '', '', 1, 1, '2017-07-10 15:35:29', '2017-07-10 15:35:29');
 
 -- --------------------------------------------------------
 
@@ -488,7 +525,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `role`, `status`, `changed_password`, `remember_token`, `created_user`, `updated_user`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@game.com', '$2y$10$PhlzVNE0mbuvR2SmMPUoAeV7Zgmm0/7tecwgO8muJr5mCD7j8f6hK', 3, 1, 0, '', 1, 1, '2017-06-02 00:00:00', '2017-06-02 00:00:00');
+(1, 'Admin', 'admin@game.com', '$2y$10$WGfOGl/72bsKqSAHGeZ7vubR3CXuNtVQ6AfoGM2a1r.q60OaRJXmS', 3, 1, 0, '', 1, 1, '2017-06-02 00:00:00', '2017-06-02 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -656,7 +693,7 @@ ALTER TABLE `block`
 -- AUTO_INCREMENT for table `cate`
 --
 ALTER TABLE `cate`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `contact`
 --
@@ -676,12 +713,12 @@ ALTER TABLE `custom_link`
 -- AUTO_INCREMENT for table `loai_sp`
 --
 ALTER TABLE `loai_sp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `meta_data`
 --
 ALTER TABLE `meta_data`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `newsletter`
 --

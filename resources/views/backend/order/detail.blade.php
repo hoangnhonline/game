@@ -1,4 +1,4 @@
-@extends('layout.backend')
+@extends('backend.layout')
 @section('content')
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
@@ -84,7 +84,7 @@
           <table class="table table-bordered" id="table-list-data">
             <tr>
               <th style="width:1%">No.</th>
-              <th> Tên Sản phẩm </th>
+              <th> Tên Game </th>
               <th style="text-align:right"> Số Lượng </th>
               <th style="text-align:center">Giá bán </th>
               <th style="text-align:center">Tổng</th>              
@@ -136,7 +136,7 @@ $(document).ready(function(){
   $('.btn-delete-order-detail').click(function(){
     var order_detail_id = $(this).attr('order-detail-id');
     var order_id = $(this).attr('order-id');
-    if(confirm('Bạn có muốn xoá sản phẩm ' + $(this).parents('tr').find('.product_name').text() +' này trong đơn hàng ?')) {
+    if(confirm('Bạn có muốn xoá game ' + $(this).parents('tr').find('.product_name').text() +' này trong đơn hàng ?')) {
       delete_order_detail(order_id, order_detail_id);
     }
   });

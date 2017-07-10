@@ -1,14 +1,14 @@
-@extends('layout.backend')
+@extends('backend.layout')
 @section('content')
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Sản phẩm    
+      Game    
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-      <li><a href="{{ route('product.index') }}">Sản phẩm</a></li>
+      <li><a href="{{ route('product.index') }}">Game</a></li>
       <li class="active">Thêm mới</li>
     </ol>
   </section>
@@ -68,23 +68,47 @@
                             @endforeach
                           </select>
                         </div>  
-                        <div class="form-group" >                  
+                        <div class="form-group col-md-6 none-padding" >                  
                           <label>Tên <span class="red-star">*</span></label>
                           <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
                         </div>
-                        <div class="form-group">                  
+                        <div class="form-group col-md-6 pleft-5">                  
                           <label>Slug <span class="red-star">*</span></label>                  
+                          <input type="text" class="form-control" name="slug" id="slug" value="{{ old('slug') }}">
+                        </div>
+                        <div class="form-group col-md-8 none-padding" >                  
+                          <label>URL IOS <span class="red-star">*</span></label>
+                          <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
+                        </div>
+                        <div class="form-group col-md-4 pleft-5">                  
+                          <label>Requirements</label>                  
+                          <input type="text" class="form-control" name="slug" id="slug" value="{{ old('slug') }}">
+                        </div>
+                        <div class="form-group col-md-8 none-padding" >                  
+                          <label>URL Android <span class="red-star">*</span></label>
+                          <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
+                        </div>
+                        <div class="form-group col-md-4 pleft-5">                  
+                          <label>Requirements</label>                  
+                          <input type="text" class="form-control" name="slug" id="slug" value="{{ old('slug') }}">
+                        </div>
+                        <div class="form-group col-md-8 none-padding" >                  
+                          <label>URL WP <span class="red-star">*</span></label>
+                          <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
+                        </div>
+                        <div class="form-group col-md-4 pleft-5">                  
+                          <label>Requirements</label>                  
                           <input type="text" class="form-control" name="slug" id="slug" value="{{ old('slug') }}">
                         </div>
                         <!--
                         <div class="col-md-4 none-padding">
                           <div class="checkbox">
-                              <label><input type="checkbox" name="is_hot" value="1"> Sản phẩm HOT </label>
+                              <label><input type="checkbox" name="is_hot" value="1"> Game HOT </label>
                           </div>                          
                         </div>
                         <div class="col-md-4 none-padding pleft-5">
                             <div class="checkbox">
-                              <label><input type="checkbox" name="is_sale" value="1"> Sản phẩm SALE </label>
+                              <label><input type="checkbox" name="is_sale" value="1"> Game SALE </label>
                           </div>
                         </div>
                         <div class="col-md-4 none-padding pleft-5">

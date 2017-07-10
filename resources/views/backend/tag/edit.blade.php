@@ -1,4 +1,4 @@
-@extends('layout.backend')
+@extends('backend.layout')
 @section('content')
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -41,7 +41,7 @@
               <div class="form-group">
                 <label for="email">Loại </label>
                 <select class="form-control" name="type" id="type">                                
-                  <option value="1" {{ 1 ==  $detail->type ? "selected" : "" }}>Sản phẩm</option>
+                  <option value="1" {{ 1 ==  $detail->type ? "selected" : "" }}>Game</option>
                   <option value="2" {{ 2 ==  $detail->type ? "selected" : "" }}>Bài viết</option>
                   <option value="3" {{ 3 ==  $detail->type ? "selected" : "" }}>Tiện ích xung quanh</option>
                 </select>

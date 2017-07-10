@@ -1,4 +1,4 @@
-@extends('layout.backend')
+@extends('backend.layout')
 @section('content')
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
@@ -37,7 +37,7 @@
               <th>Tên</th>              
               <th style="text-align:center">Ngày bắt đầu</th>
               <th style="text-align:center">Ngày kết thúc</th>
-              <th>Sản phẩm</th>
+              <th>Game</th>
               <th width="1%;white-space:nowrap">Thao tác</th>
             </tr>
             <tbody>
@@ -61,7 +61,7 @@
                 <td style="vertical-align:middle;text-align:center">{{ Carbon\Carbon::parse($item->to_date)->format('d-m-Y H:i') }}</td>            
                 <td>
                 <a class="btn btn-primary btn-sm" href="{{ route('events.product-event', $item->id )}}">
-                Sản phẩm
+                Game
                 </a>
                 </td>   
                 <td style="white-space:nowrap; text-align:right">

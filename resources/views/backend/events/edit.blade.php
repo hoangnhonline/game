@@ -1,4 +1,4 @@
-@extends('layout.backend')
+@extends('backend.layout')
 @section('content')
 <link rel="stylesheet" href="{{ URL::asset('public/assets/css/jquery.datetimepicker.min.css') }}">  
 <div class="content-wrapper">

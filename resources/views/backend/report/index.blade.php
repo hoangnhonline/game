@@ -1,4 +1,4 @@
-@extends('layout.backend')
+@extends('backend.layout')
 @section('content')
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
@@ -60,7 +60,7 @@
               <li role="presentation" {{ $report_type == "don-hang" ? "class=active" : "" }}><a data-value="don-hang" href="#home" aria-controls="home" role="tab" >Đơn hàng</a></li>
               <li role="presentation" {{ $report_type == "khach-hang" ? "class=active" : "" }}><a data-value="khach-hang" href="#profile" aria-controls="profile" role="tab" >Khách hàng</a></li>
               <li role="presentation" {{ $report_type == "doanh-thu" ? "class=active" : "" }}><a data-value="doanh-thu" href="#messages" aria-controls="messages" role="tab" >Doanh thu</a></li>
-              <!--<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Sản phẩm</a></li>-->
+              <!--<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Game</a></li>-->
             </ul>
 
             <!-- Tab panes -->
