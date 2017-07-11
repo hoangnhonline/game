@@ -760,4 +760,139 @@ function _init() {
       }
     });
   };
+  /* TAGS */
+  $('#btnAddTag').click(function(){
+      var type = $(this).data('type');
+      $('#tagModal #type').val(type);
+      $('#tagModal').modal('show');
+  });
+  $(document).on('click', '.remove-image', function(){
+    if( confirm ("Bạn có chắc chắn không ?")){
+      $(this).parents('.col-md-3').remove();
+    }
+  });
+  $(document).on('click', '#btnSaveTagAjax', function(){
+      $.ajax({
+        url : $('#formAjaxTag').attr('action'),
+        data: $('#formAjaxTag').serialize(),
+        type : "post", 
+        success : function(str_id){          
+          $('#btnCloseModalTag').click();
+          $.ajax({
+            url : $('#ajax_tag_list').val(),
+            data: { 
+              type : 1 ,
+              tagSelected : $('#tags').val(),
+              str_id : str_id
+            },
+            type : "get", 
+            success : function(data){
+                $('#tags').html(data);
+                $('#tags').select2('refresh');
+                
+            }
+          });
+        }
+      });
+   }); 
+   $('#contentTag #name').change(function(){
+         var name = $.trim( $(this).val() );
+         if( name != '' && $('#contentTag #slug').val() == ''){
+            $.ajax({
+              url: $('#route_get_slug').val(),
+              type: "POST",
+              async: false,      
+              data: {
+                str : name
+              },              
+              success: function (response) {
+                if( response.str ){                  
+                  $('#contentTag #slug').val( response.str );
+                }                
+              },
+              error: function(response){                             
+                  var errors = response.responseJSON;
+                  for (var key in errors) {
+                    
+                  }
+                  //$('#btnLoading').hide();
+                  //$('#btnSave').show();
+              }
+            });
+         }
+      });
+   $(".select2").select2();
+
+   $('#btnUploadImage').click(function(){        
+        $('#file-image').click();
+      }); 
+     
+      var files = "";
+      $('#file-image').change(function(e){
+         files = e.target.files;
+         
+         if(files != ''){
+           var dataForm = new FormData();        
+          $.each(files, function(key, value) {
+             dataForm.append('file[]', value);
+          });   
+          
+          dataForm.append('date_dir', 0);
+          dataForm.append('folder', 'tmp');
+
+          $.ajax({
+            url: $('#route_upload_tmp_image_multiple').val(),
+            type: "POST",
+            async: false,      
+            data: dataForm,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                $('#div-image').append(response);
+                if( $('input.thumb:checked').length == 0){
+                  $('input.thumb').eq(0).prop('checked', true);
+                }
+            },
+            error: function(response){                             
+                var errors = response.responseJSON;
+                for (var key in errors) {
+                  
+                }
+                //$('#btnLoading').hide();
+                //$('#btnSave').show();
+            }
+          });
+        }
+      });
+     
+
+      $('#title, #name').change(function(){
+         var name = $.trim( $(this).val() );
+         if($('#slug').length == 1){
+           if( name != '' && $('#slug').val() == ''){
+              $.ajax({
+                url: $('#route_get_slug').val(),
+                type: "POST",
+                async: false,      
+                data: {
+                  str : name
+                },              
+                success: function (response) {
+                  if( response.str ){                  
+                    $('#slug').val( response.str );
+                  }                
+                },
+                error: function(response){                             
+                    var errors = response.responseJSON;
+                    for (var key in errors) {
+                      
+                    }
+                    //$('#btnLoading').hide();
+                    //$('#btnSave').show();
+                }
+              });
+           }
+        }
+      });    
+
 }(jQuery));
