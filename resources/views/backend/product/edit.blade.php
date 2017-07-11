@@ -211,7 +211,49 @@
    function filterAjax(type){  
      var str_params = $('#formSearchAjax').serialize();     
    }   
-        
+           $(document).ready(function(){
+            $('#btnUploadImage').click(function(){        
+        $('#file-image').click();
+      }); 
+     
+      var files = "";
+      $('#file-image').change(function(e){
+         files = e.target.files;
+         
+         if(files != ''){
+           var dataForm = new FormData();        
+          $.each(files, function(key, value) {
+             dataForm.append('file[]', value);
+          });   
+          
+          dataForm.append('date_dir', 0);
+          dataForm.append('folder', 'tmp');
+
+          $.ajax({
+            url: $('#route_upload_tmp_image_multiple').val(),
+            type: "POST",
+            async: false,      
+            data: dataForm,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                $('#div-image').append(response);
+                if( $('input.thumb:checked').length == 0){
+                  $('input.thumb').eq(0).prop('checked', true);
+                }
+            },
+            error: function(response){                             
+                var errors = response.responseJSON;
+                for (var key in errors) {
+                  
+                }
+                //$('#btnLoading').hide();
+                //$('#btnSave').show();
+            }
+          });
+        }
+      });
+    });
          $('#loai_id').change(function(){        
    
                var loai_id = $(this).val();
