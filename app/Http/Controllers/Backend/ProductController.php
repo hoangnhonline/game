@@ -35,7 +35,7 @@ class ProductController extends Controller
             $dataArr['loai_id'] = 2;
             $dataArr['name'] = $name;
             $dataArr['alias'] = Helper::stripUnicode($name);
-            //Product::create($dataArr);            
+            Product::create($dataArr);            
         }        
         $arrSearch['status'] = $status = isset($request->status) ? $request->status : 1; 
         $arrSearch['is_hot'] = $is_hot = isset($request->is_hot) ? $request->is_hot : null;              
