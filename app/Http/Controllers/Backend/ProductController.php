@@ -25,7 +25,7 @@ class ProductController extends Controller
     */
     public function index(Request $request)
     {        
-        $arrName = ['Lineage2 Revolution', 'GoalKeeper Challenge', 'Clash Royale', 'Mobile Legends: Bang bang', 'Dream League Soccer 2017', 'Gangstar New Orleans OpenWorld', 'Subway Surfers', 'FIFA 16 Soccer', 'The Sims™ Mobile', 'Fate/Grand Order (English)', 'Pokémon GO', '8 Ball Pool'];
+        $arrName = ['APKPure', 'Messenger', 'Vidmate -HD Video Downloader & Live TV', 'UC Browser - Fast Download', 'Facebook', 'WhatsApp Messenger', 'Instagram', 'Live NetTV', 'YouTube', 'Snapchat', 'Facebook Lite', 'Maps - Navigation & Transit'];
         $dataArr = Product::where('status', 1)->first()->toArray();
         unset($dataArr['id']);
         unset($dataArr['created_at']);
