@@ -87,7 +87,7 @@ class SettingsController  extends Controller
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
             
-            File::move(config('icho.upload_path').$dataArr['logo'], config('icho.upload_path').$destionation);
+            File::move(config('game.upload_path').$dataArr['logo'], config('game.upload_path').$destionation);
             
             $dataArr['logo'] = $destionation;
         }
@@ -102,7 +102,7 @@ class SettingsController  extends Controller
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
             
-            File::move(config('icho.upload_path').$dataArr['favicon'], config('icho.upload_path').$destionation);
+            File::move(config('game.upload_path').$dataArr['favicon'], config('game.upload_path').$destionation);
             
             $dataArr['favicon'] = $destionation;
         }
@@ -117,7 +117,7 @@ class SettingsController  extends Controller
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
             
-            File::move(config('icho.upload_path').$dataArr['banner'], config('icho.upload_path').$destionation);
+            File::move(config('game.upload_path').$dataArr['banner'], config('game.upload_path').$destionation);
             
             $dataArr['banner'] = $destionation;
         }        

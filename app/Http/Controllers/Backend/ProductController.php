@@ -26,13 +26,10 @@ class ProductController extends Controller
     public function index(Request $request)
     {        
         $arrSearch['status'] = $status = isset($request->status) ? $request->status : 1; 
-        $arrSearch['is_hot'] = $is_hot = isset($request->is_hot) ? $request->is_hot : null;
-        $arrSearch['is_sale'] = $is_sale = isset($request->is_sale) ? $request->is_sale : null;
-        $arrSearch['in_stock'] = $in_stock = isset($request->in_stock) ? $request->in_stock : null;           
+        $arrSearch['is_hot'] = $is_hot = isset($request->is_hot) ? $request->is_hot : null;              
         $arrSearch['loai_id'] = $loai_id = isset($request->loai_id) ? $request->loai_id : null;
         $arrSearch['cate_id'] = $cate_id = isset($request->cate_id) ? $request->cate_id : null;
-        $arrSearch['name'] = $name = isset($request->name) && trim($request->name) != '' ? trim($request->name) : '';
-        $arrSearch['id'] = $id = isset($request->id) && trim($request->id) != '' ? trim($request->id) : '';
+        $arrSearch['name'] = $name = isset($request->name) && trim($request->name) != '' ? trim($request->name) : '';        
         $cateArr = (object) [];
 
 
@@ -47,23 +44,14 @@ class ProductController extends Controller
         }
         if( $is_hot ){
             $query->where('product.is_hot', $is_hot);
-        }
-        if( $is_hot ){
-            $query->where('product.is_sale', $is_sale);
-        }
-        if( $is_hot ){
-            $query->where('product.in_stock', $in_stock);
-        }
+        }        
         
         if(Auth::user()->role == 1){
             $query->where('product.created_user', Auth::user()->id);
         }
         if( $name != ''){
             $query->where('product.name', 'LIKE', '%'.$name.'%');            
-        }
-        if( $id != ''){
-            $query->where('product.id', $id);            
-        }
+        }        
 
         $query->leftJoin('product_img', 'product_img.id', '=','product.thumbnail_id'); 
         $query->join('loai_sp', 'product.loai_id', '=','loai_sp.id');
@@ -82,8 +70,6 @@ class ProductController extends Controller
         return view('backend.product.index', compact( 'items', 'arrSearch', 'loaiSpArr', 'cateArr'));        
     }
 
-    
-    
     public function saveOrderHot(Request $request){
         $data = $request->all();
         if(!empty($data['display_order'])){
@@ -113,13 +99,13 @@ class ProductController extends Controller
         $cate_id = $request->cate_id ? $request->cate_id : null;
         $cateArr = (object) [];        
         $loaiSpArr = LoaiSp::where('status', 1)->get();
-        
+        $tagArr = Tag::where('type', 1)->get();
         if( $loai_id ){
             
             $cateArr = Cate::where('loai_id', $loai_id)->select('id', 'name')->orderBy('display_order', 'desc')->get();           
             
         }      
-        return view('backend.product.create', compact('loaiSpArr', 'cateArr', 'loai_id', 'cate_id'));
+        return view('backend.product.create', compact('loaiSpArr', 'cateArr', 'loai_id', 'cate_id', 'tagArr'));
     }
 
     /**
@@ -133,14 +119,16 @@ class ProductController extends Controller
         $dataArr = $request->all();        
         
         $this->validate($request,[            
-            'loai_id' => 'required',            
+            'loai_id' => 'required',
+            'cate_id' => 'required',            
             'name' => 'required',
             'slug' => 'required'            
         ],
         [            
-            'loai_id.required' => 'Bạn chưa chọn danh mục cha',           
-            'name.required' => 'Bạn chưa nhập tên sản phẩm',
-            'slug.required' => 'Bạn chưa nhập slug'           
+            'loai_id.required' => 'Please select type',           
+            'cate_id.required' => 'Please select category',           
+            'name.required' => 'Please input name',
+            'slug.required' => 'Please input slug'           
         ]);
            
         $dataArr['slug'] = str_replace(".", "-", $dataArr['slug']);
@@ -148,22 +136,19 @@ class ProductController extends Controller
         $dataArr['slug'] = str_replace(")", "", $dataArr['slug']);
         $dataArr['alias'] = Helper::stripUnicode($dataArr['name']);
         $dataArr['is_hot'] = isset($dataArr['is_hot']) ? 1 : 0;
-        $dataArr['is_sale'] = isset($dataArr['is_sale']) ? 1 : 0;
         
-        $dataArr['in_stock'] = isset($dataArr['in_stock']) ? 0 : 1;
         $dataArr['status'] = 1;
         $dataArr['created_user'] = Auth::user()->id;
         $dataArr['updated_user'] = Auth::user()->id;        
         
         $rs = Product::create($dataArr);
 
-        $product_id = $rs->id;
-        
+        $product_id = $rs->id;        
 
         $this->storeImage( $product_id, $dataArr);
         $this->storeMeta($product_id, 0, $dataArr);
         $this->processRelation($dataArr, $product_id);
-        Session::flash('message', 'Tạo mới sản phẩm thành công');
+        Session::flash('message', 'Add new success');
 
         return redirect()->route('product.index', ['loai_id' => $dataArr['loai_id'], 'cate_id' => $dataArr['cate_id']]);
     }
@@ -208,7 +193,7 @@ class ProductController extends Controller
         {
             foreach ($hinhXoaArr as $image_id_xoa) {
                 $model = ProductImg::find($image_id_xoa);
-                $urlXoa = config('icho.upload_path')."/".$model->image_url;
+                $urlXoa = config('game.upload_path')."/".$model->image_url;
                 if(is_file($urlXoa)){
                     unlink($urlXoa);
                 }
@@ -230,20 +215,20 @@ class ProductController extends Controller
 
                         $tmp = explode('/', $image_url);
 
-                        if(!is_dir('public/uploads/'.date('Y/m/d'))){
-                            mkdir('public/uploads/'.date('Y/m/d'), 0777, true);
+                        if(!is_dir('uploads/'.date('Y/m/d'))){
+                            mkdir('uploads/'.date('Y/m/d'), 0777, true);
                         }
-                        if(!is_dir('public/uploads/thumbs/'.date('Y/m/d'))){
-                            mkdir('public/uploads/thumbs/'.date('Y/m/d'), 0777, true);
+                        if(!is_dir('uploads/thumbs/'.date('Y/m/d'))){
+                            mkdir('uploads/thumbs/'.date('Y/m/d'), 0777, true);
                         }
 
                         $destionation = date('Y/m/d'). '/'. end($tmp);
-                        //var_dump(config('icho.upload_path').$image_url, config('icho.upload_path').$destionation);die;
-                        File::move(config('icho.upload_path').$image_url, config('icho.upload_path').$destionation);
+                        //var_dump(config('game.upload_path').$image_url, config('game.upload_path').$destionation);die;
+                        File::move(config('game.upload_path').$image_url, config('game.upload_path').$destionation);
 
-                        Image::make(config('icho.upload_path').$destionation)->resize(106, null, function ($constraint) {
+                        Image::make(config('game.upload_path').$destionation)->resize(106, null, function ($constraint) {
                                 $constraint->aspectRatio();
-                        })->crop(106, 80)->save(config('icho.upload_thumbs_path').$destionation);
+                        })->crop(106, 80)->save(config('game.upload_thumbs_path').$destionation);
 
                         $imageArr['name'][] = $destionation;
 
@@ -310,24 +295,24 @@ class ProductController extends Controller
     {
         $dataArr = $request->all();
         
-        $this->validate($request,[            
-            'loai_id' => 'required',            
+         $this->validate($request,[            
+            'loai_id' => 'required',
+            'cate_id' => 'required',            
             'name' => 'required',
             'slug' => 'required'            
         ],
         [            
-            'loai_id.required' => 'Bạn chưa chọn danh mục cha',           
-            'name.required' => 'Bạn chưa nhập tên sản phẩm',
-            'slug.required' => 'Bạn chưa nhập slug'                  
+            'loai_id.required' => 'Please select type',           
+            'cate_id.required' => 'Please select category',           
+            'name.required' => 'Please input name',
+            'slug.required' => 'Please input slug'           
         ]);
            
         $dataArr['slug'] = str_replace(".", "-", $dataArr['slug']);
         $dataArr['slug'] = str_replace("(", "-", $dataArr['slug']);
         $dataArr['slug'] = str_replace(")", "", $dataArr['slug']);
         $dataArr['alias'] = Helper::stripUnicode($dataArr['name']);
-        $dataArr['is_hot'] = isset($dataArr['is_hot']) ? 1 : 0;
-        $dataArr['is_sale'] = isset($dataArr['is_sale']) ? 1 : 0;
-        $dataArr['in_stock'] = isset($dataArr['in_stock']) ? 0 : 1;
+        $dataArr['is_hot'] = isset($dataArr['is_hot']) ? 1 : 0;        
         $dataArr['status'] = 1;
         
         $dataArr['updated_user'] = Auth::user()->id;   
@@ -343,7 +328,7 @@ class ProductController extends Controller
         $this->storeImage( $product_id, $dataArr);
         $this->processRelation($dataArr, $product_id, 'edit');
 
-        Session::flash('message', 'Cập nhật sản phẩm thành công');
+        Session::flash('message', 'Update success.');
 
         return redirect()->route('product.edit', $product_id);
         
@@ -364,7 +349,7 @@ class ProductController extends Controller
         ProductImg::where('product_id', $id)->delete();
         TagObjects::deleteTags( $id, 1);        
         // redirect
-        Session::flash('message', 'Xóa tin thành công');
+        Session::flash('message', 'Delete success.');
         
         return redirect(URL::previous());//->route('product.short');
         

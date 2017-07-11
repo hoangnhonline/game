@@ -103,14 +103,14 @@ class ArticlesController extends Controller
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
             
-            File::move(config('icho.upload_path').$dataArr['image_url'], config('icho.upload_path').$destionation);
+            File::move(config('game.upload_path').$dataArr['image_url'], config('game.upload_path').$destionation);
             
-            Image::make(config('icho.upload_path').$destionation)->resize(203, null, function ($constraint) {
+            Image::make(config('game.upload_path').$destionation)->resize(203, null, function ($constraint) {
                                 $constraint->aspectRatio();
-                        })->crop(203, 128)->save(config('icho.upload_thumbs_path_articles').$destionation);
-            Image::make(config('icho.upload_path').$destionation)->resize(325, null, function ($constraint) {
+                        })->crop(203, 128)->save(config('game.upload_thumbs_path_articles').$destionation);
+            Image::make(config('game.upload_path').$destionation)->resize(325, null, function ($constraint) {
                                 $constraint->aspectRatio();
-                        })->crop(325, 200)->save(config('icho.upload_thumbs_path_articles').'325x200/'.$destionation);
+                        })->crop(325, 200)->save(config('game.upload_thumbs_path_articles').'325x200/'.$destionation);
             $dataArr['image_url'] = $destionation;
         }        
         
@@ -246,14 +246,14 @@ class ArticlesController extends Controller
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
             
-            File::move(config('icho.upload_path').$dataArr['image_url'], config('icho.upload_path').$destionation);
+            File::move(config('game.upload_path').$dataArr['image_url'], config('game.upload_path').$destionation);
             
-            Image::make(config('icho.upload_path').$destionation)->resize(203, null, function ($constraint) {
+            Image::make(config('game.upload_path').$destionation)->resize(203, null, function ($constraint) {
                                 $constraint->aspectRatio();
-                        })->crop(203, 108)->save(config('icho.upload_thumbs_path_articles').$destionation);
-            Image::make(config('icho.upload_path').$destionation)->resize(325, null, function ($constraint) {
+                        })->crop(203, 108)->save(config('game.upload_thumbs_path_articles').$destionation);
+            Image::make(config('game.upload_path').$destionation)->resize(325, null, function ($constraint) {
                                 $constraint->aspectRatio();
-                        })->crop(325, 200)->save(config('icho.upload_thumbs_path_articles').'325x200/'.$destionation);
+                        })->crop(325, 200)->save(config('game.upload_thumbs_path_articles').'325x200/'.$destionation);
             $dataArr['image_url'] = $destionation;
         }
 

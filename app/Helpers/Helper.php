@@ -16,17 +16,9 @@ class Helper
     }
     public static function getChild($table, $column, $parent_id){
         $listData = DB::table($table)->where($column, $parent_id)->get();
-        if($table == 'ward'){
-            echo '<option value="">Phường/Xã</option>';
-        }elseif($table == 'street'){
-            echo '<option value="">Đường/Phố</option>';
-        }elseif($table == "estate_type"){
-             echo '<option value="">Loại bất động sản</option>';
-        }elseif($table == 'price'){
-            echo '<option value="">Mức giá</option>';
-        }else{            
-            echo '<option value="">Dự án</option>';
-        }
+                  
+        echo '<option value="">--Select--</option>';
+        
         if(!empty(  (array) $listData  )){
             
             foreach($listData as $data){
@@ -59,8 +51,8 @@ class Helper
     }
     public static function showImage($image_url, $type = 'original'){
 
-        //return strpos($image_url, 'http') === false ? config('icho.upload_url') . $type . '/' . $image_url : $image_url;        
-        return strpos($image_url, 'http') === false ? config('icho.upload_url') . $image_url : $image_url;        
+        //return strpos($image_url, 'http') === false ? config('game.upload_url') . $type . '/' . $image_url : $image_url;        
+        return strpos($image_url, 'http') === false ? config('game.upload_url') . $image_url : $image_url;        
 
     }
     public static function showImageThumb($image_url, $object_type = 1, $folder = ''){             
@@ -68,11 +60,11 @@ class Helper
         //object_type = 1 : product, 2 :article  3: project             
         if(strpos($image_url, 'http') === false){
             if($object_type == 1){
-                return config('icho.upload_url') . 'thumbs/' . $folder. '/' . $image_url;
+                return config('game.upload_url') . 'thumbs/' . $folder. '/' . $image_url;
             }elseif($object_type == 2){
-                return config('icho.upload_url') . 'thumbs/articles/'. $folder. '/' . $image_url;
+                return config('game.upload_url') . 'thumbs/articles/'. $folder. '/' . $image_url;
             }else{
-                return config('icho.upload_url') . 'thumbs/projects/'. $folder. '/' . $image_url;
+                return config('game.upload_url') . 'thumbs/projects/'. $folder. '/' . $image_url;
             }    
         }else{
             return $image_url;
@@ -351,8 +343,8 @@ class Helper
 
         $basePath = $date_dir == true ? $basePath .= date('Y/m/d'). '/'  : $basePath = $basePath;        
         
-        $desPath = config('icho.upload_path'). $basePath;
-        $desThumbsPath = config('icho.upload_thumbs_path'). $basePath;
+        $desPath = config('game.upload_path'). $basePath;
+        $desThumbsPath = config('game.upload_thumbs_path'). $basePath;
         //set name for file
         $fileName = $file->getClientOriginalName();
         

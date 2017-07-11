@@ -44,7 +44,7 @@ return [
     'google' => [
         'client_id' => '1091007214947-l06nvreo6imqsqs7bkaao52afkchfkh0.apps.googleusercontent.com',
         'client_secret' => '-wUqrEtYf0MHxUrBc5FVw8FD',
-        'redirect' => 'http://icho.dev/social-auth/google/callback',
+        'redirect' => 'http://game.dev/social-auth/google/callback',
     ],
 
 ];

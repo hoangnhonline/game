@@ -1,7 +1,7 @@
 APP_ENV=production
 APP_DEBUG=true
 APP_KEY=base64:rq8ZMdVwV4Twv+7XcfmMLKHzoQ92scpr9eZYuSwLBSg=
-APP_URL=http://icho.vn
+APP_URL=http://game.vn
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -21,7 +21,7 @@ REDIS_PORT=6379
 MAIL_DRIVER=smtp
 MAIL_HOST=smtp.gmail.com
 MAIL_PORT=587
-MAIL_USERNAME=chamsoc@icho.vn
+MAIL_USERNAME=chamsoc@game.vn
 MAIL_PASSWORD=fhiuheaixusbopmg
 MAIL_ENCRYPTION=tls
 

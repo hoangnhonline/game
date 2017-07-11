@@ -49,10 +49,9 @@ class TagController extends Controller
 
         $query = Tag::where('type', $type);
         
-        $tagArr = $query->orderBy('id', 'desc')->get();
-        $districtList = District::where('city_id', 1)->where('status', 1)->get();
+        $tagArr = $query->orderBy('id', 'desc')->get();        
 
-        return view('backend.tag.ajax-list', compact( 'tagArr', 'type', 'tagSelected', 'districtList'));
+        return view('backend.tag.ajax-list', compact( 'tagArr', 'type', 'tagSelected'));
     }
     /**
     * Show the form for creating a new resource.

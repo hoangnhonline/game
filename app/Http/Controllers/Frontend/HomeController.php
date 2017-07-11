@@ -24,6 +24,12 @@ class HomeController extends Controller
        
 
     }
+    public function getChild(Request $request){
+        $module = $request->mod;
+        $id = $request->id;
+        $column = $request->col;
+        return Helper::getChild($module, $column, $id);
+    }
     public function index(Request $request)
     {          
         $productArr = [];

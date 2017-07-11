@@ -15,7 +15,7 @@
         <p>NhaDat đã nhận được yêu cầu thay đổi mật khẩu của quý khách.</p>
         <p>Xin hãy click vào đường dẫn sau để đổi mật khẩu:</p>
         <a>https://tiki.vn/customer/account/reset_password?key=c8f52212868331cc39337bb9e7136a6d</a>
-        <p>Mọi thắc mắc và góp ý vui lòng liên hệ với chúng tôi qua email: support@icho.vn hoặc số điện thoại 1900 636 975 (8-21h cả T7,CN).</p>
+        <p>Mọi thắc mắc và góp ý vui lòng liên hệ với chúng tôi qua email: support@game.vn hoặc số điện thoại 1900 636 975 (8-21h cả T7,CN).</p>
         <p>Trân trọng, </p>
         <p>NhaDat</p>
       </td>

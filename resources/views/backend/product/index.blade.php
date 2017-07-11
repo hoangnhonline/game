@@ -20,61 +20,47 @@
       @if(Session::has('message'))
       <p class="alert alert-info" >{{ Session::get('message') }}</p>
       @endif
-      <a href="{{ route('product.create', ['loai_id' => $arrSearch['loai_id'], 'cate_id' => $arrSearch['cate_id']]) }}" class="btn btn-info btn-sm" style="margin-bottom:5px">Tạo mới</a>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Bộ lọc</h3>
-        </div>
+      <a href="{{ route('product.create', ['loai_id' => $arrSearch['loai_id'], 'cate_id' => $arrSearch['cate_id']]) }}" class="btn btn-info btn-sm" style="margin-bottom:5px">Add new</a>
+      <div class="panel panel-default">        
         <div class="panel-body">
           <form class="form-inline" id="searchForm" role="form" method="GET" action="{{ route('product.index') }}">
            
           
             
             <div class="form-group">
-              <label for="email">Danh mục cha</label>
+              <label for="email">Type</label>
               <select class="form-control" name="loai_id" id="loai_id">
-                <option value="">--Tất cả--</option>
+                <option value="">--All--</option>
                 @foreach( $loaiSpArr as $value )
                 <option value="{{ $value->id }}" {{ $value->id == $arrSearch['loai_id'] ? "selected" : "" }}>{{ $value->name }}</option>
                 @endforeach
               </select>
             </div>
               <div class="form-group">
-              <label for="email">Danh mục con</label>
+              <label for="email">Category</label>
 
               <select class="form-control" name="cate_id" id="cate_id">
-                <option value="">--Tất cả--</option>
+                <option value="">--All--</option>
                 @foreach( $cateArr as $value )
                 <option value="{{ $value->id }}" {{ $value->id == $arrSearch['cate_id'] ? "selected" : "" }}>{{ $value->name }}</option>
                 @endforeach
               </select>
             </div>
             <div class="form-group">
-              <label for="email">Tên</label>
+              <label for="email">Name</label>
               <input type="text" class="form-control" name="name" value="{{ $arrSearch['name'] }}">
-            </div>
-            <!--<div class="form-group">
-              <label for="email">Ẩn/hiện :</label>
-              <label class="radio-inline"><input type="radio" {{ $arrSearch['status'] == 1 ? "checked" : "" }} name="status" value="1">Hiện</label>
-              <label class="radio-inline"><input type="radio" {{ $arrSearch['status'] == 0 ? "checked" : "" }} name="status" value="0">Ẩn</label>              
-            </div>-->
-            <!--<div class="form-group">
+            </div>    
+            <div class="form-group">
               <label><input type="checkbox" name="is_hot" value="1" {{ $arrSearch['is_hot'] == 1 ? "checked" : "" }}> HOT</label>              
-            </div>
-            <div class="form-group">
-              <label><input type="checkbox" name="is_sale" value="1" {{ $arrSearch['is_sale'] == 1 ? "checked" : "" }}> SALE</label>              
-            </div>
-            <div class="form-group">
-              <label><input type="checkbox" name="in_stock" value="1" {{ $arrSearch['in_stock'] == 1 ? "checked" : "" }}> Hết hàng</label>              
-            </div>                      -->
-            <button type="submit" style="margin-top:-5px" class="btn btn-primary btn-sm">Lọc</button>
+            </div>   
+            <button type="submit" class="btn btn-primary btn-sm">Search</button>
           </form>         
         </div>
       </div>
       <div class="box">
 
         <div class="box-header with-border">
-          <h3 class="box-title">Danh sách ( {{ $items->total() }} game )</h3>
+          <h3 class="box-title">List ( {{ $items->total() }} games )</h3>
         </div>
         
         <!-- /.box-header -->
@@ -88,9 +74,9 @@
               @if($arrSearch['is_hot'] == 1 && $arrSearch['loai_id'] > 0 )
               <th style="width: 1%;white-space:nowrap">Thứ tự</th>
               @endif
-              <th width="100px">Hình ảnh</th>
-              <th style="text-align:center">Thông tin game</th>                              
-              <th width="1%;white-space:nowrap">Thao tác</th>
+              <th width="100px">Images</th>
+              <th style="text-align:left">Information</th>                              
+              <th width="1%;white-space:nowrap">Action</th>
             </tr>
             <tbody>
             @if( $items->count() > 0 )
@@ -120,10 +106,10 @@
                   
                 </td>
                 <td style="white-space:nowrap; text-align:right">
-                  <a class="btn btn-default btn-sm" href="{{ route('chi-tiet', [$item->slug_loai, $item->slug, $item->id] ) }}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Xem</a>                  
-                  <a href="{{ route( 'product.edit', [ 'id' => $item->id ]) }}" class="btn btn-warning btn-sm">Chỉnh sửa</a>                 
+                  <a class="btn btn-default btn-sm" href="{{ route('chi-tiet', [$item->slug_loai, $item->slug, $item->id] ) }}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> View</a>                  
+                  <a href="{{ route( 'product.edit', [ 'id' => $item->id ]) }}" class="btn btn-warning btn-sm">Edit</a>                 
 
-                  <a onclick="return callDelete('{{ $item->name }}','{{ route( 'product.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger btn-sm">Xóa</a>
+                  <a onclick="return callDelete('{{ $item->name }}','{{ route( 'product.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger btn-sm">Delete</a>
 
                 </td>
               </tr> 

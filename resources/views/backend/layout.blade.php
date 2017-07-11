@@ -75,7 +75,7 @@
 <input type="hidden" id="route_get_slug" value="{{ route('get-slug') }}">
   <div class="control-sidebar-bg"></div>
 </div>
-<input type="hidden" id="upload_url" value="{{ config('icho.upload_url') }}">
+<input type="hidden" id="upload_url" value="{{ config('game.upload_url') }}">
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
@@ -98,7 +98,7 @@
 <!-- Slimscroll -->
 <script src="{{ URL::asset('admin/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ URL::asset('admin/dist/js/app.min.js') }}"></script>
+<script src="{{ URL::asset('admin/dist/js/app.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ URL::asset('admin/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
@@ -126,7 +126,9 @@ $(document).ready(function(){
 }
 @endif
 </style>
-
+<input type="hidden" value="{{ route('tag.ajax-list') }}" id="ajax_tag_list">
+<input type="hidden" id="route_upload_tmp_image_multiple" value="{{ route('image.tmp-upload-multiple') }}">
+<input type="hidden" id="route_upload_tmp_image" value="{{ route('image.tmp-upload') }}">
 @yield('javascript_page')
 </body>
 </html>

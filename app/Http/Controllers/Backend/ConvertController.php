@@ -457,7 +457,7 @@ class ConvertController extends Controller
 
                         $wpPost = WpPosts::where('ID', $p_id)->get()->toArray();
                         if(isset($wpPost[0])){
-                            $guid = str_replace("http://www.icho.vn/wp-content/uploads/", "", $wpPost[0]['guid']);
+                            $guid = str_replace("http://www.game.vn/wp-content/uploads/", "", $wpPost[0]['guid']);
                             $arrReturn['img']['id'][]= $p_id;
                             $arrReturn['img']['url'][] = $guid;                     
                         }
@@ -470,14 +470,14 @@ class ConvertController extends Controller
         if( empty($arrReturn['img']) && $arrReturn['thumbnail_id'] > 0){
             $arrReturn['img']['id'][]= $arrReturn['thumbnail_id'];
             $wpPost = WpPosts::where('ID',  $arrReturn['thumbnail_id'])->get()->toArray();
-            $guid = str_replace("http://www.icho.vn/wp-content/uploads/", "", $wpPost[0]['guid']);
+            $guid = str_replace("http://www.game.vn/wp-content/uploads/", "", $wpPost[0]['guid']);
             $arrReturn['img']['url'][] = $guid;  
         }
         if(!in_array($arrReturn['thumbnail_id'], $arrReturn['img']['id'])){
           //  echo "aaaaaaaaaaa".$post_id;
             $arrReturn['img']['id'][] = $arrReturn['thumbnail_id'];
             $wpPost = WpPosts::where('ID',  $arrReturn['thumbnail_id'])->get()->toArray();
-            $guid = str_replace("http://www.icho.vn/wp-content/uploads/", "", $wpPost[0]['guid']);
+            $guid = str_replace("http://www.game.vn/wp-content/uploads/", "", $wpPost[0]['guid']);
             $arrReturn['img']['url'][] = $guid;  
           
         }
