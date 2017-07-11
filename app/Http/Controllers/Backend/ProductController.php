@@ -25,6 +25,18 @@ class ProductController extends Controller
     */
     public function index(Request $request)
     {        
+        $arrName = ['Lineage2 Revolution', 'GoalKeeper Challenge', 'Clash Royale', 'Mobile Legends: Bang bang', 'Dream League Soccer 2017', 'Gangstar New Orleans OpenWorld', 'Subway Surfers', 'FIFA 16 Soccer', 'The Sims™ Mobile', 'Fate/Grand Order (English)', 'Pokémon GO', '8 Ball Pool'];
+        $dataArr = Product::where('status', 1)->first()->toArray();
+        unset($dataArr['id']);
+        unset($dataArr['created_at']);
+        unset($dataArr['updated_at']);
+        foreach ($arrName as $name) {
+            $dataArr['cate_id'] = 7;
+            $dataArr['loai_id'] = 2;
+            $dataArr['name'] = $name;
+            $dataArr['alias'] = Helper::stripUnicode($name);
+            //Product::create($dataArr);            
+        }        
         $arrSearch['status'] = $status = isset($request->status) ? $request->status : 1; 
         $arrSearch['is_hot'] = $is_hot = isset($request->is_hot) ? $request->is_hot : null;              
         $arrSearch['loai_id'] = $loai_id = isset($request->loai_id) ? $request->loai_id : null;

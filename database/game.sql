@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 10, 2017 at 04:45 PM
+-- Generation Time: Jul 11, 2017 at 03:32 PM
 -- Server version: 5.6.30-1+deb.sury.org~wily+2
 -- PHP Version: 5.6.11-1ubuntu3.4
 
@@ -280,7 +280,10 @@ INSERT INTO `meta_data` (`id`, `title`, `description`, `keywords`, `custom_text`
 (11, 'Business', '', '', '', 1, 1, '2017-07-10 15:35:00', '2017-07-10 15:35:00'),
 (12, 'Comics', '', '', '', 1, 1, '2017-07-10 15:35:09', '2017-07-10 15:35:09'),
 (13, 'Communication', '', '', '', 1, 1, '2017-07-10 15:35:19', '2017-07-10 15:35:19'),
-(14, 'Dating', '', '', '', 1, 1, '2017-07-10 15:35:29', '2017-07-10 15:35:29');
+(14, 'Dating', '', '', '', 1, 1, '2017-07-10 15:35:29', '2017-07-10 15:35:29'),
+(15, 'Clash of Clans', '', '', '', 1, 1, '2017-07-11 14:12:59', '2017-07-11 14:40:02'),
+(16, 'Time of War APK', '', '', '', 1, 1, '2017-07-11 14:46:05', '2017-07-11 14:46:05'),
+(17, '', '', '', '', 1, 1, '2017-07-11 14:49:46', '2017-07-11 14:49:46');
 
 -- --------------------------------------------------------
 
@@ -351,11 +354,11 @@ CREATE TABLE `product` (
   `latest_version` varchar(100) DEFAULT NULL,
   `publish_date` date NOT NULL,
   `url_android` varchar(255) DEFAULT NULL,
-  `req_android` tinyint(4) DEFAULT NULL,
+  `req_android` varchar(50) DEFAULT NULL,
   `url_ios` varchar(255) DEFAULT NULL,
-  `req_ios` tinyint(4) DEFAULT NULL,
+  `req_ios` varchar(50) DEFAULT NULL,
   `url_wp` varchar(255) DEFAULT NULL,
-  `req_wp` tinyint(4) DEFAULT NULL,
+  `req_wp` varchar(50) DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `is_hot` tinyint(1) NOT NULL DEFAULT '0',
   `display_order` int(11) NOT NULL DEFAULT '1' COMMENT 'danh cho bds hot',
@@ -365,6 +368,27 @@ CREATE TABLE `product` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `alias`, `slug`, `description`, `content`, `thumbnail_id`, `loai_id`, `cate_id`, `no_star`, `author`, `latest_version`, `publish_date`, `url_android`, `req_android`, `url_ios`, `req_ios`, `url_wp`, `req_wp`, `status`, `is_hot`, `display_order`, `meta_id`, `created_user`, `updated_user`, `created_at`, `updated_at`) VALUES
+(3, 'Clash of Clans', 'Clash of Clans', 'clash-of-clans', 'From rage-&shy;filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! Build your village to fend off raiders, battle against millions of players worldwide, and forge a powerful clan with others to destroy enemy clans.', '<h2>What&#39;s new</h2>\r\n2017-06-28<br />\r\n9.105.9<br />\r\nVarious minor bug fixes and improvements<br />\r\n<br />\r\n9.105<br />\r\nHome Village Upgrade Blitz<br />\r\n&bull; Upgrade Cannon, Archer Tower and Inferno Tower<br />\r\n&bull; Level up P.E.K.K.A, Healer, Wizard, Miner and Wall Breaker<br />\r\n&bull; Discounts and balancing, including new Town Hall 10 levels<br />\r\n<br />\r\n<br />\r\nBuilder Base Level Up<br />\r\n&bull; Get Builder Hall level 6 and new upgrades for EVERYTHING!<br />\r\n&bull; Bring out the Bats with the new Night Witch!<br />\r\n&bull; Burn foes to a crisp with the new Roaster defense!', 1, 1, 2, 3.5, 'Supercell', '9.105.9', '2017-06-28', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '4+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '5+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '3+', 1, 1, 1, 15, 1, 1, '2017-07-11 14:12:59', '2017-07-11 14:42:59'),
+(4, 'Time of War APK', 'Time of War APK', 'time-of-war-apk', 'Time of War is an online war-themed real-time SLG game of 2017 that challenges you to build your unbreakable empire, put your tactical mind to test against opponents and ultimately dominate the whole world with your formidable military forces. Are you ready to partner with friends worldwide to manage city&rsquo;s resources, develop your regiment and crush anyone in PVP and PVE battles that stands in your way? Just download and play for free!', 'Features:<br />\r\n<br />\r\n● Real-time strategy and resource management<br />\r\n<br />\r\nOnly strategy talks! Multi-armies and numerous lethal arms are in your hands, which can be a big help to defeat enemies and loot everything you want. However, stronger army doesn&rsquo;t guarantee victory because dozens of tactics and strategies are of great significance in war, so just remember don&rsquo;t underestimate your weak enemies! To win, what you should do is to find resources, reinforce military strength, and leverage your talents in the upcoming war!<br />\r\n<br />\r\n<br />\r\n● Team up and build strong alliances with others<br />\r\n<br />\r\nNo man is an island. Whether you&rsquo;re rallying against a barbarian leader or marching at a PvP bully, you&rsquo;ll need allies you can trust. Join a regiment, contribute your resources and wisdom to it when in peace and you will be rewarded with a powerful shelter when in war.<br />\r\n<br />\r\n● Online PVP and PVE war battles<br />\r\n<br />\r\nEnter an amazing online battlefield where battle for control of the PVP world, and PVE enemies attack with no warning. Feel free to engage into single-player mode and multi-player warfare and fight to survive in one of most thrilling and face-paced gameplay!&nbsp;<br />\r\n<br />\r\n● Immerge into an extremely realistic war-time experience<br />\r\n<br />\r\nSet in the Second World War, Time of War presents the actual the experience of eye-catching warfare, military operation, explosive conflicts throughout the world in mobile devices, where oil snatch, land occupation, historical battles are also featured. You are the very Commander who give the order to collect resources, build forces, join alliances, crush enemies and dominate the world! Join the war and be a hero!<br />\r\n<br />\r\nConnect with Time of War<br />\r\n<br />\r\nFacebook fanpage:<br />\r\nhttps://www.facebook.com/timeofwaren<br />\r\n<br />\r\nFacebook Group：<br />\r\nhttps://www.facebook.com/groups/timeofwaren/<br />\r\n<br />\r\nPLEASE NOTE: Time of War is completely free to download and play, however some game items can also be purchased for real money. If you don&#39;t want to use this feature, please disable in-app purchases in your device&#39;s settings.<br />\r\n<br />\r\nA stable network connection is also required.', 2, 1, 1, 4, 'iyoyo Studio', '1.0.6', '2017-06-30', 'https://apkpure.com/time-of-war/com.yoyogame.tow/download?from=details', '4+', 'https://apkpure.com/time-of-war/com.yoyogame.tow/download?from=details', '5+', 'https://apkpure.com/time-of-war/com.yoyogame.tow/download?from=details', '2+', 1, 1, 1, 16, 1, 1, '2017-07-11 14:46:05', '2017-07-11 14:46:05'),
+(5, 'Digital World', 'Digital World', 'digital-world', 'The fullest and coolest digimons gather here, hurry to collect the stronger and popular digimons;<br />\r\nYou can challenge Arena, Guild battle, Cross Server Battle in our game;<br />\r\nWelfare of login, battle, level up and achievement are waiting for you!', '---Super Welfare---<br />\r\n*Great reward for 7 Days, Get digimon for free*<br />\r\nTen times recharge rebate and first recharge send you super digimon.<br />\r\n<br />\r\n---Game Feature---<br />\r\n【Appearance Design】<br />\r\nProfessional painter elaborately done in design, hundreds of gorgeous and elaborate image are vividly shown on the screen!<br />\r\n<br />\r\n【Skills and Gameplay】<br />\r\nRigorous set of digimons and totally restore of relationship make team up combo powerful and amazing. You are the one to master these strongest digimon rangers! Are you ready to make the strongest team?<br />\r\n<br />\r\n【Original animation】<br />\r\nFantastic story together with popular original songs brings you purest experience of secondary element!&nbsp;<br />\r\n<br />\r\n【Complete Collection】<br />\r\nEvery iconic character you encountered in your childhood gathers here. Partners in growth stage, mature stage and so on absolutely meet your needs of image quality.<br />\r\n<br />\r\n【Abundant Training】<br />\r\nYou can develop super digimons in several ways like equipment, spirit, divine weapon, talent and constellation. Limiting strategy lead you to dominate the world.<br />\r\n<br />\r\n【Exciting Challenges】<br />\r\nEvents of Arena, instance, trial, tamers, guild battle and Challenger Tournament would be released in turns. Here are PVP, PVE instances to enrich rewards and equip your rangers!<br />\r\n<br />\r\n==Contact Us==<br />\r\n<br />\r\nFacebook Fanpage: fb.com/digitalsoul.en<br />\r\nFacebook Groups: fb.com/groups/digitalsoul.en/', 3, 1, 1, 4, 'BigBullGame ltd.', '2.0.1', '2017-05-25', 'http://www.nhaccuatui.com/bai-hat/duyen-phan-nhu-quynh.2iu0Q9dbU4pM.html', '4+', 'http://www.nhaccuatui.com/bai-hat/duyen-phan-nhu-quynh.2iu0Q9dbU4pM.html', '4+', 'http://www.nhaccuatui.com/bai-hat/duyen-phan-nhu-quynh.2iu0Q9dbU4pM.html', '4+', 1, 1, 1, 17, 1, 1, '2017-07-11 14:49:46', '2017-07-11 14:49:46'),
+(6, 'Lineage2 Revolution', 'Lineage2 Revolution', 'clash-of-clans', 'From rage-&shy;filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! Build your village to fend off raiders, battle against millions of players worldwide, and forge a powerful clan with others to destroy enemy clans.', '<h2>What&#39;s new</h2>\r\n2017-06-28<br />\r\n9.105.9<br />\r\nVarious minor bug fixes and improvements<br />\r\n<br />\r\n9.105<br />\r\nHome Village Upgrade Blitz<br />\r\n&bull; Upgrade Cannon, Archer Tower and Inferno Tower<br />\r\n&bull; Level up P.E.K.K.A, Healer, Wizard, Miner and Wall Breaker<br />\r\n&bull; Discounts and balancing, including new Town Hall 10 levels<br />\r\n<br />\r\n<br />\r\nBuilder Base Level Up<br />\r\n&bull; Get Builder Hall level 6 and new upgrades for EVERYTHING!<br />\r\n&bull; Bring out the Bats with the new Night Witch!<br />\r\n&bull; Burn foes to a crisp with the new Roaster defense!', 4, 1, 2, 3.5, 'Supercell', '9.105.9', '2017-06-28', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '4+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '5+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '3+', 1, 1, 1, 15, 1, 1, '2017-07-11 15:22:50', '2017-07-11 15:29:08'),
+(7, 'GoalKeeper Challenge', 'GoalKeeper Challenge', 'clash-of-clans', 'From rage-&shy;filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! Build your village to fend off raiders, battle against millions of players worldwide, and forge a powerful clan with others to destroy enemy clans.', '<h2>What&#39;s new</h2>\r\n2017-06-28<br />\r\n9.105.9<br />\r\nVarious minor bug fixes and improvements<br />\r\n<br />\r\n9.105<br />\r\nHome Village Upgrade Blitz<br />\r\n&bull; Upgrade Cannon, Archer Tower and Inferno Tower<br />\r\n&bull; Level up P.E.K.K.A, Healer, Wizard, Miner and Wall Breaker<br />\r\n&bull; Discounts and balancing, including new Town Hall 10 levels<br />\r\n<br />\r\n<br />\r\nBuilder Base Level Up<br />\r\n&bull; Get Builder Hall level 6 and new upgrades for EVERYTHING!<br />\r\n&bull; Bring out the Bats with the new Night Witch!<br />\r\n&bull; Burn foes to a crisp with the new Roaster defense!', 5, 1, 2, 3.5, 'Supercell', '9.105.9', '2017-06-28', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '4+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '5+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '3+', 1, 1, 1, 15, 1, 1, '2017-07-11 15:22:50', '2017-07-11 15:29:19'),
+(8, 'Clash Royale', 'Clash Royale', 'clash-of-clans', 'From rage-&shy;filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! Build your village to fend off raiders, battle against millions of players worldwide, and forge a powerful clan with others to destroy enemy clans.', '<h2>What&#39;s new</h2>\r\n2017-06-28<br />\r\n9.105.9<br />\r\nVarious minor bug fixes and improvements<br />\r\n<br />\r\n9.105<br />\r\nHome Village Upgrade Blitz<br />\r\n&bull; Upgrade Cannon, Archer Tower and Inferno Tower<br />\r\n&bull; Level up P.E.K.K.A, Healer, Wizard, Miner and Wall Breaker<br />\r\n&bull; Discounts and balancing, including new Town Hall 10 levels<br />\r\n<br />\r\n<br />\r\nBuilder Base Level Up<br />\r\n&bull; Get Builder Hall level 6 and new upgrades for EVERYTHING!<br />\r\n&bull; Bring out the Bats with the new Night Witch!<br />\r\n&bull; Burn foes to a crisp with the new Roaster defense!', 6, 1, 2, 3.5, 'Supercell', '9.105.9', '2017-06-28', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '4+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '5+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '3+', 1, 1, 1, 15, 1, 1, '2017-07-11 15:22:50', '2017-07-11 15:29:32'),
+(9, 'Mobile Legends: Bang bang', 'Mobile Legends: Bang bang', 'clash-of-clans', 'From rage-&shy;filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! Build your village to fend off raiders, battle against millions of players worldwide, and forge a powerful clan with others to destroy enemy clans.', '<h2>What&#39;s new</h2>\r\n2017-06-28<br />\r\n9.105.9<br />\r\nVarious minor bug fixes and improvements<br />\r\n<br />\r\n9.105<br />\r\nHome Village Upgrade Blitz<br />\r\n&bull; Upgrade Cannon, Archer Tower and Inferno Tower<br />\r\n&bull; Level up P.E.K.K.A, Healer, Wizard, Miner and Wall Breaker<br />\r\n&bull; Discounts and balancing, including new Town Hall 10 levels<br />\r\n<br />\r\n<br />\r\nBuilder Base Level Up<br />\r\n&bull; Get Builder Hall level 6 and new upgrades for EVERYTHING!<br />\r\n&bull; Bring out the Bats with the new Night Witch!<br />\r\n&bull; Burn foes to a crisp with the new Roaster defense!', 7, 1, 2, 3.5, 'Supercell', '9.105.9', '2017-06-28', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '4+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '5+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '3+', 1, 1, 1, 15, 1, 1, '2017-07-11 15:22:50', '2017-07-11 15:29:46'),
+(10, 'Dream League Soccer 2017', 'Dream League Soccer 2017', 'clash-of-clans', 'From rage-&shy;filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! Build your village to fend off raiders, battle against millions of players worldwide, and forge a powerful clan with others to destroy enemy clans.', '<h2>What&#39;s new</h2>\r\n2017-06-28<br />\r\n9.105.9<br />\r\nVarious minor bug fixes and improvements<br />\r\n<br />\r\n9.105<br />\r\nHome Village Upgrade Blitz<br />\r\n&bull; Upgrade Cannon, Archer Tower and Inferno Tower<br />\r\n&bull; Level up P.E.K.K.A, Healer, Wizard, Miner and Wall Breaker<br />\r\n&bull; Discounts and balancing, including new Town Hall 10 levels<br />\r\n<br />\r\n<br />\r\nBuilder Base Level Up<br />\r\n&bull; Get Builder Hall level 6 and new upgrades for EVERYTHING!<br />\r\n&bull; Bring out the Bats with the new Night Witch!<br />\r\n&bull; Burn foes to a crisp with the new Roaster defense!', 8, 1, 2, 3.5, 'Supercell', '9.105.9', '2017-06-28', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '4+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '5+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '3+', 1, 1, 1, 15, 1, 1, '2017-07-11 15:22:50', '2017-07-11 15:29:56'),
+(11, 'Gangstar New Orleans OpenWorld', 'Gangstar New Orleans OpenWorld', 'clash-of-clans', 'From rage-&shy;filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! Build your village to fend off raiders, battle against millions of players worldwide, and forge a powerful clan with others to destroy enemy clans.', '<h2>What&#39;s new</h2>\r\n2017-06-28<br />\r\n9.105.9<br />\r\nVarious minor bug fixes and improvements<br />\r\n<br />\r\n9.105<br />\r\nHome Village Upgrade Blitz<br />\r\n&bull; Upgrade Cannon, Archer Tower and Inferno Tower<br />\r\n&bull; Level up P.E.K.K.A, Healer, Wizard, Miner and Wall Breaker<br />\r\n&bull; Discounts and balancing, including new Town Hall 10 levels<br />\r\n<br />\r\n<br />\r\nBuilder Base Level Up<br />\r\n&bull; Get Builder Hall level 6 and new upgrades for EVERYTHING!<br />\r\n&bull; Bring out the Bats with the new Night Witch!<br />\r\n&bull; Burn foes to a crisp with the new Roaster defense!', 9, 1, 2, 3.5, 'Supercell', '9.105.9', '2017-06-28', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '4+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '5+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '3+', 1, 1, 1, 15, 1, 1, '2017-07-11 15:22:50', '2017-07-11 15:30:09'),
+(12, 'Subway Surfers', 'Subway Surfers', 'clash-of-clans', 'From rage-&shy;filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! Build your village to fend off raiders, battle against millions of players worldwide, and forge a powerful clan with others to destroy enemy clans.', '<h2>What&#39;s new</h2>\r\n2017-06-28<br />\r\n9.105.9<br />\r\nVarious minor bug fixes and improvements<br />\r\n<br />\r\n9.105<br />\r\nHome Village Upgrade Blitz<br />\r\n&bull; Upgrade Cannon, Archer Tower and Inferno Tower<br />\r\n&bull; Level up P.E.K.K.A, Healer, Wizard, Miner and Wall Breaker<br />\r\n&bull; Discounts and balancing, including new Town Hall 10 levels<br />\r\n<br />\r\n<br />\r\nBuilder Base Level Up<br />\r\n&bull; Get Builder Hall level 6 and new upgrades for EVERYTHING!<br />\r\n&bull; Bring out the Bats with the new Night Witch!<br />\r\n&bull; Burn foes to a crisp with the new Roaster defense!', 10, 1, 2, 3.5, 'Supercell', '9.105.9', '2017-06-28', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '4+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '5+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '3+', 1, 1, 1, 15, 1, 1, '2017-07-11 15:22:50', '2017-07-11 15:30:43'),
+(13, 'FIFA 16 Soccer', 'FIFA 16 Soccer', 'clash-of-clans', 'From rage-&shy;filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! Build your village to fend off raiders, battle against millions of players worldwide, and forge a powerful clan with others to destroy enemy clans.', '<h2>What&#39;s new</h2>\r\n2017-06-28<br />\r\n9.105.9<br />\r\nVarious minor bug fixes and improvements<br />\r\n<br />\r\n9.105<br />\r\nHome Village Upgrade Blitz<br />\r\n&bull; Upgrade Cannon, Archer Tower and Inferno Tower<br />\r\n&bull; Level up P.E.K.K.A, Healer, Wizard, Miner and Wall Breaker<br />\r\n&bull; Discounts and balancing, including new Town Hall 10 levels<br />\r\n<br />\r\n<br />\r\nBuilder Base Level Up<br />\r\n&bull; Get Builder Hall level 6 and new upgrades for EVERYTHING!<br />\r\n&bull; Bring out the Bats with the new Night Witch!<br />\r\n&bull; Burn foes to a crisp with the new Roaster defense!', 11, 1, 2, 3.5, 'Supercell', '9.105.9', '2017-06-28', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '4+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '5+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '3+', 1, 1, 1, 15, 1, 1, '2017-07-11 15:22:51', '2017-07-11 15:30:52'),
+(14, 'The Sims™ Mobile', 'The Sims™ Mobile', 'clash-of-clans', 'From rage-&shy;filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! Build your village to fend off raiders, battle against millions of players worldwide, and forge a powerful clan with others to destroy enemy clans.', '<h2>What&#39;s new</h2>\r\n2017-06-28<br />\r\n9.105.9<br />\r\nVarious minor bug fixes and improvements<br />\r\n<br />\r\n9.105<br />\r\nHome Village Upgrade Blitz<br />\r\n&bull; Upgrade Cannon, Archer Tower and Inferno Tower<br />\r\n&bull; Level up P.E.K.K.A, Healer, Wizard, Miner and Wall Breaker<br />\r\n&bull; Discounts and balancing, including new Town Hall 10 levels<br />\r\n<br />\r\n<br />\r\nBuilder Base Level Up<br />\r\n&bull; Get Builder Hall level 6 and new upgrades for EVERYTHING!<br />\r\n&bull; Bring out the Bats with the new Night Witch!<br />\r\n&bull; Burn foes to a crisp with the new Roaster defense!', 12, 1, 2, 3.5, 'Supercell', '9.105.9', '2017-06-28', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '4+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '5+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '3+', 1, 1, 1, 15, 1, 1, '2017-07-11 15:22:51', '2017-07-11 15:31:02'),
+(15, 'Fate/Grand Order (English)', 'Fate-Grand Order (English)', 'clash-of-clans', 'From rage-&shy;filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! Build your village to fend off raiders, battle against millions of players worldwide, and forge a powerful clan with others to destroy enemy clans.', '<h2>What&#39;s new</h2>\r\n2017-06-28<br />\r\n9.105.9<br />\r\nVarious minor bug fixes and improvements<br />\r\n<br />\r\n9.105<br />\r\nHome Village Upgrade Blitz<br />\r\n&bull; Upgrade Cannon, Archer Tower and Inferno Tower<br />\r\n&bull; Level up P.E.K.K.A, Healer, Wizard, Miner and Wall Breaker<br />\r\n&bull; Discounts and balancing, including new Town Hall 10 levels<br />\r\n<br />\r\n<br />\r\nBuilder Base Level Up<br />\r\n&bull; Get Builder Hall level 6 and new upgrades for EVERYTHING!<br />\r\n&bull; Bring out the Bats with the new Night Witch!<br />\r\n&bull; Burn foes to a crisp with the new Roaster defense!', 13, 1, 2, 3.5, 'Supercell', '9.105.9', '2017-06-28', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '4+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '5+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '3+', 1, 1, 1, 15, 1, 1, '2017-07-11 15:22:51', '2017-07-11 15:31:13'),
+(16, 'Pokémon GO', 'Pokemon GO', 'clash-of-clans', 'From rage-&shy;filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! Build your village to fend off raiders, battle against millions of players worldwide, and forge a powerful clan with others to destroy enemy clans.', '<h2>What&#39;s new</h2>\r\n2017-06-28<br />\r\n9.105.9<br />\r\nVarious minor bug fixes and improvements<br />\r\n<br />\r\n9.105<br />\r\nHome Village Upgrade Blitz<br />\r\n&bull; Upgrade Cannon, Archer Tower and Inferno Tower<br />\r\n&bull; Level up P.E.K.K.A, Healer, Wizard, Miner and Wall Breaker<br />\r\n&bull; Discounts and balancing, including new Town Hall 10 levels<br />\r\n<br />\r\n<br />\r\nBuilder Base Level Up<br />\r\n&bull; Get Builder Hall level 6 and new upgrades for EVERYTHING!<br />\r\n&bull; Bring out the Bats with the new Night Witch!<br />\r\n&bull; Burn foes to a crisp with the new Roaster defense!', 14, 1, 2, 3.5, 'Supercell', '9.105.9', '2017-06-28', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '4+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '5+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '3+', 1, 1, 1, 15, 1, 1, '2017-07-11 15:22:51', '2017-07-11 15:31:36'),
+(17, '8 Ball Pool', '8 Ball Pool', 'clash-of-clans', 'From rage-&shy;filled Barbarians with glorious mustaches to pyromaniac wizards, raise your own army and lead your clan to victory! Build your village to fend off raiders, battle against millions of players worldwide, and forge a powerful clan with others to destroy enemy clans.', '<h2>What&#39;s new</h2>\r\n2017-06-28<br />\r\n9.105.9<br />\r\nVarious minor bug fixes and improvements<br />\r\n<br />\r\n9.105<br />\r\nHome Village Upgrade Blitz<br />\r\n&bull; Upgrade Cannon, Archer Tower and Inferno Tower<br />\r\n&bull; Level up P.E.K.K.A, Healer, Wizard, Miner and Wall Breaker<br />\r\n&bull; Discounts and balancing, including new Town Hall 10 levels<br />\r\n<br />\r\n<br />\r\nBuilder Base Level Up<br />\r\n&bull; Get Builder Hall level 6 and new upgrades for EVERYTHING!<br />\r\n&bull; Bring out the Bats with the new Night Witch!<br />\r\n&bull; Burn foes to a crisp with the new Roaster defense!', 15, 1, 2, 3.5, 'Supercell', '9.105.9', '2017-06-28', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '4+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '5+', 'https://apkpure.com/clash-of-clans-coc/com.supercell.clashofclans/download', '3+', 1, 1, 1, 15, 1, 1, '2017-07-11 15:22:51', '2017-07-11 15:31:47');
 
 -- --------------------------------------------------------
 
@@ -378,6 +402,27 @@ CREATE TABLE `product_img` (
   `image_url` varchar(255) NOT NULL,
   `display_order` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `product_img`
+--
+
+INSERT INTO `product_img` (`id`, `product_id`, `image_url`, `display_order`) VALUES
+(1, 3, '2017/07/11/clashofclans-1499758733.png', 1),
+(2, 4, '2017/07/11/time-of-war-1499759164.png', 1),
+(3, 5, '2017/07/11/digital-world-1499759385.png', 1),
+(4, 6, '2017/07/11/lingeager2-1499761746.png', 1),
+(5, 7, '2017/07/11/goalkeeper-1499761758.png', 1),
+(6, 8, '2017/07/11/clash-1499761768.png', 1),
+(7, 9, '2017/07/11/mobile-1499761785.png', 1),
+(8, 10, '2017/07/11/soccer-1499761795.png', 1),
+(9, 11, '2017/07/11/gangstar-1499761808.png', 1),
+(10, 12, '2017/07/11/subway-1499761841.png', 1),
+(11, 13, '2017/07/11/fifa-1499761851.png', 1),
+(12, 14, '2017/07/11/sims-1499761861.png', 1),
+(13, 15, '2017/07/11/fate-1499761872.png', 1),
+(14, 16, '2017/07/11/pokemon-1499761880.png', 1),
+(15, 17, '2017/07/11/pool-1499761906.png', 1);
 
 -- --------------------------------------------------------
 
@@ -460,6 +505,20 @@ CREATE TABLE `tag` (
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+--
+-- Dumping data for table `tag`
+--
+
+INSERT INTO `tag` (`id`, `meta_id`, `slug`, `type`, `name`, `alias`, `description`, `district_id`, `created_user`, `updated_user`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'hoang-test', 1, 'hoang test', NULL, NULL, NULL, 1, 1, '2017-07-11 13:45:33', '2017-07-11 13:45:33'),
+(2, NULL, 'huy-hoang', 1, 'huy hoang', NULL, NULL, NULL, 1, 1, '2017-07-11 13:45:33', '2017-07-11 13:45:33'),
+(3, NULL, 'hoang-hon-mau-tim', 1, 'hoang hon mau tim', NULL, NULL, NULL, 1, 1, '2017-07-11 13:54:02', '2017-07-11 13:54:02'),
+(4, NULL, 'game-hay', 1, 'game hay', NULL, NULL, NULL, 1, 1, '2017-07-11 13:55:02', '2017-07-11 13:55:02'),
+(5, NULL, 'game-hanh-dong-hay', 1, 'game hanh dong hay', NULL, NULL, NULL, 1, 1, '2017-07-11 13:55:02', '2017-07-11 13:55:02'),
+(6, NULL, 'clash-of-clans', 1, 'Clash of Clans', NULL, NULL, NULL, 1, 1, '2017-07-11 14:05:28', '2017-07-11 14:05:28'),
+(7, NULL, 'time-of-war-apk', 1, 'Time of War APK', NULL, NULL, NULL, 1, 1, '2017-07-11 14:45:23', '2017-07-11 14:45:23'),
+(8, NULL, 'digital-world', 1, 'Digital World', NULL, NULL, NULL, 1, 1, '2017-07-11 14:49:22', '2017-07-11 14:49:22');
+
 -- --------------------------------------------------------
 
 --
@@ -472,6 +531,15 @@ CREATE TABLE `tag_objects` (
   `type` tinyint(4) NOT NULL COMMENT '1 : product, 2 : tin tuc',
   `object_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1 : product, 2 :tin tuc'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tag_objects`
+--
+
+INSERT INTO `tag_objects` (`object_id`, `tag_id`, `type`, `object_type`) VALUES
+(3, 6, 1, 1),
+(4, 7, 1, 1),
+(5, 8, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -718,7 +786,7 @@ ALTER TABLE `loai_sp`
 -- AUTO_INCREMENT for table `meta_data`
 --
 ALTER TABLE `meta_data`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `newsletter`
 --
@@ -733,12 +801,12 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `product_img`
 --
 ALTER TABLE `product_img`
-  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `seo`
 --
@@ -753,7 +821,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `tag`
 --
 ALTER TABLE `tag`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `text`
 --
