@@ -25,18 +25,7 @@ class ProductController extends Controller
     */
     public function index(Request $request)
     {        
-        $arrName = ['APKPure', 'Messenger', 'Vidmate -HD Video Downloader & Live TV', 'UC Browser - Fast Download', 'Facebook', 'WhatsApp Messenger', 'Instagram', 'Live NetTV', 'YouTube', 'Snapchat', 'Facebook Lite', 'Maps - Navigation & Transit'];
-        $dataArr = Product::where('status', 1)->first()->toArray();
-        unset($dataArr['id']);
-        unset($dataArr['created_at']);
-        unset($dataArr['updated_at']);
-        foreach ($arrName as $name) {
-            $dataArr['cate_id'] = 7;
-            $dataArr['loai_id'] = 2;
-            $dataArr['name'] = $name;
-            $dataArr['alias'] = Helper::stripUnicode($name);
-            Product::create($dataArr);            
-        }        
+        
         $arrSearch['status'] = $status = isset($request->status) ? $request->status : 1; 
         $arrSearch['is_hot'] = $is_hot = isset($request->is_hot) ? $request->is_hot : null;              
         $arrSearch['loai_id'] = $loai_id = isset($request->loai_id) ? $request->loai_id : null;
