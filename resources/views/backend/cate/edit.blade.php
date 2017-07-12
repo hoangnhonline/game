@@ -67,7 +67,11 @@
                 <label>Mô tả</label>
                 <textarea class="form-control" rows="4" name="description" id="description">{{ $detail->description }}</textarea>
               </div>  
-              
+              <div class="col-md-12">
+                <div class="checkbox">
+                   <label><input type="checkbox" name="is_hot" value="1" {{ $detail->is_hot == 1 ? "checked" : "" }}> <span style="color:blue"> HOT </span></label>
+                </div>
+             </div>
               <div class="form-group">
                 <label>Ẩn/hiện</label>
                 <select class="form-control" name="status" id="status">                  

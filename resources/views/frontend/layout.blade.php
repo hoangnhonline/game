@@ -171,7 +171,9 @@
 							</div>
 							<div class="block_content clearfix">
 								<ul class="popular_categories_list location">
-									<li><a href="#"><i class="adventure"></i>Adventure</a></li>
+									@foreach($cateHot as $cate)
+									<li><a href="{{ route('danh-muc-con', [$cate->slug_loai, $cate->slug]) }}"><i class=""></i>{!! $cate->name !!}</a></li>
+									@endforeach
 								</ul>
 							</div>
 						</div>

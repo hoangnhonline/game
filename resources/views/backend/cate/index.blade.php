@@ -34,7 +34,10 @@
                 <option value="{{ $value->id }}" {{ $value->id == $loai_id ? "selected" : "" }}>{{ $value->name }}</option>
                 @endforeach
               </select>
-            </div>            
+            </div> 
+             <div class="form-group">
+              <label><input type="checkbox" name="is_hot" value="1" {{ $is_hot == 1 ? "checked" : "" }}> HOT</label>              
+            </div>             
             <button type="submit" class="btn btn-default btn-sm">Lọc</button>
           </form>         
         </div>
