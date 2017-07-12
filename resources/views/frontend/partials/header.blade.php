@@ -1,8 +1,8 @@
 <header class="block header">
 	<div class="container">
 		<div class="block_logo">
-			<a href="#" title="APKPure">
-				<img alt="APKPure" src="{{ URL::asset('assets/images/logo.png') }}">
+			<a href="{{ route('home') }}" title="Home">
+				<img alt="Download game" src="{{ URL::asset('assets/images/logo.png') }}">
 			</a>
 		</div><!-- /block-logo -->
 		<div class="block_menu_top">
@@ -24,10 +24,10 @@
 					<a title="hot game" href="topics.html" class="nav-topics">TOPICS</a>
 				</li>
 				<li class="nav_menu_item">
-					<a title="hot game" href="app.html" class="nav-apps">APPS</a>
+					<a title="hot apps" href="{{ route('danh-muc', 'apps') }}" class="nav-apps">APPS</a>
 				</li>
 				<li class="nav_menu_item">
-					<a title="hot game" href="game.html" class="nav-game">GAMES</a>
+					<a title="hot games" href="{{ route('danh-muc', 'game') }}" class="nav-game">GAMES</a>
 				</li>
 			</ul>
 		</div>

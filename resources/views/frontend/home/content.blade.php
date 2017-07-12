@@ -4,7 +4,7 @@
 <div class="block block_products block_commom">
   <div class="block_title">
     <a href="#">{!! $loaiSp->name !!} »</a>
-    <div class="block_more"><a href="#">More »</a></div>
+    <div class="block_more"><a href="{{ route('danh-muc', $loaiSp->slug) }}">More »</a></div>
   </div>
   <div class="block-content">
     <ul class="product_items clearfix">
@@ -18,17 +18,23 @@
         </div>
         <div class="description">
           <h3>
-            <a title="Digital World" href="{{ route('chi-tiet', [$product->slug_loai, $product->slug, $product->id]) }}">{!! $product->name !!}</a>
+            <a title="{!! $product->name !!}" href="{{ route('chi-tiet', [$product->slug_loai, $product->slug, $product->id]) }}">{!! $product->name !!}</a>
           </h3>
           <div class="stars">
-            <span title="APKPure average rating 4.9" style="width:82%;"></span>
+            <span title="Average rating 4.9" style="width:82%;"></span>
           </div>
           <p>{!! $product->publish_date !!}</p>
           <div class="down_btn">
             <p>Download {!! $product->name !!}</p>
-            <a href="#" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i></a>
-            <a href="#" class="btn btn_down" title="For Android"><i class="fa fa-android"></i></a>
-            <a href="#" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i></a>
+            @if($product->url_ios)
+            <a href="{!! $detail->url_ios !!}" target="_blank" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i></a>
+            @endif
+            @if($product->url_android)
+            <a href="{!! $detail->url_android !!}" target="_blank" class="btn btn_down" title="For Android"><i class="fa fa-android"></i></a>
+            @endif
+            @if($product->url_wp)
+            <a href="{!! $detail->url_wp !!}" target="_blank" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i></a>
+            @endif      
           </div>
         </div>
       </li><!-- /product_item -->

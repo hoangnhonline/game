@@ -1,107 +1,167 @@
 @include('frontend.partials.meta')
 @section('content')
-<div class="col-sm-9 block-main">
-	<div class="block block-breadcrumb">
-      <ul class="breadcrumb"> 
-        <li><a href="{{ route('home') }}" title="Trở về trang chủ">Trang chủ</a></li>
-        <li><a href="{{ route('danh-muc', $detail->slug_loai) }}" title="{!! $detail->ten_loai !!}">{!! $detail->ten_loai !!}</a></li>
-        <li class="active">{!! $detail->name !!}</li>
-      </ul>
-  </div><!-- /block-breadcrumb -->
-	<div class="block-product block-block-title block-page">
-		<div class="block-content">
-			<div class="product-view">
-	            <div class="block-slide-proview">
-	                <div class="row">
-	                    <div class="product-img-box col-md-6 col-sm-6 col-xs-12">
-	                        <div class="bxslider product-img-gallery">
-	                        	<?php $i = 0; ?>
-	                            @foreach( $hinhArr as $hinh )
-	                            <?php $i++; ?>
-	                            <div class="item">
-	                                <img src="{{ Helper::showImage($hinh['image_url']) }}" alt="{!! $detail->name !!} {{ $i }}" />
-	                            </div>								
-	                            @endforeach	                            
-	                        </div>
-	                        <div class="product-img-thumb">
-	                            <div id="gallery_01" class="pro-thumb-img">
-	                                <?php $i = 0; ?>
-		                            @foreach( $hinhArr as $hinh )
-		                            <?php $i++; ?>
-		                            <div class="item">
-	                                    <a href="javascript:void(0)" data-slide-index="{{ $i-1 }}">
-	                                        <img src="{{ Helper::showImage($hinh['image_url']) }}" alt="{!! $detail->name !!} {{ $i }}" />
-	                                    </a>
-	                                </div>		                            							
-		                            @endforeach	                                
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <div class="product-shop col-md-6 col-sm-6 col-xs-12">
-	                        <div class="product-name">
-	                            <h1 class="name-product-detail">{!! $detail->name !!}</h1>
-	                        </div>
-	                        @if($detail->description)
-	                        <div class="product-description">
-	                            <label class="title">Mô tả:</label>
-	                            <div class="pro-desc-info">
-	                                {!! $detail->description !!}
-	                            </div>
-	                        </div>
-	                        @endif
-	                        <div class="social-share">
-	                            <label class="title">Share:</label>
-	                            <ul class="list-socials">
-	                                <li><a class="btn-share btn-fb" href="http://www.facebook.com/sharer.php?u={{ url()->current() }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-	                                <li><a class="btn-share btn-tw" href="https://twitter.com/share?url={{ url()->current() }}&amp;text={!! $detail->name !!}&amp;hashtags=baobihoahopphat" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-	                                <li><a class="btn-share btn-gp" href="https://plus.google.com/share?url={{ url()->current() }}" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>	                                
-	                            </ul>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div><!-- /block-slide-proview -->
-	            @if($detail->content)
-	            <div class="product-detail">
-	                <div class="tab product-tab">
-	                    <ul class="nav nav-tabs" role="tablist">
-						    <li role="presentation" class="active"><a href="#ctsp" aria-controls="ctsp" role="tab" data-toggle="tab">Chi tiết sản phẩm</a></li>						   
-					  	</ul>
-	                </div>
-	                 <!-- Tab panes -->
-					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane active" id="ctsp">
-							{!! $detail->content !!}
-						</div>						
+<div class="block_product_detail">
+	<div class="block block_commom block_shadow">
+		<div class="block_title">
+			<div class="block_breadcrumb">
+				<ul class="breadcrumb">
+					<li><a href="{{ route('home') }}" title="Back to home">Home</a></li>
+					<li><a href="{{ route('danh-muc', $detail->slug_loai) }}" title="{!! $detail->ten_loai !!}">{!! $detail->ten_loai !!}</a></li>
+					<li class="active">{!! $detail->name !!}</li>
+				</ul>
+			</div>
+		</div>		
+		<div class="block_content">
+			<div class="product_box">
+				<div class="row">
+					<div class="col-sm-3 pro_detail_img">
+						<img src="{{ Helper::showImage($detail->image_url) }}" alt="{!! $detail->name !!}">
 					</div>
-	            </div><!-- /product-detail -->
-	            @endif
-	        </div>
-	        @if($otherList)
-	        <div class="block-product-relatives">
-	        	<div class="block-title">
-	        		Sản phẩm liên quan
-	        	</div>
-	        	<div class="block-content">
-	        		<div class="row block-list-product">
-	        			@foreach($otherList as $product)
-						<div class="col-md-5ths col-xs-6">
-							<div class="item">
-								<div class="product-img">
-									<a href="{{ route('chi-tiet', [$product->slug_loai, $product->slug, $product->id]) }}" title="{!! $product->name !!}">
-										<img src="{{ Helper::showImage($product->image_url) }}" alt="{!! $product->name !!}">
-									</a>
-								</div>
-								<h2 class="product-name">{!! $product->name !!}</h2>
+					<div class="col-sm-9 pro_detail_info">
+						<h1>{!! $detail->name !!}</h1>
+						<div class="pro_detail_share">
+							Share fb, g+, instagram
+						</div>
+						<div class="pro_detail_rating">
+							<div class="stars"><span style="width:82%"></span></div>
+							<div class="rating_info">votes, <span class="rating"><span class="best">{!! $detail->no_star !!}</span></span></div>
+						</div>
+						<div class="pro_detail_version">
+							<div class="table-responsive">
+								<table class="table table-no-border">
+									<tr>
+										@if($detail->author)
+										<th>Author:</th>
+										@endif
+										@if($detail->lastest_version)
+										<th>Latest Version:</th>
+										@endif
+										@if($detail->pushlish_date)
+										<th>Publish Date:</th>
+										@endif
+									</tr>
+									<tr>
+										@if($detail->author)
+										<td>{!! $detail->author !!}</td>
+										@endif
+										@if($detail->lastest_version)
+										<td>{!! $detail->lastest_version !!}</td>
+										@endif
+										@if($detail->pushlish_date)
+										<td>{!! $detail->pushlish_date !!}</td>
+										@endif
+									</tr>
+								</table>
 							</div>
-						</div><!-- /col-md-5ths col-xs-6 -->
-						@endforeach
+						</div>
 					</div>
-	        	</div>
-	        </div><!-- /block-content -->
-	        @endif
-		</div><!-- /block-content -->
-	</div><!-- /block-product -->
-	</div><!-- /block-main -->
+				</div>
+				<div class="clearfix">
+					<div class="down_btn">
+						@if($detail->url_ios)
+						<a href="{!! $detail->url_ios !!}" target="_blank" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i> iOS</a>
+						@endif
+						@if($detail->url_android)
+						<a href="{!! $detail->url_android !!}" target="_blank" class="btn btn_down" title="For Android"><i class="fa fa-android"></i> Android</a>
+						@endif
+						@if($detail->url_wp)
+						<a href="{!! $detail->url_wp !!}" target="_blank" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i> Window</a>
+						@endif
+					</div>
+				</div>
+				<!--<div class="block_safe-link">
+					<a title="Using APKPure App to upgrade Digital World, fast, free and save your internet data." href="#">Using APKPure App to upgrade, fast, free and save your internet data.</a>
+				</div>-->
+			</div><!-- /product_box -->			
+			<div class="product_box">
+				<div class="pro_detail_description" style="height:auto !important;">
+					{!! $detail->description !!}
+				</div>				
+			</div><!-- /product_box -->
+			<div class="product_box">
+				<div class="block_whatnew">
+					{!! $detail->content !!}
+				</div>
+			</div><!-- /product_box -->
+			<!--<div class="product_box">
+				<div class="block_additional">
+					<div class="row">
+						<div class="col-sm-3">
+							<p><strong>Category:</strong></p>
+							<p><a title="Download more Role Playing games" href="#"><span>Free</span> <span>Role Playing GAME</span></a></p>
+						</div>
+						<div class="col-sm-3">
+							<p><strong>Get it on:</strong></p>
+							<p>
+								<a class="ga" title="Get Digital World on Google Play" href="#" target="_blank">
+									<img alt="Get Digital World on Google Play" src="images/gp_logo.png" height="16">
+								</a>
+							</p>
+						</div>
+						<div class="col-sm-3">
+							<p><strong>Category:</strong></p>
+							<p>Android 4.0+</p>
+						</div>
+						<div class="col-sm-3">
+							<p><strong>Category:</strong></p>
+							<p><a rel="nofollow" href="/report-content.html?pkg=air.com.helloair.HELLOFROG" target="_blank">Flag as inappropriate</a></p>
+						</div>
+					</div>
+				</div>
+			</div><!-- /product_box -->
+		</div>
+	</div><!-- /block -->	
+	<div class="block block_commom block_shadow block_related">
+		<div class="block_title">
+			<p class="block_title_small">Similar Or Related</p>
+		</div>
+		@if($otherList)
+		<div class="block-content">
+			<div class="product_box">
+				<ul class="product_items clearfix">
+					@foreach($otherList as $product)
+					<li class="col-sm-4 col-xs-6 product_item">
+						<div class="product_img">
+							<a title="{!! $product->name !!}" href="{{ route('chi-tiet', [$product->slug_loai, $product->slug, $product->id]) }}">
+								<img alt="{!! $product->name !!}" src="{{ Helper::showImage($product->image_url) }}">
+							</a>
+						</div>
+						<div class="description">
+							<h3>
+								<a title="{!! $product->name !!}" href="{{ route('chi-tiet', [$product->slug_loai, $product->slug, $product->id]) }}">{!! $product->name !!}</a>
+							</h3>
+							<div class="stars">
+								<span title="Average rating 4.9" style="width:82%;"></span>
+							</div>
+							<p>{!! $product->pushlish_date !!}</p>
+							<div class="down_btn">
+								<p>Download {!! $product->name !!}</p>
+								@if($product->url_ios)
+								<a href="{!! $detail->url_ios !!}" target="_blank" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i></a>
+								@endif
+								@if($product->url_android)
+								<a href="{!! $detail->url_android !!}" target="_blank" class="btn btn_down" title="For Android"><i class="fa fa-android"></i></a>
+								@endif
+								@if($product->url_wp)
+								<a href="{!! $detail->url_wp !!}" target="_blank" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i></a>
+								@endif								
+							</div>
+						</div>
+					</li><!-- /product_item -->		
+					@endforeach		
+				</ul>
+			</div>
+		</div>
+	</div><!-- /block -->
+	@endif
+	<div class="block block_commom block_shadow">
+		<div class="block-content">
+			<div class="product_box block-cm-fb">
+				<!-- <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="10"></div> -->
+			</div>
+		</div>
+	</div><!-- /block -->
+</div>
 @endsection
 @section('javascript_page')
 <script src="{{ URL::asset('public/assets/vendor/jquery.zoom/jquery.zoom.min.js') }}"></script>

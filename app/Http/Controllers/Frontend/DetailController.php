@@ -44,7 +44,11 @@ class DetailController extends Controller
         $spThuocTinhArr = $productArr = [];
         $slug = $request->slug;
         $id = $request->id;
-        $detail = Product::find($id);
+        $detail = Product::where('product.id', $id)
+                    ->leftJoin('product_img', 'product_img.id', '=','product.thumbnail_id')
+                    ->join('loai_sp', 'loai_sp.id', '=','product.loai_id')    
+                    ->select('product_img.image_url as image_url', 'product.*', 'loai_sp.slug as slug_loai', 'loai_sp.name as ten_loai')
+                    ->first();
         if(!$detail){
             return redirect()->route('home');
         }
@@ -71,7 +75,8 @@ class DetailController extends Controller
                     ->join('loai_sp', 'loai_sp.id', '=','product.loai_id')      
                     ->select('product_img.image_url as image_url', 'product.*', 'loai_sp.slug as slug_loai', 'loai_sp.name as ten_loai')
                     ->where('product.id', '<>', $detail->id)
-                    ->orderBy('product.id', 'desc')->limit(5)->get();
+                    ->where('product.loai_id', $detail->loai_id)
+                    ->orderBy('product.id', 'desc')->limit(6)->get();
         return view('frontend.detail.index', compact('detail', 'rsLoai', 'hinhArr', 'productArr', 'seo', 'socialImage', 'otherList', 'tagSelected' ));
     }
     public function tagDetail(Request $request){

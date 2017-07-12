@@ -393,6 +393,41 @@ img {
   font-size: 14px;
   color: #888;
 }
+.block_tab ul.nav-tabs {
+  position: absolute;
+  bottom: -1px;
+  right: 15px;
+}
+.block_tab .nav-tabs>li.active>a, .block_tab .nav-tabs>li.active>a:focus, .block_tab .nav-tabs>li.active>a:hover {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: none;
+  border-bottom-color: transparent;
+  border-bottom: 2px solid #38C78D;
+  color: #38C78D;
+}
+.block_tab .nav-tabs>li>a {
+  display: block;
+  overflow: hidden;
+  color: #888;
+  padding: 0px 10px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 200;
+}
+.block_tab .nav-tabs>li>a:hover {
+  border-color: transparent;
+}
+.block_tab .nav>li>a:focus, .block_tab .nav>li>a:hover {
+  text-decoration: none;
+  background-color: transparent;
+  border-bottom: 2px solid #38C78D;
+  color: #38C78D;
+}
 
 /*===== Block Products =====*/
 .block_products .product_items {
