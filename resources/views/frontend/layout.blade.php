@@ -61,143 +61,106 @@
 						<div class="block_search-tags block_pad">
 							<div class="block_content">
 								<div class="block_search">
-									<form action="#" method="POST" class="form_search">
-										<input type="text" name="textsearch" class="search_input" placeholder="">
+									<form method="GET" action="{{ route('search') }}" class="form_search">
+										<input type="text" autocomplete="off" name="keyword" value="{{ isset($tu_khoa) ? $tu_khoa : "" }}" class="search_input" placeholder="">
 										<button type="submit" class="btn_search"><i class="fa fa-search"></i></button>
 									</form>
 								</div><!-- /block_search -->
 								<div class="block_tags">
-									<a href="#">lucky patcher</a>
-				                    <a href="#">youtube</a>
-				                    <a href="#">gta</a>				                   
+									@foreach($customLink as $link)
+									<a href="{{ $link->link_url }}" title="{{ $link->link_text }}">{{ $link->link_text }}</a>
+									@endforeach
 								</div><!-- /block_tags -->
 							</div>
 						</div><!-- block_search-tags -->
 					</div><!-- block_sidebar -->					
 					<div class="block block_sidebar">
 						<div class="block_hot_day blokck_pad_content">
-							<div class="block_title">
+							<div class="block_title block_tab">
 								<a title="Hot Apps" href="app.html">Hot »</a>
+							 	<ul class="nav nav-tabs" role="tablist">
+								    <li role="presentation" class="active"><a href="#Game" aria-controls="Game" role="tab" data-toggle="tab">Game</a></li>
+								    <li role="presentation"><a href="#Apps" aria-controls="Apps" role="tab" data-toggle="tab">Apps</a></li>
+							  	</ul>
 							</div>
 							<div class="block_content clearfix">
-								<ul class="hot_day_list">
-									<li>
-										<div class="hot_day_img_number">
-											<div class="hot_day_number">1</div>
-											<div class="hot_day_img">
-												<a title="Clash of Clans APK" href="#">
-													<img alt="Clash of Clans APK" src="{{ URL::asset('assets/images/hot_day/Clash_of_Clans.png') }}">
-												</a>
-											</div>
-										</div>
-										<div class="description">
-											<h3>
-												<a title="Clash of Clans APK" href="#">Clash of Clans</a>
-											</h3>
-											<p>9.105.9</p>
-											<p>2017-06-28</p>
-											<div class="down_btn">
-												<p>Download Clash of Clans</p>
-												<a href="#" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i></a>
-												<a href="#" class="btn btn_down" title="For Android"><i class="fa fa-android"></i></a>
-												<a href="#" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i></a>
-											</div>
-										</div>
-									</li><!-- li -->
-									<li>
-										<div class="hot_day_img_number">
-											<div class="hot_day_number">2</div>
-											<div class="hot_day_img">
-												<a title="The Sims™ Mobile" href="#">
-													<img alt="The Sims™ Mobile" src="{{ URL::asset('assets/images/hot_day/The_Sims_Mobile_APK.png') }}">
-												</a>
-											</div>
-										</div>
-										<div class="description">
-											<h3>
-												<a title="The Sims™ Mobile" href="#">The Sims™ Mobile</a>
-											</h3>
-											<p>9.105.9</p>
-											<p>2017-06-28</p>
-											<div class="down_btn">
-												<p>Download The Sims™ Mobile</p>
-												<a href="#" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i></a>
-												<a href="#" class="btn btn_down" title="For Android"><i class="fa fa-android"></i></a>
-												<a href="#" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i></a>
-											</div>
-										</div>
-									</li><!-- li -->
-									<li>
-										<div class="hot_day_img_number">
-											<div class="hot_day_number">3</div>
-											<div class="hot_day_img">
-												<a title="Digital World" href="#">
-													<img alt="Digital World" src="{{ URL::asset('assets/images/hot_day/Digital_World_APK.png') }}">
-												</a>
-											</div>
-										</div>
-										<div class="description">
-											<h3>
-												<a title="Digital World" href="#">Digital World</a>
-											</h3>
-											<p>9.105.9</p>
-											<p>2017-06-28</p>
-											<div class="down_btn">
-												<p>Download Digital World</p>
-												<a href="#" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i></a>
-												<a href="#" class="btn btn_down" title="For Android"><i class="fa fa-android"></i></a>
-												<a href="#" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i></a>
-											</div>
-										</div>
-									</li><!-- li -->
-									<li>
-										<div class="hot_day_img_number">
-											<div class="hot_day_number">4</div>
-											<div class="hot_day_img">
-												<a title="GoalKeeper Challenge" href="#">
-													<img alt="GoalKeeper Challenge" src="{{ URL::asset('assets/images/hot_day/GoalKeeper_Challenge_APK.png') }}">
-												</a>
-											</div>
-										</div>
-										<div class="description">
-											<h3>
-												<a title="GoalKeeper Challenge" href="#">GoalKeeper Challenge</a>
-											</h3>
-											<p>9.105.9</p>
-											<p>2017-06-28</p>
-											<div class="down_btn">
-												<p>Download GoalKeeper Challenge</p>
-												<a href="#" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i></a>
-												<a href="#" class="btn btn_down" title="For Android"><i class="fa fa-android"></i></a>
-												<a href="#" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i></a>
-											</div>
-										</div>
-									</li><!-- li -->
-									<li>
-										<div class="hot_day_img_number">
-											<div class="hot_day_number">5</div>
-											<div class="hot_day_img">
-												<a title="Mobile Legends: Bang bang APK" href="#">
-													<img alt="Mobile Legends: Bang bang APK" src="{{ URL::asset('assets/images/hot_day/Mobile_Legends_Bang_bang_APK.png') }}">
-												</a>
-											</div>
-										</div>
-										<div class="description">
-											<h3>
-												<a title="Mobile Legends: Bang bang APK" href="#">Mobile Legends: Bang bang APK</a>
-											</h3>
-											<p>9.105.9</p>
-											<p>2017-06-28</p>
-											<div class="down_btn">
-												<p>Download Mobile Legends: Bang bang APK</p>
-												<a href="#" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i></a>
-												<a href="#" class="btn btn_down" title="For Android"><i class="fa fa-android"></i></a>
-												<a href="#" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i></a>
-											</div>
-										</div>
-									</li><!-- li -->
-								</ul>
-								<div class="block_more"><a href="/game">More »</a></div>
+								<div class="tab-content">
+									<div role="tabpanel" class="tab-pane active" id="Game">
+										<ul class="hot_day_list">
+											<?php $i = 0; ?>
+											@foreach($gameHotList as $product)
+											<?php $i ++; ?>
+											<li>
+												<div class="hot_day_img_number">
+													<div class="hot_day_number">{{ $i }}</div>
+													<div class="hot_day_img">
+														<a title="{!! $product->name !!}" href="{{ route('chi-tiet', [$product->slug_loai, $product->slug, $product->id]) }}">
+															<img alt="{!! $product->name !!}" src="{{ Helper::showImage($product->image_url) }}">
+														</a>
+													</div>
+												</div>
+												<div class="description">
+													<h3>
+														<a title="{!! $product->name !!}" href="{{ route('chi-tiet', [$product->slug_loai, $product->slug, $product->id]) }}">{!! $product->name !!}</a>
+													</h3>
+													<p>9.105.9</p>
+													<p>2017-06-28</p>
+													<div class="down_btn">
+														<p>Download {!! $product->name !!}</p>
+														@if($product->url_ios)
+											            <a href="{!! $product->url_ios !!}" target="_blank" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i></a>
+											            @endif
+											            @if($product->url_android)
+											            <a href="{!! $product->url_android !!}" target="_blank" class="btn btn_down" title="For Android"><i class="fa fa-android"></i></a>
+											            @endif
+											            @if($product->url_wp)
+											            <a href="{!! $product->url_wp !!}" target="_blank" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i></a>
+											            @endif      
+													</div>
+												</div>
+											</li><!-- li -->			
+											@endforeach											
+										</ul>	
+									</div><!-- Game -->
+									<div role="tabpanel" class="tab-pane" id="Apps">
+										<ul class="hot_day_list">
+											<?php $i = 0; ?>
+											@foreach($appHotList as $product)
+											<?php $i ++; ?>
+											<li>
+												<div class="hot_day_img_number">
+													<div class="hot_day_number">{{ $i }}</div>
+													<div class="hot_day_img">
+														<a title="{!! $product->name !!}" href="{{ route('chi-tiet', [$product->slug_loai, $product->slug, $product->id]) }}">
+															<img alt="{!! $product->name !!}" src="{{ Helper::showImage($product->image_url) }}">
+														</a>
+													</div>
+												</div>
+												<div class="description">
+													<h3>
+														<a title="{!! $product->name !!}" href="{{ route('chi-tiet', [$product->slug_loai, $product->slug, $product->id]) }}">{!! $product->name !!}</a>
+													</h3>
+													<p>9.105.9</p>
+													<p>2017-06-28</p>
+													<div class="down_btn">
+														<p>Download {!! $product->name !!}</p>
+														@if($product->url_ios)
+											            <a href="{!! $product->url_ios !!}" target="_blank" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i></a>
+											            @endif
+											            @if($product->url_android)
+											            <a href="{!! $product->url_android !!}" target="_blank" class="btn btn_down" title="For Android"><i class="fa fa-android"></i></a>
+											            @endif
+											            @if($product->url_wp)
+											            <a href="{!! $product->url_wp !!}" target="_blank" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i></a>
+											            @endif      
+													</div>
+												</div>
+											</li><!-- li -->			
+											@endforeach	
+											
+										</ul>
+									</div><!-- Apps -->
+								</div>								
 							</div>
 						</div>
 					</div><!-- block_sidebar -->
@@ -229,21 +192,10 @@
 									<li><a href="#" title="">APKPure For Android</a></li>
 									<li><a href="#" title="">APK Install</a></li>
 									<li><a href="#" title="">APK Downloader (Region free)</a></li>
-									<li><a href="#" title="">APK Signature Verification</a></li>
-									<li><a href="#" title="">APK to APPX</a></li>
+									<li><a href="#" title="">APK Signature Verification</a></li>									
 								</ul>
 							</div>
-							<div class="menu_footer_items">
-								<p class="list_menu_footer_title">SOLUTIONS</p>
-								<ul>
-									<li><a href="#" title="">Mobile Version</a></li>
-									<li><a href="#" title="">APKPure For Android</a></li>
-									<li><a href="#" title="">APK Install</a></li>
-									<li><a href="#" title="">APK Downloader (Region free)</a></li>
-									<li><a href="#" title="">APK Signature Verification</a></li>
-									<li><a href="#" title="">APK to APPX</a></li>
-								</ul>
-							</div>
+							
 						</div><!-- /list_menu_footer -->
 						<div class="col-sm-3 list_menu_footer">
 							<div class="menu_footer_items">
@@ -280,12 +232,7 @@
 									<li><a href="#" title="">WhatsApp Messenger APK</a></li>
 									<li><a href="#" title="">Messenger APK</a></li>
 									<li><a href="#" title="">Facebook APK</a></li>
-									<li><a href="#" title="">Instagram APK</a></li>
-									<li><a href="#" title="">YouTube APK</a></li>
-									<li><a href="#" title="">Vidmate -HD Video Downloader &amp; Live TV APK</a></li>
-									<li><a href="#" title="">Google Play Store APK</a></li>
-									<li><a href="#" title="">imo free video calls and chat APK</a></li>
-									<li><a href="#" title="">Snapchat APK</a></li>
+									<li><a href="#" title="">Instagram APK</a></li>																					
 								</ul>
 							</div>
 						</div><!-- /list_menu_footer -->
@@ -297,12 +244,7 @@
 									<li><a href="#" title="">Dream League Soccer 2017 APK</a></li>
 									<li><a href="#" title="">Clash Royale APK</a></li>
 									<li><a href="#" title="">Clash of Clans APK</a></li>
-									<li><a href="#" title="">Subway Surfers APK</a></li>
-									<li><a href="#" title="">Mobile Legends: Bang bang APK</a></li>
-									<li><a href="#" title="">FIFA 16 Soccer APK</a></li>
-									<li><a href="#" title="">Yu-Gi-Oh! Duel Links APK</a></li>
-									<li><a href="#" title="">FIFA Mobile Soccer APK</a></li>
-									<li><a href="#" title="">CSR Racing 2 APK</a></li>
+									<li><a href="#" title="">Subway Surfers APK</a></li>								
 								</ul>
 							</div>
 						</div><!-- /list_menu_footer -->

@@ -137,13 +137,13 @@
 							<div class="down_btn">
 								<p>Download {!! $product->name !!}</p>
 								@if($product->url_ios)
-								<a href="{!! $detail->url_ios !!}" target="_blank" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i></a>
+								<a href="{!! $product->url_ios !!}" target="_blank" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i></a>
 								@endif
 								@if($product->url_android)
-								<a href="{!! $detail->url_android !!}" target="_blank" class="btn btn_down" title="For Android"><i class="fa fa-android"></i></a>
+								<a href="{!! $product->url_android !!}" target="_blank" class="btn btn_down" title="For Android"><i class="fa fa-android"></i></a>
 								@endif
 								@if($product->url_wp)
-								<a href="{!! $detail->url_wp !!}" target="_blank" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i></a>
+								<a href="{!! $product->url_wp !!}" target="_blank" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i></a>
 								@endif								
 							</div>
 						</div>
