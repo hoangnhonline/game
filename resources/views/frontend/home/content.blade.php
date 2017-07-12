@@ -13,7 +13,7 @@
       <li class="col-sm-4 col-xs-6 product_item">
         <div class="product_img">
           <a title="{!! $product->name !!}" href="{{ route('chi-tiet', [$product->slug_loai, $product->slug, $product->id]) }}">
-            <img alt="{!! $product->name !!}" src="{{ Helper::showImageThumb($product->image_url) }}">
+            <img alt="{!! $product->name !!}" src="{{ Helper::showImage($product->image_url) }}">
           </a>
         </div>
         <div class="description">
