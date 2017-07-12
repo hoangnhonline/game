@@ -51,6 +51,7 @@
 
 		<main id="main" class="container">
 			<div class="row">
+				@if(\Request::route()->getName() != "danh-muc" && \Request::route()->getName() != "danh-muc-con" )
 				<div class="block_left col-sm-9 col-xs-12">
 					@yield('slider')
 					@yield('content')
@@ -179,6 +180,50 @@
 						</div>
 					</div><!-- block_sidebar -->
 				</div><!-- /block_right -->
+				@else
+				<div class="block_right col-sm-3 col-xs-12">
+					<div class="block block_sidebar block_page_child">
+						<div class="block_popular_categories blokck_pad_content">
+							<div class="block_title">
+								<div class="title">Category</div>
+							</div>
+							<div class="block_content clearfix">
+								<p class="title_head">
+									<a title="hot android game apk" href="#">
+										<img src="images/icon/gameicon.png"> Games
+									</a>
+								</p>
+								<ul class="popular_categories_list location">
+									<li><a href="#"><i class="adventure"></i>Adventure</a></li>
+					                <li><a href="#"><i class="tools"></i>Tools</a></li>
+					                <li><a href="#"><i class="entertainment"></i>Entertainment</a></li>
+					                <li><a href="#"><i class="action"></i>Action</a></li>
+					                <li><a href="#"><i class="communication"></i>Communication</a></li>
+					                <li><a href="#"><i class="social"></i>Social</a></li>
+					        
+								</ul>
+							</div>
+							<div class="block_content clearfix">
+								<p class="title_head">
+									<a title="hot android game apk" href="#">
+										<img src="images/icon/gameicon.png"> Games
+									</a>
+								</p>
+								<ul class="popular_categories_list location">
+									<li><a href="#"><i class="adventure"></i>Adventure</a></li>
+					                <li><a href="#"><i class="tools"></i>Tools</a></li>
+					                <li><a href="#"><i class="entertainment"></i>Entertainment</a></li>
+					               
+								</ul>
+							</div>
+						</div>
+					</div><!-- block_sidebar -->
+				</div><!-- /block_right -->
+
+				<div class="block_left col-sm-9 col-xs-12">
+					@yield('content')
+				</div><!-- /block_left -->
+				@endif
 			</div>
 		</main><!-- /#main -->
 
