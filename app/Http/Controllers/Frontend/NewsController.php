@@ -14,7 +14,7 @@ class NewsController extends Controller
 {
     public function newsList(Request $request)
     {
-        $slug = $request->slug;
+        $slug = 'topics';
         $cateArr = $cateActiveArr = $moviesActiveArr = [];
        
         $cateDetail = ArticlesCate::where('slug' , $slug)->first();
