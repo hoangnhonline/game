@@ -69,7 +69,7 @@
                 </td>
                 <td style="white-space:nowrap">   
                 
-                  <a class="btn btn-default btn-sm" href="{{ route('danh-muc', $item->slug ) }}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Xem</a>               
+                  <a class="btn btn-default btn-sm" href="{{ route('parent', $item->slug ) }}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Xem</a>               
                   <a href="{{ route( 'pages.edit', [ 'id' => $item->id ]) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></a>                 
                   
                   <a onclick="return callDelete('{{ $item->title }}','{{ route( 'pages.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>

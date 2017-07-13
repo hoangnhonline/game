@@ -59,7 +59,7 @@
                 <td style="text-align:center"><a class="btn btn-info btn-sm" href="{{ route('cate.index', [$item->id])}}">{{ $item->cates->count() }}</a></td>               
                
                 <td style="white-space:nowrap; text-align:right">
-                <a class="btn btn-default btn-sm" href="{{ route('danh-muc', $item->slug ) }}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Xem</a>                  
+                <a class="btn btn-default btn-sm" href="{{ route('parent', $item->slug ) }}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Xem</a>                  
                   <a href="{{ route( 'loai-sp.edit', [ 'id' => $item->id ]) }}" class="btn-sm btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>                 
                   @if( $item->cates->count() == 0)
                   <a onclick="return callDelete('{{ $item->name }}','{{ route( 'loai-sp.destroy', [ 'id' => $item->id ]) }}');" class="btn-sm btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>

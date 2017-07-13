@@ -81,7 +81,7 @@
                 
                 <td style="white-space:nowrap; text-align:right">
                 
-                 <a class="btn btn-default btn-sm" href="{{ route('danh-muc-con', [$loaiSp->slug, $item->slug] ) }}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Xem</a>                  
+                 <a class="btn btn-default btn-sm" href="{{ route('child', [$loaiSp->slug, $item->slug] ) }}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Xem</a>                  
                   <a href="{{ route( 'cate.edit', [ 'id' => $item->id ]) }}" class="btn-sm btn btn-warning">Chỉnh sửa</a>                 
                   @if($item->products->count() == 0)
                   <a onclick="return callDelete('{{ $item->name }}','{{ route( 'cate.destroy', [ 'id' => $item->id ]) }}');" class="btn-sm btn btn-danger">Xóa</a>
