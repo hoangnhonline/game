@@ -42,8 +42,10 @@ return [
     ],
 
     'google' => [
-        'client_id' => '752162154695-qqg3qkgdbhg5ubju6gvs180hjo532nfp.apps.googleusercontent.com',
+        'client_id' => '835111704789-tfavn3r2retjecco0caks7r1dqd1sq6j.apps.googleusercontent.com',
+    //'client_id' => '79611633434-3vei6cfb18vun0aicts30mv913991qc3.apps.googleusercontent.com',
         'client_secret' => '7-JXN9lr-65vLDjTX4qwtUtQ',
+    //'client_secret' => '-lNuLyzAa1b55rr42wizFGaa',
         'redirect' => env('APP_URL') . '/social-auth/google/callback',
     ],
 
