@@ -44,7 +44,7 @@ return [
     'google' => [
         'client_id' => '752162154695-qqg3qkgdbhg5ubju6gvs180hjo532nfp.apps.googleusercontent.com',
         'client_secret' => '7-JXN9lr-65vLDjTX4qwtUtQ',
-        'redirect' => env('APP_URL') . 'social-auth/google/callback',
+        'redirect' => env('APP_URL') . '/social-auth/google/callback',
     ],
 
 ];
