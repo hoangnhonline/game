@@ -51,7 +51,7 @@
 
 		<main id="main" class="container">
 			<div class="row">
-				@if(\Request::route()->getName() != "danh-muc" && \Request::route()->getName() != "danh-muc-con" )
+				@if(\Request::route()->getName() != "parent" && \Request::route()->getName() != "child" )
 				<div class="block_left col-sm-9 col-xs-12">
 					@yield('slider')
 					@yield('content')
@@ -173,7 +173,7 @@
 							<div class="block_content clearfix">
 								<ul class="popular_categories_list location">
 									@foreach($cateHot as $cate)
-									<li><a href="{{ route('danh-muc-con', [$cate->slug_loai, $cate->slug]) }}"><i class=""></i>{!! $cate->name !!}</a></li>
+									<li><a href="{{ route('child', [$cate->slug_loai, $cate->slug]) }}"><i class=""></i>{!! $cate->name !!}</a></li>
 									@endforeach
 								</ul>
 							</div>
@@ -187,35 +187,21 @@
 							<div class="block_title">
 								<div class="title">Category</div>
 							</div>
+							@foreach($loaiList as $loai)
 							<div class="block_content clearfix">
 								<p class="title_head">
-									<a title="hot android game apk" href="#">
-										<img src="images/icon/gameicon.png"> Games
+									<a title="hot {!! $loai->name !!} " href="{{ route('parent', $loai->slug)}}">
+										<img src="{{ URL::asset('assets/images/icon/gameicon.png') }}"> {!! $loai->name !!}
 									</a>
 								</p>
+								@if(!empty($cateList[$loai->id]))
 								<ul class="popular_categories_list location">
-									<li><a href="#"><i class="adventure"></i>Adventure</a></li>
-					                <li><a href="#"><i class="tools"></i>Tools</a></li>
-					                <li><a href="#"><i class="entertainment"></i>Entertainment</a></li>
-					                <li><a href="#"><i class="action"></i>Action</a></li>
-					                <li><a href="#"><i class="communication"></i>Communication</a></li>
-					                <li><a href="#"><i class="social"></i>Social</a></li>
-					        
+									@foreach($cateList[$loai->id] as $cate)
+									<li><a href="{{ route('child', [$loai->slug, $cate->slug]) }}">{!! $cate->name !!}</a></li>@endforeach					            	
 								</ul>
+								@endif
 							</div>
-							<div class="block_content clearfix">
-								<p class="title_head">
-									<a title="hot android game apk" href="#">
-										<img src="images/icon/gameicon.png"> Games
-									</a>
-								</p>
-								<ul class="popular_categories_list location">
-									<li><a href="#"><i class="adventure"></i>Adventure</a></li>
-					                <li><a href="#"><i class="tools"></i>Tools</a></li>
-					                <li><a href="#"><i class="entertainment"></i>Entertainment</a></li>
-					               
-								</ul>
-							</div>
+							@endforeach							
 						</div>
 					</div><!-- block_sidebar -->
 				</div><!-- /block_right -->

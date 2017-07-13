@@ -24,10 +24,10 @@
 					<a title="hot game" href="topics.html" class="nav-topics">TOPICS</a>
 				</li>
 				<li class="nav_menu_item">
-					<a title="hot apps" href="{{ route('danh-muc', 'apps') }}" class="nav-apps">APPS</a>
+					<a title="hot apps" href="{{ route('parent', 'apps') }}" class="nav-apps">APPS</a>
 				</li>
 				<li class="nav_menu_item">
-					<a title="hot games" href="{{ route('danh-muc', 'game') }}" class="nav-game">GAMES</a>
+					<a title="hot games" href="{{ route('parent', 'game') }}" class="nav-game">GAMES</a>
 				</li>
 			</ul>
 		</div>

@@ -19,7 +19,7 @@ Route::group(['namespace' => 'Frontend'], function()
 {
 
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-    Route::get('{slugLoaiSp}/{slug}/', ['as' => 'danh-muc-con', 'uses' => 'CateController@cate']);  
+    Route::get('{slugLoaiSp}/{slug}/', ['as' => 'child', 'uses' => 'CateController@child']);  
    
     Route::get('tag/{slug}', ['as' => 'tag', 'uses' => 'DetailController@tagDetail']);
     Route::get('tin-tuc/{slug}', ['as' => 'news-list', 'uses' => 'NewsController@newsList']);
@@ -33,7 +33,7 @@ Route::group(['namespace' => 'Frontend'], function()
     Route::get('tim-kiem.html', ['as' => 'search', 'uses' => 'ProductController@search']);
     Route::get('ho-so-cong-ty.html', ['as' => 'info', 'uses' => 'HomeController@info']);
     Route::get('lien-he.html', ['as' => 'contact', 'uses' => 'HomeController@contact']);
-    Route::get('{slug}.html', ['as' => 'danh-muc', 'uses' => 'ProductController@cate']);
+    Route::get('{slug}.html', ['as' => 'parent', 'uses' => 'ProductController@parent']);
 
 });
 

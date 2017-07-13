@@ -44,7 +44,6 @@
 			@endforeach
 			
 		</ul>
-	</div>
-	<a class="loadmore" href="#">Show More</a>
+	</div>	
 </div>
 @endsection

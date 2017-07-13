@@ -4,7 +4,7 @@
 <div class="block block_products block_commom">
   <div class="block_title">
     <a href="#">{!! $loaiSp->name !!} »</a>
-    <div class="block_more"><a href="{{ route('danh-muc', $loaiSp->slug) }}">More »</a></div>
+    <div class="block_more"><a href="{{ route('parent', $loaiSp->slug) }}">More »</a></div>
   </div>
   <div class="block-content">
     <ul class="product_items clearfix">

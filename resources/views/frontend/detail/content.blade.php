@@ -6,7 +6,7 @@
 			<div class="block_breadcrumb">
 				<ul class="breadcrumb">
 					<li><a href="{{ route('home') }}" title="Back to home">Home</a></li>
-					<li><a href="{{ route('danh-muc', $detail->slug_loai) }}" title="{!! $detail->ten_loai !!}">{!! $detail->ten_loai !!}</a></li>
+					<li><a href="{{ route('parent', $detail->slug_loai) }}" title="{!! $detail->ten_loai !!}">{!! $detail->ten_loai !!}</a></li>
 					<li class="active">{!! $detail->name !!}</li>
 				</ul>
 			</div>

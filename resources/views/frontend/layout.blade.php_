@@ -85,18 +85,18 @@
 							<a href="{{ route('home') }}" title="Trang Chủ">Trang Chủ</a>
 						</li><!-- END MENU HOME -->
 						<li class="level0">
-							<a href="{{ route('danh-muc', 'gioi-thieu') }}" title="Giới Thiệu">Giới Thiệu</a>
+							<a href="{{ route('parent', 'gioi-thieu') }}" title="Giới Thiệu">Giới Thiệu</a>
 						</li><!-- END MENU HOME -->
 						<li class="level0 parent">
-							<a href="{{ route('danh-muc', 'san-pham') }}" title="Sản Phẩm">Sản Phẩm</a>
+							<a href="{{ route('parent', 'san-pham') }}" title="Sản Phẩm">Sản Phẩm</a>
 							<ul class="level0 submenu submenu-white">
 								@foreach($loaiSpList as $loaiSp)
 								<li class="level1 @if($cateList[$loaiSp->id]->count() > 0) parent @endif">
-									<a href="{{ route('danh-muc', $loaiSp->slug) }}" title="{!! $loaiSp->name !!}">{!! $loaiSp->name !!}</a>
+									<a href="{{ route('parent', $loaiSp->slug) }}" title="{!! $loaiSp->name !!}">{!! $loaiSp->name !!}</a>
 									<ul class="level1 submenu submenu-white">
 										@if($cateList[$loaiSp->id]->count() > 0)
 										@foreach($cateList[$loaiSp->id] as $cate)
-										<li><a href="{{ route('danh-muc-con', [$loaiSp->slug, $cate->slug])}}" title="{!! $cate->name !!}">{!! $cate->name !!}</a></li>
+										<li><a href="{{ route('child', [$loaiSp->slug, $cate->slug])}}" title="{!! $cate->name !!}">{!! $cate->name !!}</a></li>
 										@endforeach
 										@endif
 									</ul>

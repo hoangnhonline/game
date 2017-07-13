@@ -11,11 +11,11 @@
 				</section><!-- /block-search -->
 				@foreach($loaiSpList as $loaiSp)
 				<section class="block block-menu-sidebar">
-					<h3 class="block-title"><a title="{!! $loaiSp->name !!}" href="{{ route('danh-muc', $loaiSp->slug) }}">{!! $loaiSp->name !!}</a></h3>
+					<h3 class="block-title"><a title="{!! $loaiSp->name !!}" href="{{ route('parent', $loaiSp->slug) }}">{!! $loaiSp->name !!}</a></h3>
 					@if($cateList[$loaiSp->id]->count() > 0)
 					<ul class="block-content">
 						@foreach($cateList[$loaiSp->id] as $cate)
-						<li><a href="{{ route('danh-muc-con', [$loaiSp->slug, $cate->slug])}}" title="{!! $cate->name !!}">{!! $cate->name !!}</a></li>
+						<li><a href="{{ route('child', [$loaiSp->slug, $cate->slug])}}" title="{!! $cate->name !!}">{!! $cate->name !!}</a></li>
 						@endforeach
 					</ul>
 					@endif
