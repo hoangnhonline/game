@@ -42,9 +42,9 @@ return [
     ],
 
     'google' => [
-        'client_id' => '835111704789-tfavn3r2retjecco0caks7r1dqd1sq6j.apps.googleusercontent.com',
+        'client_id' => '277123579438-tig0od8p4oa0romr6is9fjvm4pk1ip36.apps.googleusercontent.com',
     //'client_id' => '79611633434-3vei6cfb18vun0aicts30mv913991qc3.apps.googleusercontent.com',
-        'client_secret' => '-lNuLyzAa1b55rr42wizFGaa',
+        'client_secret' => 'QKKewF3DzYygANVEocZVyCvq',
     //'client_secret' => '-lNuLyzAa1b55rr42wizFGaa',
         'redirect' => env('APP_URL') . '/social-auth/google/callback',
     ],
