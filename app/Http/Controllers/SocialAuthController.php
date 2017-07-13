@@ -81,48 +81,8 @@ class SocialAuthController extends Controller
     public function googleCallback()
     {
 
-    $user = Socialite::driver('google')->user();
-
-        $google_client_token = [
-                'access_token' => $user->token,
-                'refresh_token' =>$user->refresh_token,
-                'expires_in' => $user->expiresIn
-            ];
-
-        $this->client->setAccessToken(json_encode($google_client_token));
-
-            if($this->client->isAccessTokenExpired()) {
-
-                $newToken = $this->client->getAccessToken();
-
-                $this->client->refreshToken($newToken);
-            }
-                dd($user);
-        $providerUser = Socialite::driver('google')->scopes(['profile','email'])->user();
-        dd($providerUser);
-        $data['email'] = $providerUser->email;
-
-        $getCustomer = Customer::where('email', $data['email'])->first();
-        dd($getCustomer);
-        if(is_null($getCustomer)) {
-            Session::put('gg_id', $providerUser->user);
-
-            if(!$providerUser->getName()) {
-                 Session::put('gg_name', $providerUser->user['name']['familyName'] . $providerUser->user['name']['givenName']);
-            }
-
-            if(!$providerUser->getEmail()) {
-                Session::put('gg_email', $providerUser->email);
-            }
-
-            return redirect()->route('home');
-
-        } else {
-            Session::put('login', true);
-            Session::put('userId', $getCustomer->id);
-
-            return redirect()->route('home');
-        }
+        $user = Socialite::driver('google')->user();
+        dd($user);
     }
 
     public function fbLogin(Request $request)
