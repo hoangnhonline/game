@@ -126,7 +126,7 @@ class SocialAuthController extends Controller
         $data['email'] = $providerUser->email;
 
         $getCustomer = Customer::where('email', $data['email'])->first();
-
+        dd($getCustomer);
         if(is_null($getCustomer)) {
             Session::put('gg_id', $providerUser->user);
 
@@ -138,13 +138,13 @@ class SocialAuthController extends Controller
                 Session::put('gg_email', $providerUser->email);
             }
 
-            return redirect()->route('shipping-step-1');
+            return redirect()->route('home');
 
         } else {
             Session::put('login', true);
             Session::put('userId', $getCustomer->id);
 
-            return redirect()->route('shipping-step-2');
+            return redirect()->route('home');
         }
     }
 
