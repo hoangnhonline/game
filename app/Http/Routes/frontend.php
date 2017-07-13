@@ -13,7 +13,6 @@
 Route::get('/test', function() {
     return view('frontend.email.thanks');
 });
-Route::get('glogin',array('as'=>'glogin','uses'=>'SocialAuthController@googleLogin')) ;
 Route::group(['prefix' => 'social-auth'], function () {
     Route::group(['prefix' => 'facebook'], function () {
         Route::get('redirect/', ['as' => 'fb-auth', 'uses' => 'SocialAuthController@redirect']);
@@ -22,7 +21,8 @@ Route::group(['prefix' => 'social-auth'], function () {
     });
 
     Route::group(['prefix' => 'google'], function () {
-        //Route::get('redirect/', ['as' => 'gg-auth', 'uses' => 'SocialAuthController@googleRedirect']);        
+        //Route::get('redirect/', ['as' => 'gg-auth', 'uses' => 'SocialAuthController@googleRedirect']);
+        Route::get('glogin/',array('as'=>'glogin','uses'=>'SocialAuthController@googleRedirect')) ;
         Route::get('callback/', ['as' => 'gg-callback', 'uses' => 'SocialAuthController@googleCallback']);
     });
 
