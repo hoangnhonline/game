@@ -80,8 +80,8 @@ class SocialAuthController extends Controller
 
     public function googleCallback()
     {
-
-        $user = Socialite::driver('google')->user();
+        dd('123');
+        //$user = Socialite::driver('google')->user();
         dd($user);
     }
 
