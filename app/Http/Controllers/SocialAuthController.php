@@ -123,6 +123,7 @@ class SocialAuthController extends Controller
     public function googleCallback()
     {
         $providerUser = Socialite::driver('google')->user();
+        dd($providerUser);
         $data['email'] = $providerUser->email;
 
         $getCustomer = Customer::where('email', $data['email'])->first();
