@@ -410,70 +410,6 @@
         ]
     },
     {
-        "name": "intervention/image",
-        "version": "2.3.13",
-        "version_normalized": "2.3.13.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Intervention/image.git",
-            "reference": "15a517f052ee15d373ffa145c9642d5fec7ddf5c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Intervention/image/zipball/15a517f052ee15d373ffa145c9642d5fec7ddf5c",
-            "reference": "15a517f052ee15d373ffa145c9642d5fec7ddf5c",
-            "shasum": ""
-        },
-        "require": {
-            "ext-fileinfo": "*",
-            "guzzlehttp/psr7": "~1.1",
-            "php": ">=5.4.0"
-        },
-        "require-dev": {
-            "mockery/mockery": "~0.9.2",
-            "phpunit/phpunit": "3.*"
-        },
-        "suggest": {
-            "ext-gd": "to use GD library based image processing.",
-            "ext-imagick": "to use Imagick based image processing.",
-            "intervention/imagecache": "Caching extension for the Intervention Image library"
-        },
-        "time": "2017-04-23 18:45:36",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Intervention\\Image\\": "src/Intervention/Image"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Oliver Vogel",
-                "email": "oliver@olivervogel.net",
-                "homepage": "http://olivervogel.net/"
-            }
-        ],
-        "description": "Image handling and manipulation library with support for Laravel integration",
-        "homepage": "http://image.intervention.io/",
-        "keywords": [
-            "gd",
-            "image",
-            "imagick",
-            "laravel",
-            "thumbnail",
-            "watermark"
-        ]
-    },
-    {
         "name": "vlucas/phpdotenv",
         "version": "v2.4.0",
         "version_normalized": "2.4.0.0",
@@ -1552,86 +1488,6 @@
         ]
     },
     {
-        "name": "monolog/monolog",
-        "version": "1.22.1",
-        "version_normalized": "1.22.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Seldaek/monolog.git",
-            "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1e044bc4b34e91743943479f1be7a1d5eb93add0",
-            "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0",
-            "psr/log": "~1.0"
-        },
-        "provide": {
-            "psr/log-implementation": "1.0.0"
-        },
-        "require-dev": {
-            "aws/aws-sdk-php": "^2.4.9 || ^3.0",
-            "doctrine/couchdb": "~1.0@dev",
-            "graylog2/gelf-php": "~1.0",
-            "jakub-onderka/php-parallel-lint": "0.9",
-            "php-amqplib/php-amqplib": "~2.4",
-            "php-console/php-console": "^3.1.3",
-            "phpunit/phpunit": "~4.5",
-            "phpunit/phpunit-mock-objects": "2.3.0",
-            "ruflin/elastica": ">=0.90 <3.0",
-            "sentry/sentry": "^0.13",
-            "swiftmailer/swiftmailer": "~5.3"
-        },
-        "suggest": {
-            "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
-            "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
-            "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
-            "ext-mongo": "Allow sending log messages to a MongoDB server",
-            "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
-            "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
-            "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
-            "php-console/php-console": "Allow sending log messages to Google Chrome",
-            "rollbar/rollbar": "Allow sending log messages to Rollbar",
-            "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
-            "sentry/sentry": "Allow sending log messages to a Sentry server"
-        },
-        "time": "2017-03-13 07:08:03",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Monolog\\": "src/Monolog"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jordi Boggiano",
-                "email": "j.boggiano@seld.be",
-                "homepage": "http://seld.be"
-            }
-        ],
-        "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
-        "homepage": "http://github.com/Seldaek/monolog",
-        "keywords": [
-            "log",
-            "logging",
-            "psr-3"
-        ]
-    },
-    {
         "name": "league/flysystem",
         "version": "1.0.40",
         "version_normalized": "1.0.40.0",
@@ -1901,70 +1757,6 @@
             "image",
             "imagick",
             "laravel"
-        ]
-    },
-    {
-        "name": "guzzlehttp/guzzle",
-        "version": "6.2.3",
-        "version_normalized": "6.2.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/guzzle/guzzle.git",
-            "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8d6c6cc55186db87b7dc5009827429ba4e9dc006",
-            "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006",
-            "shasum": ""
-        },
-        "require": {
-            "guzzlehttp/promises": "^1.0",
-            "guzzlehttp/psr7": "^1.4",
-            "php": ">=5.5"
-        },
-        "require-dev": {
-            "ext-curl": "*",
-            "phpunit/phpunit": "^4.0",
-            "psr/log": "^1.0"
-        },
-        "time": "2017-02-28 22:50:30",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "6.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "src/functions_include.php"
-            ],
-            "psr-4": {
-                "GuzzleHttp\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Michael Dowling",
-                "email": "mtdowling@gmail.com",
-                "homepage": "https://github.com/mtdowling"
-            }
-        ],
-        "description": "Guzzle is a PHP HTTP client library",
-        "homepage": "http://guzzlephp.org/",
-        "keywords": [
-            "client",
-            "curl",
-            "framework",
-            "http",
-            "http client",
-            "rest",
-            "web service"
         ]
     },
     {
@@ -2249,76 +2041,6 @@
             "spreadsheet",
             "xls",
             "xlsx"
-        ]
-    },
-    {
-        "name": "maatwebsite/excel",
-        "version": "2.1.17",
-        "version_normalized": "2.1.17.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
-            "reference": "14d5abf8e20563c80dd074fd7c8cf1c05bf51f1d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/14d5abf8e20563c80dd074fd7c8cf1c05bf51f1d",
-            "reference": "14d5abf8e20563c80dd074fd7c8cf1c05bf51f1d",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/cache": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
-            "illuminate/config": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
-            "illuminate/filesystem": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
-            "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
-            "jeremeamia/superclosure": "^2.3",
-            "nesbot/carbon": "~1.0",
-            "php": ">=5.5",
-            "phpoffice/phpexcel": "1.8.*",
-            "tijsverkoyen/css-to-inline-styles": "~2.0"
-        },
-        "require-dev": {
-            "mockery/mockery": "~0.9",
-            "orchestra/testbench": "3.1.*",
-            "phpseclib/phpseclib": "~1.0",
-            "phpunit/phpunit": "~4.0"
-        },
-        "suggest": {
-            "illuminate/http": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
-            "illuminate/queue": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
-            "illuminate/routing": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
-            "illuminate/view": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*"
-        },
-        "time": "2017-04-04 18:28:12",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/Maatwebsite/Excel"
-            ],
-            "psr-0": {
-                "Maatwebsite\\Excel\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "LGPL"
-        ],
-        "authors": [
-            {
-                "name": "Maatwebsite.nl",
-                "email": "patrick@maatwebsite.nl"
-            }
-        ],
-        "description": "An eloquent way of importing and exporting Excel and CSV in Laravel 4 with the power of PHPExcel",
-        "keywords": [
-            "PHPExcel",
-            "batch",
-            "csv",
-            "excel",
-            "export",
-            "import",
-            "laravel"
         ]
     },
     {
@@ -3519,80 +3241,6 @@
         ]
     },
     {
-        "name": "phpunit/phpunit",
-        "version": "4.8.35",
-        "version_normalized": "4.8.35.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/sebastianbergmann/phpunit.git",
-            "reference": "791b1a67c25af50e230f841ee7a9c6eba507dc87"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/791b1a67c25af50e230f841ee7a9c6eba507dc87",
-            "reference": "791b1a67c25af50e230f841ee7a9c6eba507dc87",
-            "shasum": ""
-        },
-        "require": {
-            "ext-dom": "*",
-            "ext-json": "*",
-            "ext-pcre": "*",
-            "ext-reflection": "*",
-            "ext-spl": "*",
-            "php": ">=5.3.3",
-            "phpspec/prophecy": "^1.3.1",
-            "phpunit/php-code-coverage": "~2.1",
-            "phpunit/php-file-iterator": "~1.4",
-            "phpunit/php-text-template": "~1.2",
-            "phpunit/php-timer": "^1.0.6",
-            "phpunit/phpunit-mock-objects": "~2.3",
-            "sebastian/comparator": "~1.2.2",
-            "sebastian/diff": "~1.2",
-            "sebastian/environment": "~1.3",
-            "sebastian/exporter": "~1.2",
-            "sebastian/global-state": "~1.0",
-            "sebastian/version": "~1.0",
-            "symfony/yaml": "~2.1|~3.0"
-        },
-        "suggest": {
-            "phpunit/php-invoker": "~1.1"
-        },
-        "time": "2017-02-06 05:18:07",
-        "bin": [
-            "phpunit"
-        ],
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "4.8.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Sebastian Bergmann",
-                "email": "sebastian@phpunit.de",
-                "role": "lead"
-            }
-        ],
-        "description": "The PHP Unit Testing framework.",
-        "homepage": "https://phpunit.de/",
-        "keywords": [
-            "phpunit",
-            "testing",
-            "xunit"
-        ]
-    },
-    {
         "name": "symfony/dom-crawler",
         "version": "v3.0.9",
         "version_normalized": "3.0.9.0",
@@ -3927,71 +3575,6 @@
         ]
     },
     {
-        "name": "symfony/event-dispatcher",
-        "version": "v3.3.2",
-        "version_normalized": "3.3.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/event-dispatcher.git",
-            "reference": "4054a102470665451108f9b59305c79176ef98f0"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/4054a102470665451108f9b59305c79176ef98f0",
-            "reference": "4054a102470665451108f9b59305c79176ef98f0",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5.9"
-        },
-        "conflict": {
-            "symfony/dependency-injection": "<3.3"
-        },
-        "require-dev": {
-            "psr/log": "~1.0",
-            "symfony/config": "~2.8|~3.0",
-            "symfony/dependency-injection": "~3.3",
-            "symfony/expression-language": "~2.8|~3.0",
-            "symfony/stopwatch": "~2.8|~3.0"
-        },
-        "suggest": {
-            "symfony/dependency-injection": "",
-            "symfony/http-kernel": ""
-        },
-        "time": "2017-06-04 18:15:29",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\EventDispatcher\\": ""
-            },
-            "exclude-from-classmap": [
-                "/Tests/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony EventDispatcher Component",
-        "homepage": "https://symfony.com"
-    },
-    {
         "name": "laravelcollective/html",
         "version": "v5.2.6",
         "version_normalized": "5.2.6.0",
@@ -4163,18 +3746,315 @@
         ]
     },
     {
-        "name": "symfony/yaml",
-        "version": "v3.3.2",
-        "version_normalized": "3.3.2.0",
+        "name": "symfony/event-dispatcher",
+        "version": "v3.3.4",
+        "version_normalized": "3.3.4.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/yaml.git",
-            "reference": "9752a30000a8ca9f4b34b5227d15d0101b96b063"
+            "url": "https://github.com/symfony/event-dispatcher.git",
+            "reference": "67535f1e3fd662bdc68d7ba317c93eecd973617e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/yaml/zipball/9752a30000a8ca9f4b34b5227d15d0101b96b063",
-            "reference": "9752a30000a8ca9f4b34b5227d15d0101b96b063",
+            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/67535f1e3fd662bdc68d7ba317c93eecd973617e",
+            "reference": "67535f1e3fd662bdc68d7ba317c93eecd973617e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9"
+        },
+        "conflict": {
+            "symfony/dependency-injection": "<3.3"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~2.8|~3.0",
+            "symfony/dependency-injection": "~3.3",
+            "symfony/expression-language": "~2.8|~3.0",
+            "symfony/stopwatch": "~2.8|~3.0"
+        },
+        "suggest": {
+            "symfony/dependency-injection": "",
+            "symfony/http-kernel": ""
+        },
+        "time": "2017-06-09 14:53:08",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\EventDispatcher\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony EventDispatcher Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "monolog/monolog",
+        "version": "1.23.0",
+        "version_normalized": "1.23.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Seldaek/monolog.git",
+            "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
+            "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "psr/log": "~1.0"
+        },
+        "provide": {
+            "psr/log-implementation": "1.0.0"
+        },
+        "require-dev": {
+            "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+            "doctrine/couchdb": "~1.0@dev",
+            "graylog2/gelf-php": "~1.0",
+            "jakub-onderka/php-parallel-lint": "0.9",
+            "php-amqplib/php-amqplib": "~2.4",
+            "php-console/php-console": "^3.1.3",
+            "phpunit/phpunit": "~4.5",
+            "phpunit/phpunit-mock-objects": "2.3.0",
+            "ruflin/elastica": ">=0.90 <3.0",
+            "sentry/sentry": "^0.13",
+            "swiftmailer/swiftmailer": "^5.3|^6.0"
+        },
+        "suggest": {
+            "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+            "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+            "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+            "ext-mongo": "Allow sending log messages to a MongoDB server",
+            "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+            "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+            "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+            "php-console/php-console": "Allow sending log messages to Google Chrome",
+            "rollbar/rollbar": "Allow sending log messages to Rollbar",
+            "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+            "sentry/sentry": "Allow sending log messages to a Sentry server"
+        },
+        "time": "2017-06-19 01:22:40",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Monolog\\": "src/Monolog"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jordi Boggiano",
+                "email": "j.boggiano@seld.be",
+                "homepage": "http://seld.be"
+            }
+        ],
+        "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+        "homepage": "http://github.com/Seldaek/monolog",
+        "keywords": [
+            "log",
+            "logging",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "maatwebsite/excel",
+        "version": "2.1.19",
+        "version_normalized": "2.1.19.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
+            "reference": "f4535ac21968f6086438e098cdf289b350aa993c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/f4535ac21968f6086438e098cdf289b350aa993c",
+            "reference": "f4535ac21968f6086438e098cdf289b350aa993c",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/cache": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/config": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/filesystem": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "jeremeamia/superclosure": "^2.3",
+            "nesbot/carbon": "~1.0",
+            "php": ">=5.5",
+            "phpoffice/phpexcel": "1.8.*",
+            "tijsverkoyen/css-to-inline-styles": "~2.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9",
+            "orchestra/testbench": "3.1.*",
+            "phpseclib/phpseclib": "~1.0",
+            "phpunit/phpunit": "~4.0"
+        },
+        "suggest": {
+            "illuminate/http": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/queue": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/routing": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+            "illuminate/view": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*"
+        },
+        "time": "2017-07-02 07:00:56",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Maatwebsite\\Excel\\ExcelServiceProvider"
+                ],
+                "aliases": {
+                    "Excel": "Maatwebsite\\Excel\\Facades\\Excel"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/Maatwebsite/Excel"
+            ],
+            "psr-0": {
+                "Maatwebsite\\Excel\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Maatwebsite.nl",
+                "email": "patrick@maatwebsite.nl"
+            }
+        ],
+        "description": "An eloquent way of importing and exporting Excel and CSV in Laravel 4 with the power of PHPExcel",
+        "keywords": [
+            "PHPExcel",
+            "batch",
+            "csv",
+            "excel",
+            "export",
+            "import",
+            "laravel"
+        ]
+    },
+    {
+        "name": "intervention/image",
+        "version": "2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Intervention/image.git",
+            "reference": "322a4ade249467179c50a3e50eda8760ff3af2a3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Intervention/image/zipball/322a4ade249467179c50a3e50eda8760ff3af2a3",
+            "reference": "322a4ade249467179c50a3e50eda8760ff3af2a3",
+            "shasum": ""
+        },
+        "require": {
+            "ext-fileinfo": "*",
+            "guzzlehttp/psr7": "~1.1",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9.2",
+            "phpunit/phpunit": "^4.8 || ^5.7"
+        },
+        "suggest": {
+            "ext-gd": "to use GD library based image processing.",
+            "ext-imagick": "to use Imagick based image processing.",
+            "intervention/imagecache": "Caching extension for the Intervention Image library"
+        },
+        "time": "2017-07-03 15:50:40",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Intervention\\Image\\ImageServiceProvider"
+                ],
+                "aliases": {
+                    "Image": "Intervention\\Image\\Facades\\Image"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Intervention\\Image\\": "src/Intervention/Image"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Oliver Vogel",
+                "email": "oliver@olivervogel.com",
+                "homepage": "http://olivervogel.com/"
+            }
+        ],
+        "description": "Image handling and manipulation library with support for Laravel integration",
+        "homepage": "http://image.intervention.io/",
+        "keywords": [
+            "gd",
+            "image",
+            "imagick",
+            "laravel",
+            "thumbnail",
+            "watermark"
+        ]
+    },
+    {
+        "name": "symfony/yaml",
+        "version": "v3.3.4",
+        "version_normalized": "3.3.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/yaml.git",
+            "reference": "1f93a8d19b8241617f5074a123e282575b821df8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/yaml/zipball/1f93a8d19b8241617f5074a123e282575b821df8",
+            "reference": "1f93a8d19b8241617f5074a123e282575b821df8",
             "shasum": ""
         },
         "require": {
@@ -4186,7 +4066,7 @@
         "suggest": {
             "symfony/console": "For validating YAML files using the lint command"
         },
-        "time": "2017-06-02 22:05:06",
+        "time": "2017-06-15 12:58:50",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4220,18 +4100,92 @@
         "homepage": "https://symfony.com"
     },
     {
-        "name": "symfony/browser-kit",
-        "version": "v3.3.2",
-        "version_normalized": "3.3.2.0",
+        "name": "phpunit/phpunit",
+        "version": "4.8.36",
+        "version_normalized": "4.8.36.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/browser-kit.git",
-            "reference": "c2c8ceb1aa9dab9eae54e9150e6a588ce3e53be1"
+            "url": "https://github.com/sebastianbergmann/phpunit.git",
+            "reference": "46023de9a91eec7dfb06cc56cb4e260017298517"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/browser-kit/zipball/c2c8ceb1aa9dab9eae54e9150e6a588ce3e53be1",
-            "reference": "c2c8ceb1aa9dab9eae54e9150e6a588ce3e53be1",
+            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/46023de9a91eec7dfb06cc56cb4e260017298517",
+            "reference": "46023de9a91eec7dfb06cc56cb4e260017298517",
+            "shasum": ""
+        },
+        "require": {
+            "ext-dom": "*",
+            "ext-json": "*",
+            "ext-pcre": "*",
+            "ext-reflection": "*",
+            "ext-spl": "*",
+            "php": ">=5.3.3",
+            "phpspec/prophecy": "^1.3.1",
+            "phpunit/php-code-coverage": "~2.1",
+            "phpunit/php-file-iterator": "~1.4",
+            "phpunit/php-text-template": "~1.2",
+            "phpunit/php-timer": "^1.0.6",
+            "phpunit/phpunit-mock-objects": "~2.3",
+            "sebastian/comparator": "~1.2.2",
+            "sebastian/diff": "~1.2",
+            "sebastian/environment": "~1.3",
+            "sebastian/exporter": "~1.2",
+            "sebastian/global-state": "~1.0",
+            "sebastian/version": "~1.0",
+            "symfony/yaml": "~2.1|~3.0"
+        },
+        "suggest": {
+            "phpunit/php-invoker": "~1.1"
+        },
+        "time": "2017-06-21 08:07:12",
+        "bin": [
+            "phpunit"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.8.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de",
+                "role": "lead"
+            }
+        ],
+        "description": "The PHP Unit Testing framework.",
+        "homepage": "https://phpunit.de/",
+        "keywords": [
+            "phpunit",
+            "testing",
+            "xunit"
+        ]
+    },
+    {
+        "name": "symfony/browser-kit",
+        "version": "v3.3.4",
+        "version_normalized": "3.3.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/browser-kit.git",
+            "reference": "3a4435e79a8401746e8525e98039199d0924b4e5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/browser-kit/zipball/3a4435e79a8401746e8525e98039199d0924b4e5",
+            "reference": "3a4435e79a8401746e8525e98039199d0924b4e5",
             "shasum": ""
         },
         "require": {
@@ -4245,7 +4199,7 @@
         "suggest": {
             "symfony/process": ""
         },
-        "time": "2017-04-12 14:14:56",
+        "time": "2017-06-24 09:29:48",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4277,5 +4231,406 @@
         ],
         "description": "Symfony BrowserKit Component",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "guzzlehttp/guzzle",
+        "version": "6.3.0",
+        "version_normalized": "6.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/guzzle.git",
+            "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+            "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/promises": "^1.0",
+            "guzzlehttp/psr7": "^1.4",
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "ext-curl": "*",
+            "phpunit/phpunit": "^4.0 || ^5.0",
+            "psr/log": "^1.0"
+        },
+        "suggest": {
+            "psr/log": "Required for using the Log middleware"
+        },
+        "time": "2017-06-22 18:50:49",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "6.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/functions_include.php"
+            ],
+            "psr-4": {
+                "GuzzleHttp\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle is a PHP HTTP client library",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "client",
+            "curl",
+            "framework",
+            "http",
+            "http client",
+            "rest",
+            "web service"
+        ]
+    },
+    {
+        "name": "phpseclib/phpseclib",
+        "version": "2.0.6",
+        "version_normalized": "2.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phpseclib/phpseclib.git",
+            "reference": "34a7699e6f31b1ef4035ee36444407cecf9f56aa"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/34a7699e6f31b1ef4035ee36444407cecf9f56aa",
+            "reference": "34a7699e6f31b1ef4035ee36444407cecf9f56aa",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phing/phing": "~2.7",
+            "phpunit/phpunit": "~4.0",
+            "sami/sami": "~2.0",
+            "squizlabs/php_codesniffer": "~2.0"
+        },
+        "suggest": {
+            "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
+            "ext-libsodium": "SSH2/SFTP can make use of some algorithms provided by the libsodium-php extension.",
+            "ext-mcrypt": "Install the Mcrypt extension in order to speed up a few other cryptographic operations.",
+            "ext-openssl": "Install the OpenSSL extension in order to speed up a wide variety of cryptographic operations."
+        },
+        "time": "2017-06-05 06:31:10",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "phpseclib/bootstrap.php"
+            ],
+            "psr-4": {
+                "phpseclib\\": "phpseclib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jim Wigginton",
+                "email": "terrafrost@php.net",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Patrick Monnerat",
+                "email": "pm@datasphere.ch",
+                "role": "Developer"
+            },
+            {
+                "name": "Andreas Fischer",
+                "email": "bantu@phpbb.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Hans-Jürgen Petrich",
+                "email": "petrich@tronic-media.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Graham Campbell",
+                "email": "graham@alt-three.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
+        "homepage": "http://phpseclib.sourceforge.net",
+        "keywords": [
+            "BigInteger",
+            "aes",
+            "asn.1",
+            "asn1",
+            "blowfish",
+            "crypto",
+            "cryptography",
+            "encryption",
+            "rsa",
+            "security",
+            "sftp",
+            "signature",
+            "signing",
+            "ssh",
+            "twofish",
+            "x.509",
+            "x509"
+        ]
+    },
+    {
+        "name": "firebase/php-jwt",
+        "version": "v3.0.0",
+        "version_normalized": "3.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/firebase/php-jwt.git",
+            "reference": "fa8a06e96526eb7c0eeaa47e4f39be59d21f16e1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/firebase/php-jwt/zipball/fa8a06e96526eb7c0eeaa47e4f39be59d21f16e1",
+            "reference": "fa8a06e96526eb7c0eeaa47e4f39be59d21f16e1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2015-07-22 18:31:08",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Firebase\\JWT\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Neuman Vong",
+                "email": "neuman+pear@twilio.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Anant Narayanan",
+                "email": "anant@php.net",
+                "role": "Developer"
+            }
+        ],
+        "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+        "homepage": "https://github.com/firebase/php-jwt"
+    },
+    {
+        "name": "google/apiclient-services",
+        "version": "v0.7",
+        "version_normalized": "0.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/google/google-api-php-client-services.git",
+            "reference": "c07a8a9d424024f1a9fc5d62da8ed5467ed25909"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/c07a8a9d424024f1a9fc5d62da8ed5467ed25909",
+            "reference": "c07a8a9d424024f1a9fc5d62da8ed5467ed25909",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "time": "2016-09-14 19:12:27",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Google_Service_": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "description": "Client library for Google APIs",
+        "homepage": "http://developers.google.com/api-client-library/php",
+        "keywords": [
+            "google"
+        ]
+    },
+    {
+        "name": "psr/cache",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/cache.git",
+            "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
+            "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-08-06 20:24:11",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Cache\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for caching libraries",
+        "keywords": [
+            "cache",
+            "psr",
+            "psr-6"
+        ]
+    },
+    {
+        "name": "google/auth",
+        "version": "v0.10",
+        "version_normalized": "0.10.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/google/google-auth-library-php.git",
+            "reference": "760e3fbe4064c0525c22e27e5374eada3c103da8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/google/google-auth-library-php/zipball/760e3fbe4064c0525c22e27e5374eada3c103da8",
+            "reference": "760e3fbe4064c0525c22e27e5374eada3c103da8",
+            "shasum": ""
+        },
+        "require": {
+            "firebase/php-jwt": "~2.0|~3.0",
+            "guzzlehttp/guzzle": "~5.3|~6.0",
+            "guzzlehttp/psr7": "~1.2",
+            "php": ">=5.4",
+            "psr/cache": "^1.0",
+            "psr/http-message": "^1.0"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "^1.11",
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2016-08-02 22:00:48",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ],
+            "psr-4": {
+                "Google\\Auth\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "description": "Google Auth Library for PHP",
+        "homepage": "http://github.com/google/google-auth-library-php",
+        "keywords": [
+            "Authentication",
+            "google",
+            "oauth2"
+        ]
+    },
+    {
+        "name": "google/apiclient",
+        "version": "v2.0.3",
+        "version_normalized": "2.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/google/google-api-php-client.git",
+            "reference": "37adb8a6f4d4b27b9900d62d67bf1d54995a755c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/google/google-api-php-client/zipball/37adb8a6f4d4b27b9900d62d67bf1d54995a755c",
+            "reference": "37adb8a6f4d4b27b9900d62d67bf1d54995a755c",
+            "shasum": ""
+        },
+        "require": {
+            "firebase/php-jwt": "~2.0|~3.0",
+            "google/apiclient-services": "^0.7",
+            "google/auth": "0.10",
+            "guzzlehttp/guzzle": "~5.2|~6.0",
+            "guzzlehttp/psr7": "^1.2",
+            "monolog/monolog": "^1.17",
+            "php": ">=5.4",
+            "phpseclib/phpseclib": "~2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4",
+            "squizlabs/php_codesniffer": "~2.3",
+            "symfony/css-selector": "~2.1",
+            "symfony/dom-crawler": "~2.1",
+            "tedivm/stash": "^0.14.1"
+        },
+        "suggest": {
+            "tedivm/stash": "For caching certs and tokens (using Google_Client::setCache)"
+        },
+        "time": "2016-09-14 19:33:35",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Google_": "src/"
+            },
+            "classmap": [
+                "src/Google/Service/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "description": "Client library for Google APIs",
+        "homepage": "http://developers.google.com/api-client-library/php",
+        "keywords": [
+            "google"
+        ]
     }
 ]

@@ -16,7 +16,7 @@
 							<span><img src="{{ URL::asset('assets/images/icon/facebook.png') }}" alt=""></span>
 							<i>Facebook</i>
 						</a></li>
-						<li><a href="#" class="btn-login btn-gg">
+						<li><a href="{{ route('glogin') }}" class="btn-login btn-gg">
 							<span><img src="{{ URL::asset('assets/images/icon/gplus.png') }}" alt=""></span>
 							<i>Google</i>
 						</a></li>

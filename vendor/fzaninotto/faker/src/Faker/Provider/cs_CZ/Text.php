@@ -456,7 +456,7 @@ ano?“
 „Kolik je hodin?“ ptal se Prokop netečně.
 „Čtyři… Čtyři a pět minut. Snad… ti tu nic neschází?“
 Prokop zavřel oči, odhodlán nezajímat se už o nic na světě. Tomeš ho pečlivě
-přikryl, a bylo ticho.
+přikryl, a bylo tgame.
 Náhle otevřel oči dokořán. Viděl nad sebou neznámý strop a po jeho kraji běží
 neznámý ornament. Sáhl rukou po svém nočním stolku, a hmátl do prázdna.
 Obrátil se polekán, a místo svého širokého laboratorního pultu vidí nějaký
@@ -465,7 +465,7 @@ jsou jakési dveře. Zmátl se tím vším nesmírně; nedovedl pochopit, co se 
 děje, kde se octl, a přemáhaje závrať usedl na posteli. Pomalu si uvědomil, že
 není doma, ale nemohl si vzpomenout, jak se sem dostal. „Kdo je to,“ zeptal se
 hlasitě nazdařbůh, stěží hýbaje jazykem. „Pít,“ ozval se po chvíli, „pít!“
-Bylo trýznivé ticho. Vstal z postele a trochu vrávoravě šel hledat vodu. Na
+Bylo trýznivé tgame. Vstal z postele a trochu vrávoravě šel hledat vodu. Na
 umyvadle našel karafu a pil z ní dychtivě; a když se vracel do postele,
 podlomily se mu nohy a usedl na židli, nemoha dále. Seděl snad hodně dlouho;
 pak ho roztřásla zima, neboť se celý polil vodou z karafy, a přišlo mu líto
@@ -898,7 +898,7 @@ docela zarostlé tváře a obličej skoro neznámý; hledí a nemůže pochopit,
 se mu roztřásly rty.
 „Lehněte si, hned si zas lehněte,“ káže mu drobounký hlásek skoro plačící, a
 rychlé ruce mu nastavují podušku. Prokop se sváží naznak a zavírá oči; jen
-chvilinku si zdřímnu, myslí si, a udělalo se libé, hluboké ticho.
+chvilinku si zdřímnu, myslí si, a udělalo se libé, hluboké tgame.
 
 
 VIII.
@@ -1009,7 +1009,7 @@ Někde venku se chraptivě a směšně rozkřikl mladý kohoutek. Najednou se ta
 dole strhlo jakési slepičí rozčilení, bylo slyšet divoké „ko-ko-ko-“ a vítězně
 kvikající štěkot psiska. Děvče vyskočilo. „Honzík honí slepice!“ Ale hned si
 zase sedla, odhodlána ponechat slípky jejich osudu. Bylo příjemné a jasné
-ticho.
+tgame.
 „Já nevím, o čem povídat,“ řekla po chvíli s nejkrásnější prostotou. „Já vám
 přečtu noviny, chcete?“
 Prokop se usmál. A už tu byla s novinami a pustila se odvážně do úvodníku.
@@ -1274,7 +1274,7 @@ duší zbahnělou a tělem zamořeným shnilou leností. Coural po pokoji, zíva
 bezmyšlenkovitě se mrzel. Setmělo se, a ani nerozsvítil.
 Služka mu přinesla večeři. Nechal ji vystydnout a poslouchal, co se děje dole.
 Vidličky cinkaly, doktor bručel a náramně brzo po večeři práskl dveřmi u svého
-pokoje. Bylo ticho.
+pokoje. Bylo tgame.
 Jist, že už nikoho nepotká, sebral se Prokop a šel do zahrady. Byla vlažná a
 jasná noc. Už kvetou šeříky a pustoryl, Bootes široce rozpíná na nebi svou
 hvězdnou náruč, je ticho prohloubené dalekým psím štěkáním. O kamennou zídku v
@@ -2178,7 +2178,7 @@ Války! Jděte, nebuďte směšný. Pokud mají lidé nehty a zuby –“
 „Neprodám,“ drtil Prokop mezi zuby.
 Pan Carson pokrčil rameny. „Jak chcete. Najdeme si to sami. Nebo to najde
 Tomeš. Taky dobře.“
-Bylo chvíli ticho. „Mně je to jedno,“ ozval se pan Carson. „Je-li vám to
+Bylo chvíli tgame. „Mně je to jedno,“ ozval se pan Carson. „Je-li vám to
 milejší, pojedeme s tím do Francie, do Anglie, kam chcete, třeba do Číny. My
 oba, víte? Tady by nám to nikdo nezaplatil. Byl byste osel, kdybyste to prodal
 za dvacet miliónů. Spolehněte se na Carsona. Tak co?“
@@ -3243,7 +3243,7 @@ zalarmovány posily a četné patroly procházely parkem.
 Asi o půlnoci demoloval kdosi balustrádu na parkové terase a vrhal
 desetikilové kameny po stráži, jež přecházela dole v hloubi deseti metrů.
 Voják vystřelil, načež shora se vychrlila spousta politických urážek, a bylo
-ticho. V tu chvíli přijížděli z Dikkeln přivolaní kavaleristé, zatímco veškerá
+tgame. V tu chvíli přijížděli z Dikkeln přivolaní kavaleristé, zatímco veškerá
 balttinská posádka šťouchala bajonety do křovin. V zámku už dávno nikdo
 nespal. V jednu hodinu našli u tenisového hříště omráčeného vojáka bez pušky.
 Brzo nato se v březovém lesíku strhla krátká, ale vydatná přestřelka; raněn
@@ -3901,7 +3901,7 @@ nekroutil se úsilím jako ti ostatní, jen svalstvo v obličeji mu k prasknutí
 nabíhalo; vypadal jako pračlověk, který se chystá někoho zabít krátkým kyjem:
 nasupený, s ústy námahou zkřivenými a tváří jakoby přeseknutou hrubými svaly,
 s plecí šikmo schýlenou, jako by chtěl zamávat lahví v gorilím útoku, upřel
-krví zalité oči na princeznu. Nastalo ticho. Princezna se zvedla s očima
+krví zalité oči na princeznu. Nastalo tgame. Princezna se zvedla s očima
 zrovna vzepřenýma do jeho; rty se jí stáhly nad zaťatými zuby, v olivové líci
 jí vystoupily šlašité provazce, svraštila obočí a prudce oddychovala jakoby
 děsnou tělesnou námahou. Tak stáli proti sobě s očima do sebe zakleslýma a
@@ -4057,7 +4057,7 @@ učiniti konec. Nepřijdete-li odpoledne do japonského altánu, dovtípím se t
 dokonale a učiním vše, abych Vás dále neobtěžoval.“
 Prokop si oddychl; nebyl zvyklý psát milostné dopisy, a toto se mu zdálo býti
 napsáno důkladně a dosti srdečně. Pan Paul to běžel odevzdat; klavír v druhém
-křídle uryl, a bylo ticho.
+křídle uryl, a bylo tgame.
 Zatím se Prokop rozběhl za Carsonem; potkal ho u skladů a šel rovnou do toho:
 aby ho na čestné slovo nechal chodit bez Holze, a že je ochoten složit
 jakoukoliv přísahu, že až do dalšího ohlášení odtud neuteče. Pan Carson se
@@ -5078,7 +5078,7 @@ krabičkou ve zdvižené ruce, aby ji hodil pod nohy prvnímu, kdo se hne, a Hol
 (nyní už neodvolatelně zrevolucionovaný) s nastraženým ústím revolveru; a
 proti nim čtyři bledí muži, trochu nachýlení vpřed, tři s revolvery v ruce; to
 bude mela. Prokop nalíčil strategickou diverzi ke schodům; čtyři muži se
-začali přetáčet v tu stranu, někdo vzadu se dal na útěk, bylo hrozně ticho.
+začali přetáčet v tu stranu, někdo vzadu se dal na útěk, bylo hrozně tgame.
 „Nestřílet,“ zašeptal kdosi ostře. Prokop slyší tikat své hodinky. Nahoře v
 patře hlaholí veselé hlasy, nikdo tam o ničem neví; a protože nyní je východ
 volný, točí se Prokop pozpátku ke dveřím, kryt Holzem. Čtyři muži u schodů se
@@ -5206,7 +5206,7 @@ se souší jen dvěma holými trámy. Z vytrhaných prken získal materiál pro
 zabednění vchodu a krom toho drahocenné rezavé hřebíky, jež natloukl do lopat
 vesel hroty ven. Tím vznikla zbraň strašná a vskutku vražedná. Pořídiv to vše
 a shledavaje, že dobré jest, byl by se rád tím pochlubil náčelníkovi; ten však
-byl zamčen v kabině princeznině a snad ani nedýchal, jak tam bylo ticho. Tu
+byl zamčen v kabině princeznině a snad ani nedýchal, jak tam bylo tgame. Tu
 stanul dr. Krafft nad šedivou plochou rybníka, jenž chladně a tichounce
 šplounal; někdy to zažbluňklo, jak se vymrštila ryba, někdy zašelestilo
 rákosí; a dr. Krafftovi začalo být úzko z té samoty.
@@ -5605,7 +5605,7 @@ podáte žádost o udělení našeho státního občanství.“
 chápete přece, že… že je třeba jisté záruky, ne? Prostě si něčím vysloužíte
 hodnost, která se vám udělí… za mimořádné zásluhy, že ano? Předpokládá se, že…
 že vydáte armádní správě… rozumíte, že vydáte…“
-Bylo hrozné ticho. Le bon prince se díval z okna, Carsonovy oči zmizely za
+Bylo hrozné tgame. Le bon prince se díval z okna, Carsonovy oči zmizely za
 blýskavými skly; a Prokopovi se svíralo srdce úzkostí.
 „… že totiž vydáte… prostě vydáte…,“ koktal Carson stěží dýchaje napětím.
 „Co?“
@@ -5964,7 +5964,7 @@ pátral po úbočích, slézal drásaje si ruce, kde rozeznával něco temného 
 světlého; bylo to hloží nebo kamení, a tu opět klopýtal a drápal se na silnici
 a zarýval se očima do tmy, zda… zda není někde hromada trosek, a pod ní…
 Byl opět nahoře u rozcestí; právě tady se začala propadat do tmy. Usedl na
-milník. Ticho, nesmírné ticho. Studené hvězdy popůlnoční, letí teď někde temný
+milník. Ticho, nesmírné tgame. Studené hvězdy popůlnoční, letí teď někde temný
 meteor vozu? Což se nic neozve, nezavolá pták, neštěkne ve vsi pes, nedá nic
 znamení života? Vše ustrnulo slavnostním mlčením smrti. A toto je tedy konec,
 tichý a mrazivý a temný konec všeho; prázdnota vykroužená tmou a tichem;
@@ -6310,7 +6310,7 @@ Zakoktal se, zamračil se, hodil krabici s Krakatitem na katedru a usedl.
 
 XLIX.
 
-Bylo chvíli rozpačité ticho.
+Bylo chvíli rozpačité tgame.
 „A to je všechno?“ ozval se ze středu lavic výsměšný hlas.
 „To je všechno,“ zabručel Prokop znechucen.
 „Není.“ To řekl Daimon a vstal. „Kamarád Krakatit předpokládal, že delegáti
@@ -6561,7 +6561,7 @@ Daimon přikývl. „S nimi se nedalo pracovat. Jistě že se hádali do posledn
 chvíle o taktiku. Nejspíš tam hoří.“
 Na obzoru bylo vidět jen slaboučkou červenou záři.
 „Zůstal tam i vynálezce naší stanice. Zůstali tam všichni. Teď tedy to vezmete
-do ruky sám – Hleďte, poslouchejte, jak je ticho. A přece odtud, tady z těch
+do ruky sám – Hleďte, poslouchejte, jak je tgame. A přece odtud, tady z těch
 drátů, šlehá do prostoru němá a přesná kanonáda. Teď jsme zastavili všechny
 bezdrátové spoje, a telegrafistům to práská do uší, krach, krach! Ať se
 vztekají. Zatím se pan Tomeš někde v Grottup pachtí dodělat Krakatit – Nenajde

@@ -42,9 +42,10 @@ return [
     ],
 
     'google' => [
-        'client_id' => '1091007214947-l06nvreo6imqsqs7bkaao52afkchfkh0.apps.googleusercontent.com',
-        'client_secret' => '-wUqrEtYf0MHxUrBc5FVw8FD',
-        'redirect' => 'http://game.dev/social-auth/google/callback',
+        'app_name' => 'Download game mobile',
+        'client_id' => '752162154695-qqg3qkgdbhg5ubju6gvs180hjo532nfp.apps.googleusercontent.com',
+        'client_secret' => '7-JXN9lr-65vLDjTX4qwtUtQ',
+        'redirect' => env('APP_URL') . '/social-auth/google/callback',
     ],
 
 ];

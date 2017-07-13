@@ -21,7 +21,8 @@ Route::group(['prefix' => 'social-auth'], function () {
     });
 
     Route::group(['prefix' => 'google'], function () {
-        Route::get('redirect/', ['as' => 'gg-auth', 'uses' => 'SocialAuthController@googleRedirect']);
+        //Route::get('redirect/', ['as' => 'gg-auth', 'uses' => 'SocialAuthController@googleRedirect']);
+        Route::get('glogin',array('as'=>'glogin','uses'=>'SocialAuthController@googleLogin')) ;
         Route::get('callback/', ['as' => 'gg-callback', 'uses' => 'SocialAuthController@googleCallback']);
     });
 
