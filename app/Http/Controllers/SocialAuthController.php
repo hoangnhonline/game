@@ -96,6 +96,7 @@ class SocialAuthController extends Controller
                 $newToken = $this->client->getAccessToken();
 
                 $this->client->refreshToken($newToken);
+            }
                 dd($user);
         $providerUser = Socialite::driver('google')->scopes(['profile','email'])->user();
         dd($providerUser);
