@@ -81,7 +81,7 @@ class SocialAuthController extends Controller
     public function googleCallback()
     {
 
-    $user = Socialite::driver('google')->userFromToken(Auth::user()->token);
+    $user = Socialite::driver('google')->user();
 
         $google_client_token = [
                 'access_token' => $user->token,
