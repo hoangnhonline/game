@@ -44,7 +44,25 @@
 	<![endif]-->
 </head>
 <body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : $('#fb-app-id').val(),
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();   
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 	<div class="wrapper">
 		
 		@include('frontend.partials.header')
@@ -305,7 +323,8 @@
     	<!-- Return To Top -->
 
 	</div><!-- /wrapper -->
-
+	<input type="hidden" id="route-ajax-login-fb" value="{{ route('ajax-login-by-fb') }}">
+	<input type="hidden" id="fb-app-id" value="{{ env('FACEBOOK_APP_ID') }}">
 	<!-- ===== JS ===== -->
 	<script src="{{ URL::asset('assets/js/jquery.min.js') }}"></script>
 	<!-- ===== JS Bootstrap ===== -->
@@ -314,5 +333,38 @@
 	<script src="{{ URL::asset('assets/lib/owl/owl.carousel.min.js') }}"></script>
 	<!-- Js Common -->
 	<script src="{{ URL::asset('assets/js/common.js') }}"></script>
+	@yield('js_page')
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.ajaxSetup({
+			    headers: {
+			       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			    }
+			});
+			$('.login-by-facebook-popup').click(function() {
+			    FB.login(function(response){
+			      if(response.status == "connected")
+			      {
+			         // call ajax to send data to server and do process login
+			        var token = response.authResponse.accessToken;
+			        $.ajax({
+			          url: $('#route-ajax-login-fb').val(),
+			          method: "POST",
+			          data : {
+			            token : token
+			          },
+			          success : function(data){
+			            
+			            location.reload();
+			            
+			          }
+			        });
+
+			      }
+			    }, {scope: 'public_profile,email'});
+			  });
+		});
+
+	</script>
 </body>
 </html>

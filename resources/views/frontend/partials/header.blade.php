@@ -8,9 +8,11 @@
 		<div class="block_menu_top">
 			<ul class="nav_menu">
 				<li class="nav_menu_item nav_menu_user">
-					<a title="hot game" href="javascript:void(0);" class="nav-user">Login</a>
+					@if(!Session::get('login'))
+					<a title="Login" href="javascript:void(0);" class="nav-user">Login</a>
+
 					<ul class="nav_submenu nav_submenu_login">
-						<li><a href="#" class="btn-login btn-fb">
+						<li><a href="javascript:;" class="btn-login btn-fb login-by-facebook-popup">
 							<span><img src="{{ URL::asset('assets/images/icon/facebook.png') }}" alt=""></span>
 							<i>Facebook</i>
 						</a></li>
@@ -19,6 +21,14 @@
 							<i>Google</i>
 						</a></li>
 					</ul>
+					@else
+					<a href="javascript:void(0);" class="nav-user">Hi, {!! Session::get('username') !!}</a>
+					<ul class="nav_submenu nav_submenu_login">
+					
+						<li> <a href="{{route('user-logout')}}" title="Logout"> Logout </a></li>
+					</ul>
+					
+					@endif
 				</li>						
 				<li class="nav_menu_item">
 					<a title="hot game" href="topics.html" class="nav-topics">TOPICS</a>
