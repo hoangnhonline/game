@@ -182,33 +182,16 @@ img {
   padding: 5px 0;
   z-index: 9;
   text-transform: none;
-  opacity: 0;
-  display: block;
-  overflow: hidden;
+  display: none;
   position: absolute;
-  top: 100px;
+  top: 100%;
   right: 0;
   background: #fff;
   border: 1px solid #e8e8e8;
-  -webkit-transform: translate(0, 10px);
-  -ms-transform: translate(0, 10px);
-  -o-transform: translate(0, 10px);
-  transform: translate(0, 10px);
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
 }
 .nav_menu_item:hover .nav_submenu {
-  top: 68px;
-  opacity: 1;
-  overflow: visible;
-  -webkit-transform: translate(0, 0px);
-  -ms-transform: translate(0, 0px);
-  -o-transform: translate(0, 0px);
-  transform: translate(0, 0px);
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  display: block;
+  visibility: visible;
 }
 .nav_submenu li a {
   display: block;
@@ -701,7 +684,7 @@ img {
 .block_popular_categories ul li {
   width: 100%;
   float: left;
-  padding: 5px 0;
+  padding: 7px 0;
   position: relative;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -709,7 +692,8 @@ img {
 }
 .block_popular_categories ul li a {
   color: #666;
-  font-size: 13px;
+  font-size: 15px;
+  padding-left: 15px;
 }
 .block_popular_categories ul li a:hover {
   color: #00A6ED;
