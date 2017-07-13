@@ -80,6 +80,23 @@ class SocialAuthController extends Controller
 
     public function googleCallback()
     {
+
+    $user = Socialite::driver('google')->userFromToken(Auth::user()->token);
+
+        $google_client_token = [
+                'access_token' => $user->token,
+                'refresh_token' =>$user->refresh_token,
+                'expires_in' => $user->expiresIn
+            ];
+
+        $this->client->setAccessToken(json_encode($google_client_token));
+
+            if($this->client->isAccessTokenExpired()) {
+
+                $newToken = $this->client->getAccessToken();
+
+                $this->client->refreshToken($newToken);
+                dd($user);
         $providerUser = Socialite::driver('google')->scopes(['profile','email'])->user();
         dd($providerUser);
         $data['email'] = $providerUser->email;
