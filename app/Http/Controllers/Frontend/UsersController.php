@@ -114,12 +114,12 @@ class UsersController extends Controller
             'cate_id.required' => 'Please select category',           
             'name.required' => 'Please input name'                      
         ]);
-        $dataArr['slug'] = str_slug($dataArr['slug']);
+        $dataArr['slug'] = str_slug($dataArr['name']);
         $dataArr['slug'] = str_replace(".", "-", $dataArr['slug']);
         $dataArr['slug'] = str_replace("(", "-", $dataArr['slug']);
         $dataArr['slug'] = str_replace(")", "", $dataArr['slug']);
         $dataArr['alias'] = Helper::stripUnicode($dataArr['name']);
-        $dataArr['is_hot'] = isset($dataArr['is_hot']) ? 1 : 0;
+        $dataArr['is_hot'] = 0;
         
         $dataArr['status'] = 2; // chua duyet        
         $dataArr['customer_id'] = Session::get('userId');        

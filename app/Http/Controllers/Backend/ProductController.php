@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\LoaiSp;
 use App\Models\Cate;
+use App\Models\Customer;
 use App\Models\ProductImg;
 use App\Models\MetaData;
 use App\Models\Tag;
@@ -71,6 +72,52 @@ class ProductController extends Controller
         return view('backend.product.index', compact( 'items', 'arrSearch', 'loaiSpArr', 'cateArr'));        
     }
 
+    public function kygui(Request $request)
+    {
+
+        $arrSearch['status'] = $status = 2; 
+        
+        $arrSearch['loai_id'] = $loai_id = isset($request->loai_id) ? $request->loai_id : null;
+        $arrSearch['customer_id'] = $customer_id = isset($request->customer_id) ? $request->customer_id : null;
+        $arrSearch['cate_id'] = $cate_id = isset($request->cate_id) ? $request->cate_id : null;
+        $arrSearch['name'] = $name = isset($request->name) && trim($request->name) != '' ? trim($request->name) : '';        
+        $cateArr = (object) [];
+
+
+        $query = Product::where('product.status', $status);
+       
+        if( $loai_id ){
+            $query->where('product.loai_id', $loai_id);
+            $cateArr = Cate::where('loai_id', $loai_id)->orderBy('display_order', 'desc')->get();        
+        }
+        if( $cate_id ){
+            $query->where('product.cate_id', $cate_id);
+        }
+        if( $customer_id ){
+            $query->where('product.customer_id', $customer_id);
+        }        
+        if(Auth::user()->role == 1){
+            $query->where('product.created_user', Auth::user()->id);
+        }
+        if( $name != ''){
+            $query->where('product.name', 'LIKE', '%'.$name.'%');            
+        }        
+
+        $query->leftJoin('product_img', 'product_img.id', '=','product.thumbnail_id'); 
+        $query->join('loai_sp', 'product.loai_id', '=','loai_sp.id');
+        $query->join('customers', 'product.customer_id', '=','customers.id');
+        $query->leftJoin('cate', 'product.cate_id', '=','cate.id'); 
+           
+        $query->orderBy('product.id', 'desc');   
+        $items = $query->select(['product_img.image_url as image_url','product.*', 
+                'loai_sp.slug as slug_loai','loai_sp.name as ten_loai', 
+                'cate.slug as slug_cate','cate.name as ten_cate', 'customers.full_name'])->paginate(50);
+
+       
+        $loaiSpArr = LoaiSp::where('status', 1)->get(); 
+        $memberList = Customer::all();
+        return view('backend.product.kygui', compact( 'items', 'arrSearch', 'loaiSpArr', 'cateArr', 'memberList'));   
+    }
     public function saveOrderHot(Request $request){
         $data = $request->all();
         if(!empty($data['display_order'])){
