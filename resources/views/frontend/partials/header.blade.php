@@ -13,19 +13,32 @@
 
 					<ul class="nav_submenu nav_submenu_login">
 						<li><a href="javascript:;" class="btn-login btn-fb login-by-facebook-popup">
-							<span><img src="{{ URL::asset('assets/images/icon/facebook.png') }}" alt=""></span>
+							<span><img src="{{ URL::asset('assets/images/icon/facebook.png') }}" alt="Login with Facebook"></span>
 							<i>Facebook</i>
 						</a></li>
 						<li><a href="{{ route('glogin') }}" class="btn-login btn-gg">
-							<span><img src="{{ URL::asset('assets/images/icon/gplus.png') }}" alt=""></span>
+							<span><img src="{{ URL::asset('assets/images/icon/gplus.png') }}" alt="Login with Google"></span>
 							<i>Google</i>
 						</a></li>
 					</ul>
-					@else
-					<a href="javascript:void(0);" class="nav-user">Hi, {!! Session::get('username') !!}</a>
+					@else					
+					<a href="javascript:void(0);" class="nav-user user-login-susscess">Hi, <span>{!! Session::get('username') !!}</span></a>
 					<ul class="nav_submenu nav_submenu_login">
-					
-						<li> <a href="{{route('user-logout')}}" title="Logout"> Logout </a></li>
+						<li>
+							<a href="{{ route('upload') }}" title="Upload game">
+								<i class="fa fa-upload"></i> Upload game
+							</a>
+						</li>
+						<li>
+							<a href="{{ route('list') }}" title="Manage game">
+								<i class="fa fa-cog"></i> Manage game
+							</a>
+						</li>
+						<li> 
+							<a href="{{route('user-logout')}}" title="Logout"> 
+								<i class="fa fa-sign-out"></i> Logout 
+							</a>
+						</li>
 					</ul>
 					
 					@endif

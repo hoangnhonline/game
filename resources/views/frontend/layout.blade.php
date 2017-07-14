@@ -358,7 +358,9 @@
 	<script src="{{ URL::asset('assets/lib/owl/owl.carousel.min.js') }}"></script>
 	<!-- Js Common -->
 	<script src="{{ URL::asset('assets/js/common.js') }}"></script>
-	@yield('js_page')
+	<script src="{{ URL::asset('admin/dist/js/ckeditor/ckeditor.js') }}"></script>
+
+	@yield('javascript_page')
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$.ajaxSetup({

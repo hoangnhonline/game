@@ -36,7 +36,11 @@ Route::group(['prefix' => 'authentication'], function () {
 
 Route::group(['namespace' => 'Frontend'], function()
 {
-
+    Route::group(['prefix' => 'member'], function () {
+        Route::get('upload', ['as' => 'upload', 'uses' => 'UsersController@upload']);
+        Route::get('list', ['as' => 'list', 'uses' => 'UsersController@list']);
+        Route::post('store-game', ['as' => 'store-game', 'uses' => 'UsersController@store']);
+    });
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
     Route::get('{slugLoaiSp}/{slug}/', ['as' => 'child', 'uses' => 'CateController@child']);  
    
@@ -50,9 +54,11 @@ Route::group(['namespace' => 'Frontend'], function()
     Route::post('/send-contact', ['as' => 'send-contact', 'uses' => 'ContactController@store']);
   
     Route::get('search.html', ['as' => 'search', 'uses' => 'CateController@search']);
+    
     Route::get('ho-so-cong-ty.html', ['as' => 'info', 'uses' => 'HomeController@info']);
     Route::get('contact.html', ['as' => 'contact', 'uses' => 'HomeController@contact']);
     Route::get('{slug}.html', ['as' => 'parent', 'uses' => 'CateController@parent']);
 
-});
 
+
+});
