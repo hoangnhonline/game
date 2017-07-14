@@ -7,7 +7,7 @@
                 <ul class="breadcrumb">
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li>
-                        <a href="{{ route('news-list', $cateDetail->slug) }}">{!! $cateDetail->name !!}</a>
+                        <a href="{{ route('parent', 'news') }}">{!! $cateDetail->name !!}</a>
                     </li>  
                     <li class="active">{!! $detail->title !!}</li>
                 </ul>

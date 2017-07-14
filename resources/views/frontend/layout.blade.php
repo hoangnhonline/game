@@ -88,8 +88,7 @@
 							</div>
 						</li><!-- /li -->
 						@endforeach			
-					</ul>
-					<a class="loadmore" href="#">Show More</a>
+					</ul>					
 				</div>
 			</div><!-- /block_left -->
 			@else
