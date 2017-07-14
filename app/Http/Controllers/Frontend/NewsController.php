@@ -18,7 +18,9 @@ class NewsController extends Controller
         $cateArr = $cateActiveArr = $moviesActiveArr = [];
        
         $cateDetail = ArticlesCate::where('slug' , $slug)->first();
-
+        if(!$cateDetail){
+            return redirect()->route('home');
+        }
         $title = trim($cateDetail->meta_title) ? $cateDetail->meta_title : $cateDetail->name;
 
         $articlesArr = Articles::where('cate_id', $cateDetail->id)->orderBy('id', 'desc')->paginate(10);
