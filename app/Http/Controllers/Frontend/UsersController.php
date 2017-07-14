@@ -18,6 +18,11 @@ use Helper, File, Session, Auth, Hash, URL, Image;
 
 class UsersController extends Controller
 {
+    public function __construct(){
+        
+
+
+    }
     /**
     * Display a listing of the resource.
     *
@@ -25,6 +30,9 @@ class UsersController extends Controller
     */
     public function index(Request $request)
     { 
+        if(!Session::get('userId')){
+            return redirect()->route('home');
+        }
         $customer_id = Session::get('userId');
         $query = Product::where('product.customer_id', $customer_id);
 
@@ -49,13 +57,15 @@ class UsersController extends Controller
     */
     public function upload(Request $request)
     {
-        $tagArr = Tag::where('type', 1)->get();        
+        if(!Session::get('userId')){
+            return redirect()->route('home');
+        }       
         
         $loai_id = $request->loai_id ? $request->loai_id : null;
         $cate_id = $request->cate_id ? $request->cate_id : null;
         $cateArr = (object) [];        
         $loaiSpArr = LoaiSp::where('status', 1)->get();
-        $tagArr = Tag::where('type', 1)->get();
+        
         if( $loai_id ){
             
             $cateArr = Cate::where('loai_id', $loai_id)->select('id', 'name')->orderBy('display_order', 'desc')->get();           
@@ -63,10 +73,13 @@ class UsersController extends Controller
         }      
 
         $seo['title'] = $seo['description'] = $seo['keywords'] = "Upload";       
-        return view('frontend.users.upload', compact('loaiSpArr', 'cateArr', 'loai_id', 'cate_id', 'tagArr', 'seo'));
+        return view('frontend.users.upload', compact('loaiSpArr', 'cateArr', 'loai_id', 'cate_id', 'seo'));
     }
     public function destroy($id)
     {
+        if(!Session::get('userId')){
+            return redirect()->route('home');
+        }
         // delete
         $model = Product::find($id);        
         $model->delete();
@@ -86,6 +99,9 @@ class UsersController extends Controller
     */
     public function store(Request $request)
     {
+        if(!Session::get('userId')){
+            return redirect()->route('home');
+        }
         $dataArr = $request->all();        
         
         $this->validate($request,[            
@@ -175,6 +191,9 @@ class UsersController extends Controller
     */
     public function edit($id)
     {        
+        if(!Session::get('userId')){
+            return redirect()->route('home');
+        }
         $tagArr = Tag::where('type', 1)->get();
         $hinhArr = (object) [];
         $detail = Product::find($id);
@@ -208,6 +227,9 @@ class UsersController extends Controller
     */
     public function update(Request $request)
     {
+        if(!Session::get('userId')){
+            return redirect()->route('home');
+        }
         $dataArr = $request->all();
         
          $this->validate($request,[            
