@@ -69,7 +69,7 @@
 
 		<main id="main" class="container">
 			<div class="row">
-				@if(\Request::route()->getName() != "parent" && \Request::route()->getName() != "child" )
+				@if(!in_array(\Request::route()->getName(), ['parent', 'child']))
 				<div class="block_left col-sm-9 col-xs-12">
 					@yield('slider')
 					@yield('content')

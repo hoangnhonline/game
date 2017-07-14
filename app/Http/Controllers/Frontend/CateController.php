@@ -19,7 +19,23 @@ class CateController extends Controller
        
 
     }
-   
+    public function search(Request $request)
+    {        
+        $tu_khoa = $request->keyword;       
+        $loaiList = LoaiSp::all();
+        foreach($loaiList as $loai){
+            $cateList[$loai->id] = Cate::where('loai_id', $loai->id)->get();
+        }
+        $sql = Product::where('product.alias', 'LIKE', '%'.$tu_khoa.'%');            
+        
+         $sql->leftJoin('product_img', 'product_img.id', '=','product.thumbnail_id') 
+                ->join('loai_sp', 'loai_sp.id', '=','product.loai_id')                
+                ->select('product_img.image_url as image_url', 'product.*', 'loai_sp.slug as slug_loai')
+                ->orderBy('id', 'desc');
+        $productList = $sql->paginate(25);
+        $seo['title'] = $seo['description'] = $seo['keywords'] = "Keyword: '".$tu_khoa."'";       
+        return view('frontend.cate.search', compact('productList', 'tu_khoa', 'seo', 'loaiList', 'cateList'));
+    } 
     public function parent(Request $request)
     {
         $slug = $request->slug;
