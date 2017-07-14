@@ -30,7 +30,13 @@
           <li {{ in_array(\Request::route()->getName(), ['loai-sp.index', 'loai-sp.edit', 'loai-sp.create']) ? "class=active" : "" }}><a href="{{ route('loai-sp.index') }}"><i class="fa fa-circle-o"></i> Danh mục</a></li>
           @endif
         </ul>
-      </li>        
+      </li>      
+      <li {{ in_array(\Request::route()->getName(), ['product.kygui']) ? "class=active" : "" }}>
+        <a href="{{ route('product.kygui') }}">
+          <i class="fa fa-pencil-square-o"></i> 
+          <span>Member Upload</span>          
+        </a>       
+      </li>  
       @if(Auth::user()->role == 3)
       <li class="treeview {{ in_array(\Request::route()->getName(), ['pages.index', 'pages.create']) ? 'active' : '' }}">
         <a href="#">
