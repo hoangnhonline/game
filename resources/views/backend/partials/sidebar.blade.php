@@ -109,14 +109,13 @@
         <ul class="treeview-menu">
           @if(Auth::user()->role == 3)
         
-          <li {{ \Request::route()->getName() == "settings.index" ? "class=active" : "" }}><a href="{{ route('settings.index') }}"><i class="fa fa-circle-o"></i> Thông tin CTY</a></li>
+          <li {{ \Request::route()->getName() == "settings.index" ? "class=active" : "" }}><a href="{{ route('settings.index') }}"><i class="fa fa-circle-o"></i> Thông tin chung</a></li>
           <li {{ (in_array(\Request::route()->getName(), ['custom-link.edit', 'custom-link.index', 'custom-link.create']) && isset($block_id) && $block_id == 2 )? "class=active" : "" }}>
             <a href="{{ route('custom-link.index', ['block_id' => 2 ]) }}">
               <i class="fa fa-circle-o"></i>
               <span>Link Footer</span>         
             </a>       
-          </li>
-          <li {{ \Request::route()->getName() == "info-seo.index" ? "class=active" : "" }}><a href="{{ route('info-seo.index') }}"><i class="fa fa-circle-o"></i> Cài đặt SEO</a></li>
+          </li>          
           @endif
           <li {{ \Request::route()->getName() == "account.index" ? "class=active" : "" }}><a href="{{ route('account.index') }}"><i class="fa fa-circle-o"></i> Users</a></li>          
         </ul>
