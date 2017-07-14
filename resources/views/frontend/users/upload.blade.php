@@ -137,7 +137,7 @@
     color: red
   }
 </style>
-<input type="hidden" id="route_upload_tmp_image" value="{{ route('image.tmp-upload') }}">
+<input type="hidden" id="route_upload_tmp_image" value="{{ route('image.tmp-upload-fe') }}">
 <input type="hidden" id="upload_url" value="{{ config('game.upload_url') }}">
 @stop
 @section('javascript_page')

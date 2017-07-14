@@ -43,13 +43,13 @@ Route::group(['namespace' => 'Frontend'], function()
     });
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
     Route::get('{slugLoaiSp}/{slug}/', ['as' => 'child', 'uses' => 'CateController@child']);  
-   
+    
     Route::get('tag/{slug}', ['as' => 'tag', 'uses' => 'DetailController@tagDetail']);
     Route::get('news.html', ['as' => 'news-list', 'uses' => 'NewsController@newsList']);
     Route::get('{slugLoaiSp}/{slug}-{id}.html', ['as' => 'chi-tiet', 'uses' => 'DetailController@index']);
     
     Route::get('/news/{slug}-p{id}.html', ['as' => 'news-detail', 'uses' => 'NewsController@newsDetail']);  
-
+    Route::post('/tmp-upload-fe', ['as' => 'image.tmp-upload-fe', 'uses' => 'UploadController@tmpUpload']);
     Route::post('/dang-ki-newsletter', ['as' => 'register.newsletter', 'uses' => 'HomeController@registerNews']);    
     Route::post('/send-contact', ['as' => 'send-contact', 'uses' => 'ContactController@store']);
   
