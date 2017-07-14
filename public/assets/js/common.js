@@ -33,16 +33,23 @@
     }, 'slow');
   });
 
-  /*[ hover dropdown ]
+  /*  [ Sticky Menu ] */
+  $('.fixed').sticky({ topSpacing: 0 });
+
+  /*  [ Main Menu ]
   - - - - - - - - - - - - - - - - - - - - */
-  $('.customer-setting, .minicart-wrapper').hover(function() {
-    $(this).addClass('open');
-  },
-  function() {
-    $(this).removeClass('open');
+  $('.nav-toogle i').on( 'click', function() {
+    $(this).toggleClass('has-open');
+    $(this).parent().parent().toggleClass('has-open');
+    $('body').toggleClass('menu-open');
   });
 
-  /*  [ Sticky Menu ] */
-  // $('.fixed-header').sticky({ topSpacing: 0 });
+  /** Menu, Menu Mega Responsive **/
+  $(document).ready(function(){
+    $('.nav_menu li.parent').append('<span class="plus"></span>');
+    $('.nav_menu li.parent .plus').click(function(){
+      $(this).toggleClass('open').siblings('.nav_menu').slideToggle();
+    });
+  });
 
 })(jQuery); // End of use strict

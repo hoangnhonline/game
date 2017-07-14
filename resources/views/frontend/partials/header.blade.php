@@ -6,8 +6,11 @@
 			</a>
 		</div><!-- /block-logo -->
 		<div class="block_menu_top">
+			<div class="nav-toogle">
+				<i class="fa"></i>
+			</div>
 			<ul class="nav_menu">
-				<li class="nav_menu_item nav_menu_user">
+				<li class="nav_menu_item nav_menu_user parent">
 					@if(!Session::get('login'))
 					<a title="Login" href="javascript:void(0);" class="nav-user">Login</a>
 
