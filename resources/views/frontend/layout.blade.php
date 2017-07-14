@@ -351,6 +351,7 @@
 	<script src="{{ URL::asset('assets/js/common.js') }}"></script>
 	<script src="{{ URL::asset('admin/dist/js/ckeditor/ckeditor.js') }}"></script>
 	<script src="{{ URL::asset('admin/dist/js/sweetalert2.min.js') }}"></script>
+	<script src="{{ URL::asset('assets/lib/sticky/jquery.sticky.js') }}"></script>
 	@yield('javascript_page')
 	<script type="text/javascript">
 		$(document).ready(function(){
