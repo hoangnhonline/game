@@ -138,9 +138,8 @@ class UsersController extends Controller
         $dataArr['alias'] = Helper::stripUnicode($dataArr['name']);
         $dataArr['is_hot'] = isset($dataArr['is_hot']) ? 1 : 0;
         
-        $dataArr['status'] = 1;
-        $dataArr['created_user'] = Auth::user()->id;
-        $dataArr['updated_user'] = Auth::user()->id;        
+        $dataArr['status'] = 2; // chua duyet        
+        $dataArr['customer_id'] = Session::get('userId');        
         
         $rs = Product::create($dataArr);
 
