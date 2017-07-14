@@ -271,13 +271,29 @@ class ProductController extends Controller
                         }
 
                         $destionation = date('Y/m/d'). '/'. end($tmp);
-                        //var_dump(config('game.upload_path').$image_url, config('game.upload_path').$destionation);die;
+                        
                         File::move(config('game.upload_path').$image_url, config('game.upload_path').$destionation);
 
-                        Image::make(config('game.upload_path').$destionation)->resize(106, null, function ($constraint) {
-                                $constraint->aspectRatio();
-                        })->crop(106, 80)->save(config('game.upload_thumbs_path').$destionation);
+                        $imageArr['is_thumbnail'][] = $is_thumbnail = $dataArr['thumbnail_id'] == $image_url  ? 1 : 0;
 
+                        if($is_thumbnail == 1){
+                            $img = Image::make(config('game.upload_path').$destionation);
+                            $w_img = $img->width();
+                            $h_img = $img->height();
+                            $tile = 0;
+                            $w_tile = $w_img/170;
+                            $h_tile = $h_img/170;
+                         
+                            if($w_tile - $h_tile <= 0){
+                                Image::make(config('game.upload_path').$destionation)->resize(170, null, function ($constraint) {
+                                        $constraint->aspectRatio();
+                                })->crop(170, 170)->save(config('game.upload_path').$destionation);
+                            }else{
+                                Image::make(config('game.upload_path').$destionation)->resize(null, 170, function ($constraint) {
+                                        $constraint->aspectRatio();
+                                })->crop(170, 170)->save(config('game.upload_path').$destionation);
+                            }
+                        }
                         $imageArr['name'][] = $destionation;
 
                         $imageArr['is_thumbnail'][] = $dataArr['thumbnail_id'] == $image_url  ? 1 : 0;
