@@ -120,7 +120,7 @@
     </div>
      <input type="hidden" name="image_url" id="image_url" value="{{ old('image_url') }}"/>          
     <input type="hidden" name="image_name" id="image_name" value="{{ old('image_name') }}"/>
-    <div class="box-footer col-md-12">
+    <div class="box-footer col-md-12" style="margin-bottom:20px">
         <button type="button" class="btn btn-default" id="btnLoading" style="display:none"><i class="fa fa-spin fa-spinner"></i></button>
         <button type="submit" class="btn btn-primary" id="btnSave">Upload</button>
         <a class="btn btn-default" class="btn btn-primary" href="{{ route('home')}}">Cancel</a>

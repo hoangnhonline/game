@@ -31,6 +31,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/style.css') }}">
 	<!-- ===== Responsive CSS ===== -->
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/responsive.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('admin/dist/css/sweetalert2.min.css') }}">  
 
 	<!-- ===== Responsive CSS ===== -->
   <!-- <link href="{{ URL::asset('assets/css/responsive.css') }}" rel="stylesheet"> -->
@@ -359,7 +360,7 @@
 	<!-- Js Common -->
 	<script src="{{ URL::asset('assets/js/common.js') }}"></script>
 	<script src="{{ URL::asset('admin/dist/js/ckeditor/ckeditor.js') }}"></script>
-
+	<script src="{{ URL::asset('admin/dist/js/sweetalert2.min.js') }}"></script>
 	@yield('javascript_page')
 	<script type="text/javascript">
 		$(document).ready(function(){

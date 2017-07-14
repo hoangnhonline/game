@@ -24,68 +24,23 @@ class UsersController extends Controller
     * @return Response
     */
     public function index(Request $request)
-    {        
-        
-        $arrSearch['status'] = $status = isset($request->status) ? $request->status : 1; 
-        $arrSearch['is_hot'] = $is_hot = isset($request->is_hot) ? $request->is_hot : null;              
-        $arrSearch['loai_id'] = $loai_id = isset($request->loai_id) ? $request->loai_id : null;
-        $arrSearch['cate_id'] = $cate_id = isset($request->cate_id) ? $request->cate_id : null;
-        $arrSearch['name'] = $name = isset($request->name) && trim($request->name) != '' ? trim($request->name) : '';        
-        $cateArr = (object) [];
-
-
-        $query = Product::where('product.status', $status);
-       
-        if( $loai_id ){
-            $query->where('product.loai_id', $loai_id);
-            $cateArr = Cate::where('loai_id', $loai_id)->orderBy('display_order', 'desc')->get();        
-        }
-        if( $cate_id ){
-            $query->where('product.cate_id', $cate_id);
-        }
-        if( $is_hot ){
-            $query->where('product.is_hot', $is_hot);
-        }        
-        
-        if(Auth::user()->role == 1){
-            $query->where('product.created_user', Auth::user()->id);
-        }
-        if( $name != ''){
-            $query->where('product.name', 'LIKE', '%'.$name.'%');            
-        }        
+    { 
+        $customer_id = Session::get('userId');
+        $query = Product::where('product.customer_id', $customer_id);
 
         $query->leftJoin('product_img', 'product_img.id', '=','product.thumbnail_id'); 
         $query->join('loai_sp', 'product.loai_id', '=','loai_sp.id');
         $query->leftJoin('cate', 'product.cate_id', '=','cate.id'); 
-        if($is_hot == 1){
-            $query->orderBy('product.display_order', 'asc'); 
-        }        
+             
         $query->orderBy('product.id', 'desc');   
         $items = $query->select(['product_img.image_url as image_url','product.*', 
                 'loai_sp.slug as slug_loai','loai_sp.name as ten_loai', 
                 'cate.slug as slug_cate','cate.name as ten_cate'])->paginate(50);
-
-       
-        $loaiSpArr = LoaiSp::where('status', 1)->get(); 
         
-        return view('backend.product.index', compact( 'items', 'arrSearch', 'loaiSpArr', 'cateArr'));        
+        $seo['title'] = $seo['description'] = $seo['keywords'] = "Manage game";   
+
+        return view('frontend.users.list', compact( 'items', 'seo'));        
     }
-
-    public function saveOrderHot(Request $request){
-        $data = $request->all();
-        if(!empty($data['display_order'])){
-            foreach ($data['display_order'] as $id => $display_order) {
-                $model = Product::find($id);
-                $model->display_order = $display_order;
-                $model->save();
-            }
-        }
-        Session::flash('message', 'Cập nhật thứ tự tin HOT thành công');
-
-        return redirect()->route('product.index', ['loai_id' => $data['loai_id'], 'cate_id' => $data['cate_id'], 'is_hot' => 1]);
-    }
-   
-
    
     /**
     * Show the form for creating a new resource.
@@ -110,7 +65,19 @@ class UsersController extends Controller
         $seo['title'] = $seo['description'] = $seo['keywords'] = "Upload";       
         return view('frontend.users.upload', compact('loaiSpArr', 'cateArr', 'loai_id', 'cate_id', 'tagArr', 'seo'));
     }
-
+    public function destroy($id)
+    {
+        // delete
+        $model = Product::find($id);        
+        $model->delete();
+        ProductImg::where('product_id', $id)->delete();
+        TagObjects::deleteTags( $id, 1);        
+        // redirect
+        Session::flash('message', 'Delete success.');
+        
+        return redirect(URL::previous());//->route('product.short');
+        
+    }
     /**
     * Store a newly created resource in storage.
     *
@@ -151,21 +118,7 @@ class UsersController extends Controller
 
         return redirect()->route('upload');
     }
-    private function processRelation($dataArr, $object_id, $type = 'add'){
     
-        if( $type == 'edit'){
-          
-            TagObjects::deleteTags( $object_id, 1);            
-
-        }
-        // xu ly tags
-        if( !empty( $dataArr['tags'] ) && $object_id ){
-            foreach ($dataArr['tags'] as $tag_id) {
-                TagObjects::create(['object_id' => $object_id, 'tag_id' => $tag_id, 'type' => 1]);
-            }
-        }
-      
-    }
     public function storeMeta( $id, $meta_id, $dataArr ){
        
         $arrData = ['title' => $dataArr['meta_title'], 'description' => $dataArr['meta_description'], 'keywords'=> $dataArr['meta_keywords'], 'custom_text' => $dataArr['custom_text'], 'updated_user' => Auth::user()->id];
@@ -184,9 +137,7 @@ class UsersController extends Controller
         }              
     }   
 
-    public function storeImage($id, $dataArr){        
-        
-
+    public function storeImage($id, $dataArr){ 
 
         if($dataArr['image_url'] && $dataArr['image_name']){
         
@@ -201,8 +152,7 @@ class UsersController extends Controller
             Image::make(config('game.upload_path').$destionation)->resize(170, 170)->save(config('game.upload_path').$destionation);
             
             $dataArr['image_url'] = $destionation;
-
-            //dd($dataArr['image_url']);
+            
             $rs = ProductImg::create(['product_id' => $id, 'image_url' => $dataArr['image_url'], 'display_order' => 1]);                
             $image_id = $rs->id;         
             
@@ -297,26 +247,6 @@ class UsersController extends Controller
 
         return redirect()->route('product.edit', $product_id);
         
-    }
-       
+    }      
 
-    /**
-    * Remove the specified resource from storage.
-    *
-    * @param  int  $id
-    * @return Response
-    */
-    public function destroy($id)
-    {
-        // delete
-        $model = Product::find($id);        
-        $model->delete();
-        ProductImg::where('product_id', $id)->delete();
-        TagObjects::deleteTags( $id, 1);        
-        // redirect
-        Session::flash('message', 'Delete success.');
-        
-        return redirect(URL::previous());//->route('product.short');
-        
-    }
 }

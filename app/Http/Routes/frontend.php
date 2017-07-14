@@ -38,8 +38,9 @@ Route::group(['namespace' => 'Frontend'], function()
 {
     Route::group(['prefix' => 'member'], function () {
         Route::get('upload', ['as' => 'upload', 'uses' => 'UsersController@upload']);
-        Route::get('list', ['as' => 'list', 'uses' => 'UsersController@list']);
+        Route::get('list', ['as' => 'list', 'uses' => 'UsersController@index']);
         Route::post('store-game', ['as' => 'store-game', 'uses' => 'UsersController@store']);
+        Route::get('{id}/destroy', ['as' => 'member.destroy', 'uses' => 'UsersController@destroy']);
     });
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
     Route::get('{slugLoaiSp}/{slug}/', ['as' => 'child', 'uses' => 'CateController@child']);  
