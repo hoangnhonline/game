@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="block_logo">
 			<a href="{{ route('home') }}" title="Home">
-				<img alt="Download game" src="{{ URL::asset('assets/images/logo.png') }}">
+				<img alt="Download game" src="{{ Helper::showImage($settingArr['logo']) }}">
 			</a>
 		</div><!-- /block-logo -->
 		<div class="block_menu_top">
