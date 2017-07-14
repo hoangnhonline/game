@@ -301,30 +301,26 @@
 								</ul>
 							</div>
 						</div><!-- /list_menu_footer -->
+						<?php $i = 0; ?>
+						@foreach($loaiSpList as $loai)
+						<?php $i++; ?>
+						@if($i <= 2)
 						<div class="col-sm-3 list_menu_footer">
 							<div class="menu_footer_items">
-								<p class="list_menu_footer_title">TOP ANDROID APPS</p>
+								<p class="list_menu_footer_title">TOP {!! $loai->name !!}</p>
 								<ul>
-									<li><a href="#" title="">APKPure APK</a></li>
-									<li><a href="#" title="">WhatsApp Messenger APK</a></li>
-									<li><a href="#" title="">Messenger APK</a></li>
-									<li><a href="#" title="">Facebook APK</a></li>
-									<li><a href="#" title="">Instagram APK</a></li>																					
+									<?php $j = 0; ?>
+									@foreach($cateList[$loai->id] as $cate)
+									<?php $j++; ?>
+									@if($j <= 5)
+									<li><a href="{{ route('child', [$loai->slug, $cate->slug] ) }}" title="{!! $cate->name !!}">{!! $cate->name !!}</a></li>
+									@endif
+									@endforeach		
 								</ul>
 							</div>
 						</div><!-- /list_menu_footer -->
-						<div class="col-sm-3 list_menu_footer">
-							<div class="menu_footer_items">
-								<p class="list_menu_footer_title">TOP ANDROID GAMES</p>
-								<ul>
-									<li><a href="#" title="">Pokémon GO APK</a></li>
-									<li><a href="#" title="">Dream League Soccer 2017 APK</a></li>
-									<li><a href="#" title="">Clash Royale APK</a></li>
-									<li><a href="#" title="">Clash of Clans APK</a></li>
-									<li><a href="#" title="">Subway Surfers APK</a></li>								
-								</ul>
-							</div>
-						</div><!-- /list_menu_footer -->
+						@endif
+						@endforeach						
 					</div>
 				</div>
 			</div><!-- /footer_main -->
