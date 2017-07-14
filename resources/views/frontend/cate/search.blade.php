@@ -7,7 +7,7 @@
 			Keyword: <span style="color:blue">{!! $tu_khoa !!}</span>
 		</a>
 	</div>
-	<div class="block block-content clearfix">
+	<div class="block block-content clearfix">	
 		<ul class="product_list clearfix">								
 			@foreach( $productList as $product )
 			<li class="col-sm-5ths col-xs-6">

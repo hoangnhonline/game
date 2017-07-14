@@ -70,7 +70,7 @@
 		<main id="main" class="container">
 			@if(\Request::route()->getName() == "news-list")
 			<div class="title bread-crumbs" style="margin-bottom: 20px;"><a href="{{ route('home') }}">Home</a> » <span>{{ $cateDetail->name }}</span></div>
-			<div class="block_1_col">
+			<div class="block_1_col row">
 				<div class="block-topics">
 					<ul class="topics_list clearfix">
               			@foreach( $articlesArr as $articles )

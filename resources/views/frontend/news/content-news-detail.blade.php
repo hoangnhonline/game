@@ -19,35 +19,34 @@
                 <?php echo $detail->content; ?>
             </div><!-- /product_box -->
         </div>
-        <div class="block_content">
-            <div class="block-title block-title-common">
-                <h3><span class="icon-tile"><i class="fa fa-th-list"></i></span> News related</h3>
+        <div class="block block_commom block_shadow block_related">
+            <div class="block_title">
+                <p class="block_title_small">News related</p>
             </div>
-            <div class="block-contents">
-                <div class="all-news-new-list">
-                    <div class="row">
+            <div class="block-content">
+                <div class="news_box">
+                    <ul class="news_items clearfix">
                         @if( $otherArr )
                         @foreach( $otherArr as $articles)
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="all-news-new-item clearfix">
-                                <div class="all-news-new-img">
-                                    <a href="{{ route('news-detail', ['slug' => $articles->slug, 'id' => $articles->id]) }}" title="">
-                                        <img  src="{{ Helper::showImage($articles->image_url) }}" alt="" style="height:80px !important; width:120px !important; "> 
-                                    </a>
-                                </div>
-                                <div class="all-news-new-info" style="height:77px !important">
-                                    <a href="{{ route('news-detail', ['slug' => $articles->slug, 'id' => $articles->id]) }}" title="">
-                                        {{ $articles->title }}
-                                    </a>
-                                </div>
+                        <li class="col-sm-6 col-xs-6 news_item">
+                            <div class="news_img">
+                                <a title="{!! $articles->title !!}" href="{{ route('news-detail', ['slug' => $articles->slug, 'id' => $articles->id]) }}">
+                                    <img alt="{!! $articles->title !!}" src="{{ Helper::showImage($articles->image_url) }}">
+                                </a>
                             </div>
-                        </div><!-- /col-sm-6 col-xs-12 --> 
+                            <div class="description">
+                                <h3>
+                                    <a title="{!! $articles->title !!}" href="{{ route('news-detail', ['slug' => $articles->slug, 'id' => $articles->id]) }}">{!! $articles->title !!}</a>
+                                </h3>
+                                <!--<p class="date">2017-06-28</p>-->
+                            </div>
+                        </li><!-- /product_item -->
                         @endforeach
                         @endif
-                    </div>                
+                    </ul>
                 </div>
             </div>
-        </div><!-- /block-news-with-region -->
+        </div><!-- /block_related -->      
     </div><!-- /block -->
 
 </div>
