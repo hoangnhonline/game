@@ -44,14 +44,14 @@ Route::group(['namespace' => 'Frontend'], function()
     Route::get('news.html', ['as' => 'news-list', 'uses' => 'NewsController@newsList']);
     Route::get('{slugLoaiSp}/{slug}-{id}.html', ['as' => 'chi-tiet', 'uses' => 'DetailController@index']);
     
-    Route::get('/topics/{slug}-p{id}.html', ['as' => 'news-detail', 'uses' => 'NewsController@newsDetail']);  
+    Route::get('/news/{slug}-p{id}.html', ['as' => 'news-detail', 'uses' => 'NewsController@newsDetail']);  
 
     Route::post('/dang-ki-newsletter', ['as' => 'register.newsletter', 'uses' => 'HomeController@registerNews']);    
     Route::post('/send-contact', ['as' => 'send-contact', 'uses' => 'ContactController@store']);
   
     Route::get('search.html', ['as' => 'search', 'uses' => 'CateController@search']);
     Route::get('ho-so-cong-ty.html', ['as' => 'info', 'uses' => 'HomeController@info']);
-    Route::get('lien-he.html', ['as' => 'contact', 'uses' => 'HomeController@contact']);
+    Route::get('contact.html', ['as' => 'contact', 'uses' => 'HomeController@contact']);
     Route::get('{slug}.html', ['as' => 'parent', 'uses' => 'CateController@parent']);
 
 });
