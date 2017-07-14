@@ -157,7 +157,7 @@
 	<div class="block block_commom block_shadow">
 		<div class="block-content">
 			<div class="product_box block-cm-fb">
-				<!-- <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="10"></div> -->
+				<div class="fb-comments" data-href="{{ url()->current() }}" data-width="100%" data-numposts="10"></div>
 			</div>
 		</div>
 	</div><!-- /block -->
