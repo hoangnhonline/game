@@ -41,7 +41,7 @@ Route::group(['namespace' => 'Frontend'], function()
     Route::get('{slugLoaiSp}/{slug}/', ['as' => 'child', 'uses' => 'CateController@child']);  
    
     Route::get('tag/{slug}', ['as' => 'tag', 'uses' => 'DetailController@tagDetail']);
-    Route::get('topics.html', ['as' => 'news-list', 'uses' => 'NewsController@newsList']);
+    Route::get('news.html', ['as' => 'news-list', 'uses' => 'NewsController@newsList']);
     Route::get('{slugLoaiSp}/{slug}-{id}.html', ['as' => 'chi-tiet', 'uses' => 'DetailController@index']);
     
     Route::get('/topics/{slug}-p{id}.html', ['as' => 'news-detail', 'uses' => 'NewsController@newsDetail']);  

@@ -68,6 +68,31 @@
 		@include('frontend.partials.header')
 
 		<main id="main" class="container">
+			@if(\Request::route()->getName() == "news-list")
+			<div class="title bread-crumbs" style="margin-bottom: 20px;"><a href="{{ route('home') }}">Home</a> » <span>{{ $cateDetail->name }}</span></div>
+			<div class="block_1_col">
+				<div class="block-topics">
+					<ul class="topics_list clearfix">
+              			@foreach( $articlesArr as $articles )
+						<li class="col-sm-4 col-xs-12">
+							<div class="topics_item">
+								<a href="{{ route('news-detail', ['slug' => $articles->slug, 'id' => $articles->id]) }}" title="{!! $articles->title !!}">
+									<div class="topics_img">
+										<img src="{{ Helper::showImage($articles->image_url) }}" alt="{!! $articles->title !!}">
+									</div>
+									<div class="description">
+										<div class="topics_name">{!! $articles->title !!}</div>
+										<div class="topics_description">{!! $articles->description !!}</div>
+									</div>
+								</a>
+							</div>
+						</li><!-- /li -->
+						@endforeach			
+					</ul>
+					<a class="loadmore" href="#">Show More</a>
+				</div>
+			</div><!-- /block_left -->
+			@else
 			<div class="row">
 				@if(!in_array(\Request::route()->getName(), ['parent', 'child']))
 				<div class="block_left col-sm-9 col-xs-12">
@@ -96,7 +121,7 @@
 					<div class="block block_sidebar">
 						<div class="block_hot_day blokck_pad_content">
 							<div class="block_title block_tab">
-								<a title="Hot Apps" href="app.html">Hot »</a>
+								<a title="Hot Apps" href="{{ route('parent', 'game') }}">Hot »</a>
 							 	<ul class="nav nav-tabs" role="tablist">
 								    <li role="presentation" class="active"><a href="#Game" aria-controls="Game" role="tab" data-toggle="tab">Game</a></li>
 								    <li role="presentation"><a href="#Apps" aria-controls="Apps" role="tab" data-toggle="tab">Apps</a></li>
@@ -229,6 +254,7 @@
 				</div><!-- /block_left -->
 				@endif
 			</div>
+			@endif
 		</main><!-- /#main -->
 
 		<footer class="footer">

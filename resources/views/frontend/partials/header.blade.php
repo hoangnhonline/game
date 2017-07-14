@@ -31,7 +31,7 @@
 					@endif
 				</li>						
 				<li class="nav_menu_item">
-					<a title="hot game" href="topics.html" class="nav-topics">TOPICS</a>
+					<a title="hot game" href="{{ route('parent', 'news') }}" class="nav-topics">NEWS</a>
 				</li>
 				<li class="nav_menu_item">
 					<a title="hot apps" href="{{ route('parent', 'apps') }}" class="nav-apps">APPS</a>
