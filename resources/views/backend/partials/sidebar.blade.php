@@ -81,13 +81,7 @@
           <span>Newsletter</span>         
         </a>       
       </li>
-      -->
-      <li {{ in_array(\Request::route()->getName(), ['contact.edit', 'contact.index']) ? "class=active" : "" }}>
-        <a href="{{ route('contact.index') }}">
-          <i class="fa fa-pencil-square-o"></i> 
-          <span>Liên hệ</span>          
-        </a>       
-      </li>
+      -->      
       @endif
       @if(Auth::user()->role == 3)
       <li {{ in_array(\Request::route()->getName(), ['banner.list', 'banner.edit', 'banner.create']) ? "class=active" : "" }}>
