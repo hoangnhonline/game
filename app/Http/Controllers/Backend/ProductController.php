@@ -361,7 +361,6 @@ class ProductController extends Controller
         $dataArr['slug'] = str_replace(")", "", $dataArr['slug']);
         $dataArr['alias'] = Helper::stripUnicode($dataArr['name']);
         $dataArr['is_hot'] = isset($dataArr['is_hot']) ? 1 : 0;        
-        $dataArr['status'] = 1;
         
         $dataArr['updated_user'] = Auth::user()->id;   
         

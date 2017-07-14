@@ -138,7 +138,27 @@
                                 Add new
                               </button>
                             </span>
-                          </div>                          
+                          </div>  
+                          @if($detail->status == 2)
+                          <div class="form-group col-md-4 none-padding" >
+                              <div class="checkbox">
+                                <label>
+                                  <input type="radio" name="status" value="2" {{ old('status', $detail->status) == 2 ? "checked" : "" }}>
+                                  Pending
+                                </label>
+                              </div>
+                          </div> 
+                          <div class="form-group col-md-4 none-padding" >
+                              <div class="checkbox">
+                                <label>
+                                  <input type="radio" name="status" value="1" {{ old('status', $detail->status) == 1 ? "checked" : "" }}>
+                                  Approved
+                                </label>
+                              </div>
+                          </div>                        
+                          <div class="form-group col-md-4 none-padding" ></div> 
+                          <div class="clearfix"></div>                      
+                          @endif                        
                            <div class="form-group">
                               <label>Description</label>
                               <textarea class="form-control" rows="6" name="description" id="description">{{ old('description', $detail->description) }}</textarea>
