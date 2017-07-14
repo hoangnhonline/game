@@ -22,19 +22,16 @@ class CateController extends Controller
     public function search(Request $request)
     {        
         $tu_khoa = $request->keyword;       
-        $loaiList = LoaiSp::all();
-        foreach($loaiList as $loai){
-            $cateList[$loai->id] = Cate::where('loai_id', $loai->id)->get();
-        }
-        $sql = Product::where('product.alias', 'LIKE', '%'.$tu_khoa.'%');            
         
+        $sql = Product::where('product.alias', 'LIKE', '%'.$tu_khoa.'%');            
+        $sql->where('product.status', 1);
          $sql->leftJoin('product_img', 'product_img.id', '=','product.thumbnail_id') 
                 ->join('loai_sp', 'loai_sp.id', '=','product.loai_id')                
                 ->select('product_img.image_url as image_url', 'product.*', 'loai_sp.slug as slug_loai')
                 ->orderBy('id', 'desc');
         $productList = $sql->paginate(25);
         $seo['title'] = $seo['description'] = $seo['keywords'] = "Keyword: '".$tu_khoa."'";       
-        return view('frontend.cate.search', compact('productList', 'tu_khoa', 'seo', 'loaiList', 'cateList'));
+        return view('frontend.cate.search', compact('productList', 'tu_khoa', 'seo'));
     } 
     public function parent(Request $request)
     {
@@ -43,10 +40,7 @@ class CateController extends Controller
         $rs = LoaiSp::where('slug', $slug)->first();        
 
         if($rs){//danh muc cha
-            $loaiList = LoaiSp::all();
-            foreach($loaiList as $loai){
-                $cateList[$loai->id] = Cate::where('loai_id', $loai->id)->get();
-            }
+           
             $loai_id = $rs->id;
             
             $query = Product::where('loai_id', $loai_id)               
@@ -62,7 +56,7 @@ class CateController extends Controller
             }else{
                 $seo['title'] = $seo['description'] = $seo['keywords'] = $rs->name;
             }                                                   
-            return view('frontend.cate.parent', compact('productList', 'rs', 'socialImage', 'seo', 'loai_id', 'loaiList', 'cateList'));
+            return view('frontend.cate.parent', compact('productList', 'rs', 'socialImage', 'seo', 'loai_id'));
         }else{
             $detailPage = Pages::where('slug', $slug)->first();
             if(!$detailPage){
@@ -83,10 +77,7 @@ class CateController extends Controller
         if(!$rs){
             return redirect()->route('home');
         }
-        $loaiList = LoaiSp::all();
-        foreach($loaiList as $loai){
-            $cateList[$loai->id] = Cate::where('loai_id', $loai->id)->get();
-        }
+        
         $loai_id = $rs->id;
         $rsCate = Cate::where(['loai_id' => $loai_id, 'slug' => $slug])->first();
         $cate_id = $rsCate->id;
@@ -95,10 +86,11 @@ class CateController extends Controller
 
         
         $query = Product::where('cate_id', $rsCate->id)->where('loai_id', $loai_id)
+                ->where('product.status', 1)
                 ->leftJoin('product_img', 'product_img.id', '=','product.thumbnail_id')  
                 ->join('loai_sp', 'loai_sp.id', '=','product.loai_id')                
                 ->select('product_img.image_url as image_url', 'product.*', 'loai_sp.slug as slug_loai'); 
-                    
+                
         $query->orderBy('product.id', 'desc');
         $productList = $query->paginate(30);        
         $socialImage = $rsCate->icon_url;
@@ -109,7 +101,7 @@ class CateController extends Controller
         }
         $is_child = 1;
         
-        return view('frontend.cate.child', compact('productList', 'cateArr', 'rs', 'rsCate', 'socialImage', 'seo', 'is_child', 'loaiList', 'cateList'));
+        return view('frontend.cate.child', compact('productList', 'cateArr', 'rs', 'rsCate', 'socialImage', 'seo', 'is_child'));
     }    
     
     

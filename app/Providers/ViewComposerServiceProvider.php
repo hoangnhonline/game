@@ -62,6 +62,7 @@ class ViewComposerServiceProvider extends ServiceProvider
 		                    ->where('product.loai_id', 2)
 		                    ->orderBy('product.id', 'desc')->limit(5)->get();                
 		    $customLink = CustomLink::where('block_id', 1)->orderBy('display_order', 'asc')->get();
+		    $footerLink = CustomLink::where('block_id', 2)->orderBy('display_order', 'asc')->get();
 		    $cateHot = Cate::where('loai_id', 1)
 		    		->join('loai_sp', 'cate.loai_id', '=', 'loai_sp.id')
 		    		->select('cate.*', 'loai_sp.slug as slug_loai')
@@ -74,7 +75,8 @@ class ViewComposerServiceProvider extends ServiceProvider
 							'gameHotList' => $gameHotList,
 							'appHotList' => $appHotList,
 							'customLink' => $customLink,
-							'cateHot' => $cateHot
+							'cateHot' => $cateHot,
+							'footerLink' => $footerLink
 						]);
 			
 		});

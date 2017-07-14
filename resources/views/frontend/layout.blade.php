@@ -230,7 +230,7 @@
 							<div class="block_title">
 								<div class="title">Category</div>
 							</div>
-							@foreach($loaiList as $loai)
+							@foreach($loaiSpList as $loai)
 							<div class="block_content clearfix">
 								<p class="title_head">
 									<a title="hot {!! $loai->name !!} " href="{{ route('parent', $loai->slug)}}">
@@ -263,13 +263,11 @@
 					<div class="row">
 						<div class="col-sm-3 list_menu_footer">
 							<div class="menu_footer_items">
-								<p class="list_menu_footer_title">SOLUTIONS</p>
+								<p class="list_menu_footer_title">HELPFUL LINKS</p>
 								<ul>
-									<li><a href="#" title="">Mobile Version</a></li>
-									<li><a href="#" title="">APKPure For Android</a></li>
-									<li><a href="#" title="">APK Install</a></li>
-									<li><a href="#" title="">APK Downloader (Region free)</a></li>
-									<li><a href="#" title="">APK Signature Verification</a></li>									
+									@foreach($footerLink as $link)
+									<li><a href="{{ $link->link_url }}" title="{{ $link->link_text }}">{{ $link->link_text }}</a></li>
+									@endforeach																
 								</ul>
 							</div>
 							
@@ -279,22 +277,22 @@
 								<p class="list_menu_footer_title">FOLLOW US</p>
 								<ul class="follow">
 									<li>
-										<a href="" title="">
+										<a href="{{ $settingArr['facebook_fanpage'] }}" title="Facebook" target="_blank">
 											<i class="fa fa-facebook"></i> Facebook
 										</a>
 									</li>
 									<li>
-										<a href="" title="">
+										<a href="{{ $settingArr['twitter_fanpage'] }}" title="Twitter" target="_blank">
 											<i class="fa fa-twitter"></i> Twitter
 										</a>
 									</li>
 									<li>
-										<a href="" title="">
+										<a href="{{ $settingArr['google_fanpage'] }}" title="Google+" target="_blank">
 											<i class="fa fa-google-plus"></i> Google+
 										</a>
 									</li>
 									<li>
-										<a href="" title="">
+										<a href="{{ $settingArr['instagram_fanpage'] }}" title="Instagram" target="_blank">
 											<i class="fa fa-instagram"></i> Instagram
 										</a>
 									</li>
@@ -328,11 +326,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="copyright">
-							Copyright © 2014-2017 APKPure. All rights reserved.
-					        <a href="/dmca.html" rel="nofollow">DMCA Disclaimer</a>
-					        <a href="/privacy-policy.html" rel="nofollow">Privacy Policy</a>
-					        <a href="/terms.html" rel="nofollow">Term of Use</a>
-					        <a target="_blank" href="https://translate.apkpure.com/projects/apkpure/apkpurecom/" rel="nofollow">Help translate APKPure</a>
+							Copyright © 2017-2020 game.com. All rights reserved.
 						</div>
 					</div>
 			    </div>
