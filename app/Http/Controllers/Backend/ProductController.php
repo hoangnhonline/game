@@ -263,11 +263,11 @@ class ProductController extends Controller
 
                         $tmp = explode('/', $image_url);
 
-                        if(!is_dir('uploads/'.date('Y/m/d'))){
-                            mkdir('uploads/'.date('Y/m/d'), 0777, true);
+                        if(!is_dir('public/uploads/'.date('Y/m/d'))){
+                            mkdir('public/uploads/'.date('Y/m/d'), 0777, true);
                         }
-                        if(!is_dir('uploads/thumbs/'.date('Y/m/d'))){
-                            mkdir('uploads/thumbs/'.date('Y/m/d'), 0777, true);
+                        if(!is_dir('public/uploads/thumbs/'.date('Y/m/d'))){
+                            mkdir('public/uploads/thumbs/'.date('Y/m/d'), 0777, true);
                         }
 
                         $destionation = date('Y/m/d'). '/'. end($tmp);

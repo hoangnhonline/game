@@ -24,24 +24,24 @@
     <meta name="twitter:description" content="@yield('site_description')" />
     <meta name="twitter:title" content="@yield('title')" />        
     <meta name="twitter:image" content="{{ Helper::showImage($socialImage) }}" />
-	<link rel="icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon">
-	<!-- <link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon">
-	<link rel="icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon"> -->
+	<link rel="icon" href="{{ URL::asset('public/assets/images/favicon.ico') }}" type="image/x-icon">
+	<!-- <link rel="shortcut icon" href="{{ URL::asset('public/assets/images/favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" href="{{ URL::asset('public/assets/images/favicon.ico') }}" type="image/x-icon"> -->
 	<!-- ===== Style CSS ===== -->
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('public/assets/css/style.css') }}">
 	<!-- ===== Responsive CSS ===== -->
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/responsive.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('admin/dist/css/sweetalert2.min.css') }}">  
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('public/assets/css/responsive.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('public/admin/dist/css/sweetalert2.min.css') }}">  
 
 	<!-- ===== Responsive CSS ===== -->
-  <!-- <link href="{{ URL::asset('assets/css/responsive.css') }}" rel="stylesheet"> -->
+  <!-- <link href="{{ URL::asset('public/assets/css/responsive.css') }}" rel="stylesheet"> -->
 
   <!-- HTML5 Shim and Respond.js') }} IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js') }} doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
-		<link href='{{ URL::asset('assets/css/animations-ie-fix.css') }}' rel='stylesheet'>
+		<link href='{{ URL::asset('public/assets/css/animations-ie-fix.css') }}' rel='stylesheet'>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.{{ URL::asset('assets/js/1.4.2/respond.min.js') }}"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.{{ URL::asset('public/assets/js/1.4.2/respond.min.js') }}"></script>
 	<![endif]-->
 </head>
 <body>
@@ -79,7 +79,7 @@
 							<div class="topics_item">
 								<a href="{{ route('news-detail', ['slug' => $articles->slug, 'id' => $articles->id]) }}" title="{!! $articles->title !!}">
 									<div class="topics_img">
-										<img src="{{ Helper::showImage($articles->image_url) }}" alt="{!! $articles->title !!}">
+										<img class="lazy" data-original="{{ Helper::showImage($articles->image_url) }}" alt="{!! $articles->title !!}">
 									</div>
 									<div class="description">
 										<div class="topics_name">{!! $articles->title !!}</div>
@@ -234,7 +234,7 @@
 							<div class="block_content clearfix">
 								<p class="title_head">
 									<a title="hot {!! $loai->name !!} " href="{{ route('parent', $loai->slug)}}">
-										<img src="{{ URL::asset('assets/images/icon/gameicon.png') }}"> {!! $loai->name !!}
+										<img src="{{ URL::asset('public/assets/images/icon/gameicon.png') }}"> {!! $loai->name !!}
 									</a>
 								</p>
 								@if(!empty($cateList[$loai->id]))
@@ -342,20 +342,21 @@
 	<input type="hidden" id="route-ajax-login-fb" value="{{ route('ajax-login-by-fb') }}">
 	<input type="hidden" id="fb-app-id" value="{{ env('FACEBOOK_APP_ID') }}">
 	<!-- ===== JS ===== -->
-	<script src="{{ URL::asset('assets/js/jquery.min.js') }}"></script>
+	<script src="{{ URL::asset('public/assets/js/jquery.min.js') }}"></script>
 	<!-- ===== JS Bootstrap ===== -->
-	<script src="{{ URL::asset('assets/lib/bootstrap/bootstrap.min.js') }}"></script>
+	<script src="{{ URL::asset('public/assets/lib/bootstrap/bootstrap.min.js') }}"></script>
 	<!-- ===== JS Owl ===== -->
-	<script src="{{ URL::asset('assets/lib/owl/owl.carousel.min.js') }}"></script>
+	<script src="{{ URL::asset('public/assets/lib/owl/owl.carousel.min.js') }}"></script>
 	<!-- Js Common -->
-	<script src="{{ URL::asset('assets/lib/sticky/jquery.sticky.js') }}"></script>
-	<script src="{{ URL::asset('assets/js/common.js') }}"></script>
-	<script src="{{ URL::asset('admin/dist/js/ckeditor/ckeditor.js') }}"></script>
-	<script src="{{ URL::asset('admin/dist/js/sweetalert2.min.js') }}"></script>
-
+	<script src="{{ URL::asset('public/assets/lib/sticky/jquery.sticky.js') }}"></script>
+	<script src="{{ URL::asset('public/assets/js/common.js') }}"></script>
+	<script src="{{ URL::asset('public/admin/dist/js/ckeditor/ckeditor.js') }}"></script>
+	<script src="{{ URL::asset('public/admin/dist/js/sweetalert2.min.js') }}"></script>
+	<script src="{{ URL::asset('public/admin/dist/js/lazy.js') }}"></script>
 	@yield('javascript_page')
 	<script type="text/javascript">
 		$(document).ready(function(){
+			$('img.lazy').lazyload();
 			$.ajaxSetup({
 			    headers: {
 			       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

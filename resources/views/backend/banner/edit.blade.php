@@ -43,7 +43,7 @@
                   <label class="col-md-3 row">Banner </label>  
                   <input type="hidden" name="id" value="{{ $detailBanner->id }}">  
                   <div class="col-md-9">
-                    <img id="thumbnail_image" src="{{ $detailBanner->image_url ? Helper::showImage($detailBanner->image_url) : URL::asset('admin/dist/img/img.png') }}" class="img-thumbnail" width="145" height="85">
+                    <img id="thumbnail_image" src="{{ $detailBanner->image_url ? Helper::showImage($detailBanner->image_url) : URL::asset('public/admin/dist/img/img.png') }}" class="img-thumbnail" width="145" height="85">
                     
                     <input type="file" id="file-image" style="display:none" />
                  

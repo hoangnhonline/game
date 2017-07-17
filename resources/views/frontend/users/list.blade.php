@@ -33,11 +33,11 @@
               <tr id="row-{{ $item->id }}">
                 <td><span class="order">{{ $i }}</span></td>               
                 <td>
-                  <img class="img-thumbnail" width="80" src="{{ $item->image_url ? Helper::showImage($item->image_url) : URL::asset('admin/dist/img/no-image.jpg') }}" alt="{!! $item->name !!}" title="{!! $item->name !!}" />
+                  <img class="img-thumbnail" width="80" src="{{ $item->image_url ? Helper::showImage($item->image_url) : URL::asset('public/admin/dist/img/no-image.jpg') }}" alt="{!! $item->name !!}" title="{!! $item->name !!}" />
                 </td>
                 <td>                  
                   <strong>{!! $item->name !!} </strong> &nbsp; @if( $item->is_hot == 1 )
-                  <img class="img-thumbnail" src="{{ URL::asset('admin/dist/img/star.png')}}" alt="Hot" title="Hot" />
+                  <img class="img-thumbnail" src="{{ URL::asset('public/admin/dist/img/star.png')}}" alt="Hot" title="Hot" />
                   @endif<br />
                   <strong style="color:#337ab7;font-style:italic"> {{ $item->ten_loai }} / {{ $item->ten_cate }}</strong>
                  <p style="margin-top:10px">

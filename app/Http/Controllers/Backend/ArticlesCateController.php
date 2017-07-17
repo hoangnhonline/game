@@ -113,8 +113,8 @@ class ArticlesCateController extends Controller
             
             $tmp = explode('/', $dataArr['image_url']);
 
-            if(!is_dir('uploads/'.date('Y/m/d'))){
-                mkdir('uploads/'.date('Y/m/d'), 0777, true);
+            if(!is_dir('public/uploads/'.date('Y/m/d'))){
+                mkdir('public/uploads/'.date('Y/m/d'), 0777, true);
             }
 
             $destionation = date('Y/m/d'). '/'. end($tmp);

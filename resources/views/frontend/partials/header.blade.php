@@ -16,11 +16,11 @@
 
 					<ul class="nav_submenu nav_submenu_login">
 						<li><a href="javascript:;" class="btn-login btn-fb login-by-facebook-popup">
-							<span><img src="{{ URL::asset('assets/images/icon/facebook.png') }}" alt="Login with Facebook"></span>
+							<span><img src="{{ URL::asset('public/assets/images/icon/facebook.png') }}" alt="Login with Facebook"></span>
 							<i>Facebook</i>
 						</a></li>
 						<li><a href="{{ route('glogin') }}" class="btn-login btn-gg">
-							<span><img src="{{ URL::asset('assets/images/icon/gplus.png') }}" alt="Login with Google"></span>
+							<span><img src="{{ URL::asset('public/assets/images/icon/gplus.png') }}" alt="Login with Google"></span>
 							<i>Google</i>
 						</a></li>
 					</ul>

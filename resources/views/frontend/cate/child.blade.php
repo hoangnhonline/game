@@ -13,11 +13,11 @@
 	<div class="block block-content clearfix">
 		<ul class="product_list clearfix">								
 			@foreach( $productList as $product )
-			<li class="col-sm-5ths col-xs-6">
+			<li class="col-sm-2 col-xs-6">
 				<div class="product_item">
 					<div class="product_img">
 						<a href="{{ route('chi-tiet', [$product->slug_loai, $product->slug, $product->id]) }}" title="{!! $product->name !!}">
-							<img src="{{ Helper::showImageThumb($product->image_url) }}" alt="{!! $product->name !!}">
+							<img class="lazy" data-original="{{ Helper::showImage($product->image_url) }}" alt="{!! $product->name !!}">
 						</a>
 					</div>
 					<div class="description">

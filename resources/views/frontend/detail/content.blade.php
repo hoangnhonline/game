@@ -15,7 +15,7 @@
 			<div class="product_box">
 				<div class="row">
 					<div class="col-sm-3 pro_detail_img">
-						<img src="{{ Helper::showImage($detail->image_url) }}" alt="{!! $detail->name !!}">
+						<img class="lazy" data-original="{{ Helper::showImage($detail->image_url) }}" alt="{!! $detail->name !!}">
 					</div>
 					<div class="col-sm-9 pro_detail_info">
 						<h1>{!! $detail->name !!}</h1>
@@ -123,7 +123,7 @@
 					<li class="col-sm-4 col-xs-6 product_item">
 						<div class="product_img">
 							<a title="{!! $product->name !!}" href="{{ route('chi-tiet', [$product->slug_loai, $product->slug, $product->id]) }}">
-								<img alt="{!! $product->name !!}" src="{{ Helper::showImage($product->image_url) }}">
+								<img alt="{!! $product->name !!}" class="lazy" data-original="{{ Helper::showImage($product->image_url) }}">
 							</a>
 						</div>
 						<div class="description">
@@ -164,29 +164,5 @@
 </div>
 @endsection
 @section('javascript_page')
-<script src="{{ URL::asset('public/assets/vendor/jquery.zoom/jquery.zoom.min.js') }}"></script>
-<script type="text/javascript">
-$(document).ready(function () {            
 
-    $('.bxslider .item').each(function () {
-        $(this).zoom();
-    });
-
-    $(".bxslider").bxSlider({
-        pagerCustom: '.pro-thumb-img',
-        nextText: '<i class="fa fa-chevron-right"></i>',
-        prevText: '<i class="fa fa-chevron-left"></i>'
-    });
-
-    $(".pro-thumb-img").bxSlider({
-        slideMargin: 10,
-        maxSlides: 5,
-        pager: false,
-        controls: false,
-        slideWidth: 50,
-        infiniteLoop: false
-    });
-
-});
-</script>>
 @endsection

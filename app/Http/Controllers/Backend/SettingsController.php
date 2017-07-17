@@ -81,8 +81,8 @@ class SettingsController  extends Controller
             
             $tmp = explode('/', $dataArr['logo']);
 
-            if(!is_dir('uploads/'.date('Y/m/d'))){
-                mkdir('uploads/'.date('Y/m/d'), 0777, true);
+            if(!is_dir('public/uploads/'.date('Y/m/d'))){
+                mkdir('public/uploads/'.date('Y/m/d'), 0777, true);
             }
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
@@ -96,8 +96,8 @@ class SettingsController  extends Controller
             
             $tmp = explode('/', $dataArr['favicon']);
 
-            if(!is_dir('uploads/'.date('Y/m/d'))){
-                mkdir('uploads/'.date('Y/m/d'), 0777, true);
+            if(!is_dir('public/uploads/'.date('Y/m/d'))){
+                mkdir('public/uploads/'.date('Y/m/d'), 0777, true);
             }
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
@@ -111,8 +111,8 @@ class SettingsController  extends Controller
             
             $tmp = explode('/', $dataArr['banner']);
 
-            if(!is_dir('uploads/'.date('Y/m/d'))){
-                mkdir('uploads/'.date('Y/m/d'), 0777, true);
+            if(!is_dir('public/uploads/'.date('Y/m/d'))){
+                mkdir('public/uploads/'.date('Y/m/d'), 0777, true);
             }
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
