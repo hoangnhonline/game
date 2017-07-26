@@ -5,7 +5,7 @@
 /*  
   [Let press Ctrl + f and type of paste the key, then press Enter to search the content ] Title
   Example : You want Import Files => Title is Import Files, or Fonts => Title is Fonts
-
+  
   
   
 /*==========*/
@@ -137,9 +137,8 @@ img {
   font-size: 15px;
 }
 .nav_menu_item {
-  display: block;
+  display: inline-block;
   position: relative;
-  float: right;
   border-top: 2px solid #fafafa;
 }
 .nav_menu_item > a {
@@ -496,7 +495,6 @@ img {
 .form_search .search_input {
   background: #FFF;
   height: 30px;
-  width: 216px;
   padding: 2px 10px;
   border: none;
   color: #333;
@@ -532,6 +530,9 @@ img {
 .block_tags a:hover {
   background: #a4d24f;
   color: #fff;
+}
+.block_search_top {
+  display: none;
 }
 
 /* Block Down Apps or Game */
@@ -690,13 +691,16 @@ img {
 
 /* Block Popular Categories */
 .block_popular_categories ul li {
-  width: 100%;
+  width: 50%;
   float: left;
   padding: 7px 0;
   position: relative;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.block_page_child .block_popular_categories ul li {
+  width: 100%;
 }
 .block_popular_categories ul li a {
   color: #666;
@@ -889,6 +893,7 @@ img {
 }
 .product_list .product_item img {
   margin: 0 auto;
+  width: 90%;
 }
 .product_list .product_item h3 a {
   display: inline-block;
@@ -1145,6 +1150,17 @@ img {
 .pro_detail_info > * {
   padding: 5px 0;
 }
+.pro_detail_info table {
+  margin-bottom: 0;
+}
+.pro_detail_info .table>tbody>tr>td,
+.pro_detail_info .table>tbody>tr>th,
+.pro_detail_info .table>tfoot>tr>td,
+.pro_detail_info .table>tfoot>tr>th,
+.pro_detail_info .table>thead>tr>td,
+.pro_detail_info .table>thead>tr>th {
+  padding: 2px;
+}
 .pro_detail_info h1 {
   font-size: 34px;
   line-height: 36px;
@@ -1161,6 +1177,9 @@ img {
   font-size: 13px;
   margin-left: 5px;
   margin-top: 2px;
+}
+.pro_detail_info .down_btn {
+  text-align: left;
 }
 .table-no-border,
 .table-no-border tr,
@@ -1214,6 +1233,7 @@ img {
   color: #545454;
   padding-left: 10px;
   cursor: pointer;
+  line-height: 1.2;
 }
 .block_faq .box-title:hover {
   color: #00A6ED;
@@ -1561,6 +1581,13 @@ img {
   border-color: transparent;
 }
 
+/*===== Page Search =====*/
+.block_search_results .block_title {
+  background: #fbfbfb;
+  padding-top: 20px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
 /*===== Btn Login =====*/
 .nav_submenu_login {
   padding: 5px 7px;
@@ -1667,8 +1694,8 @@ img {
 
 .nav-toogle {
   position: absolute;
-  top: 15px;
-  right: -40px;
+  top: 110px;
+  left: -40px;
   display: none;
 }
 .nav-toogle i {
@@ -1678,8 +1705,8 @@ img {
   line-height: 40px;
   font-size: 20px;
   background: #a0d651;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 .nav-toogle i:before {
   content: "\f0c9";

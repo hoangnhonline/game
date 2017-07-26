@@ -81,20 +81,29 @@ CKEDITOR.plugins.add('uploadimage',
                         var response = jQuery.parseJSON($.trim(xhr.responseText));
                         var files = response.fileList,                            
                             html = "";
-                        var editor = $('#editor').val();
-                            
-                                var    editorTemp = CKEDITOR.instances[editor];        
-                                var   edi_parent = $(CKEDITOR.instances[editor].document.getBody().$);                      
+                        var lang = $('#editor_active').val();
+                            if(lang == 'en'){
+                                var    editorTemp = CKEDITOR.instances['content_en'];        
+                                var   edi_parent = $(CKEDITOR.instances['content_en'].document.getBody().$);
+                            }else if(lang == 'vi'){
+                                var    editorTemp = CKEDITOR.instances['content_vi'];        
+                                var   edi_parent = $(CKEDITOR.instances['content_vi'].document.getBody().$);
+                            }else{
+                                var    editorTemp = CKEDITOR.instances['content'];        
+                                var   edi_parent = $(CKEDITOR.instances['content'].document.getBody().$);
+                            }                            
+                            console.log(editorTemp);
                             var  get_html,
                             count_img = edi_parent.find('img').length,
                             getParentNode = editorTemp.getSelection().getRanges()[0].startContainer,
                             table = $('<div></div>'),
                             getChildSelected = editorTemp.getSelection().getSelectedElement(),
                             insertMoreImg = false;
+
                             for (var i in files) {
                                 var elementImg = editorTemp.document.createElement('img');
                                 elementImg.$.setAttribute('src', files[i].filename);
-                                elementImg.$.style.maxWidth="600px";
+                                elementImg.$.style.maxWidth="750px";
                                 html = $('<table width="100%" border="0" cellpadding="3" width="1" cellspacing="0" align="center" ><tr><td style="text-align:center"></td></tr><tr><td><p style="text-align:center">[Caption]</p></td></tr></table>');
                                 html.find('td:eq(0)').append($(elementImg.$));
                                 table.append(html);

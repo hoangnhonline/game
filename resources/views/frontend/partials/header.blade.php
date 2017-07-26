@@ -5,11 +5,28 @@
 				<img alt="Download game" src="{{ Helper::showImage($settingArr['logo']) }}">
 			</a>
 		</div><!-- /block-logo -->
+		<div class="block_search_top">
+			<div class="block_search">
+				<form method="GET" action="{{ route('search') }}"  class="form_search">
+					<input type="text" autocomplete="off" name="keyword" value="{{ isset($tu_khoa) ? $tu_khoa : "" }}" class="search_input" placeholder="" >
+					<button type="submit" class="btn_search"><i class="fa fa-search"></i></button>
+				</form>
+			</div><!-- /block_search -->
+		</div><!-- /block_search_top-logo -->
 		<div class="block_menu_top">
 			<div class="nav-toogle">
 				<i class="fa"></i>
 			</div>
 			<ul class="nav_menu">
+				<li class="nav_menu_item">
+					<a title="hot games" href="{{ route('parent', 'game') }}" class="nav-game">GAMES</a>
+				</li>
+				<li class="nav_menu_item">
+					<a title="hot apps" href="{{ route('parent', 'apps') }}" class="nav-apps">APPS</a>
+				</li>
+				<li class="nav_menu_item">
+					<a title="hot news" href="{{ route('parent', 'news') }}" class="nav-topics">NEWS</a>
+				</li>
 				<li class="nav_menu_item nav_menu_user parent">
 					@if(!Session::get('login'))
 					<a title="Login" href="javascript:void(0);" class="nav-user">Login</a>
@@ -46,15 +63,9 @@
 					
 					@endif
 				</li>						
-				<li class="nav_menu_item">
-					<a title="hot game" href="{{ route('parent', 'news') }}" class="nav-topics">NEWS</a>
-				</li>
-				<li class="nav_menu_item">
-					<a title="hot apps" href="{{ route('parent', 'apps') }}" class="nav-apps">APPS</a>
-				</li>
-				<li class="nav_menu_item">
-					<a title="hot games" href="{{ route('parent', 'game') }}" class="nav-game">GAMES</a>
-				</li>
+				
+				
+				
 			</ul>
 		</div>
 	</div>
