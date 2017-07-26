@@ -69,7 +69,7 @@ class DetailController extends Controller
         if($detail->thumbnail_id > 0){
             $socialImage = ProductImg::find($detail->thumbnail_id)->image_url;
         }
-
+        $tagSelected = Product::getListTag($detail->id);
         $otherList = Product::where('product.slug', '<>', '')                  
                     ->leftJoin('product_img', 'product_img.id', '=','product.thumbnail_id')            
                     ->join('loai_sp', 'loai_sp.id', '=','product.loai_id')      
@@ -81,7 +81,7 @@ class DetailController extends Controller
     }
     public function tagDetail(Request $request){
         $slug = $request->slug;
-        $detail = Tag::where('slug', $slug)->first();
+        $detail = Tag::where('slug', $slug)->first(); 
         if($detail->type == 1 || $detail->type == 3){ // product           
             $productList = (object)[];
             $listId = [];
@@ -90,13 +90,13 @@ class DetailController extends Controller
                 $listId = $listId->toArray();
             }
             if(!empty($listId)){
-            $query = Product::where('product.status', 1)            
-                ->leftJoin('product_img', 'product_img.id', '=','product.thumbnail_id') 
-                ->join('loai_sp', 'loai_sp.id', '=','product.loai_id')
-                ->select('product_img.image_url as image_urls', 'product.*', 'loai_sp.slug as slug_loai')
-                ->where('product_img.image_url', '<>', '')
-                ->whereIn('product.id', $listId)
-                ->orderBy('product.cart_status', 'asc')
+            $query = Product::where('product.status', 1); 
+                
+                $query->leftJoin('product_img', 'product_img.id', '=','product.thumbnail_id') 
+                ->join('loai_sp', 'loai_sp.id', '=','product.loai_id')                
+                ->select('product_img.image_url as image_url', 'product.*', 'loai_sp.slug as slug_loai')
+                
+                ->whereIn('product.id', $listId)         
                 ->orderBy('product.id', 'desc');
                 $productList  = $query->limit(36)->get();
 

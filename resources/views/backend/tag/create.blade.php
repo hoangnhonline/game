@@ -15,7 +15,7 @@
 
   <!-- Main content -->
   <section class="content">
-    <a class="btn btn-default btn-sm " href="{{ route('tag.index') }}" style="margin-bottom:5px">Quay lại</a>
+    <a class="btn btn-default btn-sm " href="{{ route('tag.index', ['type' => $type]) }}" style="margin-bottom:5px">Quay lại</a>
     <form role="form" method="POST" action="{{ route('tag.store') }}">
     <div class="row">
       <!-- left column -->
@@ -42,22 +42,10 @@
                 <div class="form-group">
                   <label for="email">Loại </label>
                   <select class="form-control" name="type" id="type">                                
-                    <option value="1" {{ 1 ==  old('type') ? "selected" : "" }}>Game</option>
-                    <option value="2" {{ 2 ==  old('type') ? "selected" : "" }}>Bài viết</option>
-                    <option value="3" {{ 3 ==  old('type') ? "selected" : "" }}>Tiện ích xung quanh</option>
+                    <option value="1" {{ 1 ==  old('type', $type) ? "selected" : "" }}>GAME</option>
+                    <option value="2" {{ 2 ==  old('type', $type) ? "selected" : "" }}>Bài viết</option>
                   </select>
-                </div>
-                <div class="form-group" id="div_tien_ich" @if(old('type') != 3 ) style="display:none" @endif>
-                  <label for="email">Quận</label>
-                    <select class="form-control" name="district_id" id="district_id" data-live-search="true">
-                        @foreach( $districtList as $value )
-                        <option value="{{ $value->id }}"
-                        {{ old('district_id') == $value->id ? "selected" : "" }}                           
-
-                        >{{ $value->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
+                </div>              
                  <!-- text input -->
                 <div class="form-group">
                   <label>Tag<span class="red-star">*</span></label>
@@ -76,7 +64,7 @@
             </div>                        
             <div class="box-footer">
               <button type="submit" class="btn btn-primary btn-sm">Lưu</button>
-              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('tag.index')}}">Hủy</a>
+              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('tag.index', ['type' => $type ]) }}">Hủy</a>
             </div>
             
         </div>
@@ -124,15 +112,7 @@
 @stop
 @section('javascript_page')
 <script type="text/javascript">
-$(document).ready(function(){
-  $('#type').change(function(){
-    var type = $(this).val();
-    if(type != 3){
-      $('#div_tien_ich').hide();
-    }else{
-      $('#div_tien_ich').show();
-    }
-  });
+$(document).ready(function(){  
   $('#name').change(function(){
          var name = $.trim( $(this).val() );
          if( name != '' && $('#slug').val() == ''){
@@ -153,8 +133,6 @@ $(document).ready(function(){
                   for (var key in errors) {
                     
                   }
-                  //$('#btnLoading').hide();
-                  //$('#btnSave').show();
               }
             });
          }

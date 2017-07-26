@@ -43,9 +43,10 @@ Route::group(['namespace' => 'Frontend'], function()
         Route::get('{id}/destroy', ['as' => 'member.destroy', 'uses' => 'UsersController@destroy']);
     });
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+    Route::get('tag/{slug}', ['as' => 'tag', 'uses' => 'DetailController@tagDetail']);
     Route::get('{slugLoaiSp}/{slug}/', ['as' => 'child', 'uses' => 'CateController@child']);  
     
-    Route::get('tag/{slug}', ['as' => 'tag', 'uses' => 'DetailController@tagDetail']);
+    
     Route::get('news.html', ['as' => 'news-list', 'uses' => 'NewsController@newsList']);
     Route::get('{slugLoaiSp}/{slug}-{id}.html', ['as' => 'chi-tiet', 'uses' => 'DetailController@index']);
     
