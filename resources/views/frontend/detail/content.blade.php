@@ -10,7 +10,8 @@
 					<li class="active">{!! $detail->name !!}</li>
 				</ul>
 			</div>
-		</div>		
+		</div>	
+
 		<div class="block_content">
 			<div class="product_box">
 				<div class="row">
@@ -36,8 +37,8 @@
 									<tr>
 										
 										<td>{!! $detail->author !!}</td>
-										<td>{!! $detail->lastest_version !!}</td>
-										<td>{!! $detail->pushlish_date !!}</td>
+										<td>{!! $detail->latest_version !!}</td>
+										<td>{!! $detail->publish_date !!}</td>
 										
 									</tr>
 								</table>

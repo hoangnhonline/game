@@ -1,6 +1,8 @@
 @include('frontend.partials.meta')
 @section('content')
+<?php $i = 0; ?>
 @foreach($loaiSpList as $loaiSp)
+<?php $i++; ?>
 <div class="block block_products block_commom">
   <div class="block_title">
     <a href="#">{!! $loaiSp->name !!} »</a>
@@ -43,5 +45,22 @@
     </ul>
   </div>
 </div><!-- /block_products -->
+
+@if($i == 1)
+<div class="block block_products block_commom">
+<?php 
+$ads = DB::table('ads')->where('id', 1)->first();
+?>
+@if($ads)
+@if($ads->type == 1)
+<a href="{{ $ads->ads_url }}" target="_blank">
+<img src="{{ Helper::showImage($ads->image_url) }}" alt="{{ $ads->name }}" style="width:100%" />
+</a>
+@else
+{{ $ads-> ads_code }}
+@endif
+@endif
+</div>
+@endif
  @endforeach
 @endsection

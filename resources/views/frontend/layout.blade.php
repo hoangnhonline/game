@@ -222,6 +222,22 @@
 							</div>
 						</div>
 					</div><!-- block_sidebar -->
+					<?php 
+					$ads = DB::table('ads')->where('id', 2)->first();
+					?>
+					@if($ads)
+					<div class="block block_sidebar">					
+					
+						@if($ads->type == 1)
+							<a href="{{ $ads->ads_url }}" target="_blank">
+							<img src="{{ Helper::showImage($ads->image_url) }}" alt="{{ $ads->name }}" style="width:100%" />
+							</a>
+						@else
+							{!! $ads-> ads_code !!}
+						@endif
+											
+					</div>
+					@endif	
 				</div><!-- /block_right -->
 				@else
 				<div class="block_right col-sm-3 col-xs-12">

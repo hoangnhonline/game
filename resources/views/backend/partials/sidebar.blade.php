@@ -89,6 +89,12 @@
           <i class="fa fa-file-image-o"></i> 
           <span>Banner</span>          
         </a>       
+      </li>  
+      <li {{ in_array(\Request::route()->getName(), ['ads.index', 'ads.edit', 'ads.create']) ? "class=active" : "" }}>
+        <a href="{{ route('ads.index') }}">
+          <i class="fa fa-file-image-o"></i> 
+          <span>ADS</span>          
+        </a>       
       </li>      
       @endif
       @if(Auth::user()->role > 1)

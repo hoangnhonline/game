@@ -105,6 +105,14 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
         Route::post('/update', ['as' => 'banner.update', 'uses' => 'BannerController@update']);
         Route::get('{id}/destroy', ['as' => 'banner.destroy', 'uses' => 'BannerController@destroy']);
     });
+    Route::group(['prefix' => 'ads'], function () {
+        Route::get('/', ['as' => 'ads.index', 'uses' => 'AdsController@index']);
+        Route::get('/create/', ['as' => 'ads.create', 'uses' => 'AdsController@create']);        
+        Route::post('/store', ['as' => 'ads.store', 'uses' => 'AdsController@store']);
+        Route::get('/edit',   ['as' => 'ads.edit', 'uses' => 'AdsController@edit']);
+        Route::post('/update', ['as' => 'ads.update', 'uses' => 'AdsController@update']);
+        Route::get('{id}/destroy', ['as' => 'ads.destroy', 'uses' => 'AdsController@destroy']);
+    });
     Route::group(['prefix' => 'product'], function () {
         Route::get('/', ['as' => 'product.index', 'uses' => 'ProductController@index']); 
         Route::get('/kygui', ['as' => 'product.kygui', 'uses' => 'ProductController@kygui']);        
