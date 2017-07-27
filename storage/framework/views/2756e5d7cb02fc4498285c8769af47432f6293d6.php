@@ -19,7 +19,7 @@
                     <div class="content">
                         <h4>NhaDat - Chợ Công Nghệ Giá Sỉ</h4>                        
                         <p>Hotline: <span class="tel">1900 63 69 75</span></p>                        
-                        <p>Email: <a href="mailto:muahang@icho.vn">muahang@icho.vn</a></p>
+                        <p>Email: <a href="mailto:muahang@game.vn">muahang@game.vn</a></p>
                     </div>
                     <?php if(Session::has('message')): ?>
 	                <p class="alert alert-info" ><?php echo e(Session::get('message')); ?></p>

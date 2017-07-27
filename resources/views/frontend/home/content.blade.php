@@ -10,7 +10,7 @@
     <ul class="product_items clearfix">
       @if($productArr[$loaiSp->id]->count() > 0)
       @foreach($productArr[$loaiSp->id] as $product)
-      <li class="col-sm-4 col-xs-6 product_item">
+      <li class="col-sm-4 col-xs-12 product_item">
         <div class="product_img">
           <a title="{!! $product->name !!}" href="{{ route('chi-tiet', [$product->slug_loai, $product->slug, $product->id]) }}">
             <img alt="{!! $product->name !!}" data-original="{{ Helper::showImage($product->image_url) }}" class="lazy">

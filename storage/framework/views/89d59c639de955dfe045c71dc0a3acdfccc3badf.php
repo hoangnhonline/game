@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
-  <title>Hòa Hợp Phát | Dashboard</title>
+  <title>DOWNLOAD GAME | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   
@@ -75,7 +75,7 @@
 <input type="hidden" id="route_get_slug" value="<?php echo e(route('get-slug')); ?>">
   <div class="control-sidebar-bg"></div>
 </div>
-<input type="hidden" id="upload_url" value="<?php echo e(config('icho.upload_url')); ?>">
+<input type="hidden" id="upload_url" value="<?php echo e(config('game.upload_url')); ?>">
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->

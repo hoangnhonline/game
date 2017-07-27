@@ -23,8 +23,7 @@
         "symfony/css-selector": "2.8.*|3.0.*",
         "symfony/dom-crawler": "2.8.*|3.0.*",
         "sammyk/laravel-facebook-sdk": "^3.0",
-        "weidner/goutte": "@dev",
-        "google/apiclient": "2.0.*"
+        "weidner/goutte": "@dev"
     },
     "autoload": {
         "classmap": [

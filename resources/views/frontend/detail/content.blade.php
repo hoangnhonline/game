@@ -18,10 +18,7 @@
 						<img class="lazy" data-original="{{ Helper::showImage($detail->image_url) }}" alt="{!! $detail->name !!}">
 					</div>
 					<div class="col-sm-9 pro_detail_info">
-						<h1>{!! $detail->name !!}</h1>
-						<div class="pro_detail_share">
-							Share fb, g+, instagram
-						</div>
+						<h1>{!! $detail->name !!}</h1>						
 						<div class="pro_detail_rating">
 							<div class="stars"><span style="width:82%"></span></div>
 							<div class="rating_info">votes, <span class="rating"><span class="best">{!! $detail->no_star !!}</span></span></div>
@@ -30,45 +27,37 @@
 							<div class="table-responsive">
 								<table class="table table-no-border">
 									<tr>
-										@if($detail->author)
+										
 										<th>Author:</th>
-										@endif
-										@if($detail->lastest_version)
 										<th>Latest Version:</th>
-										@endif
-										@if($detail->pushlish_date)
 										<th>Publish Date:</th>
-										@endif
+										
 									</tr>
 									<tr>
-										@if($detail->author)
+										
 										<td>{!! $detail->author !!}</td>
-										@endif
-										@if($detail->lastest_version)
 										<td>{!! $detail->lastest_version !!}</td>
-										@endif
-										@if($detail->pushlish_date)
 										<td>{!! $detail->pushlish_date !!}</td>
-										@endif
+										
 									</tr>
 								</table>
 							</div>
 						</div>
+						<div class="clearfix">
+							<div class="down_btn">
+								@if($detail->url_ios)
+								<a href="{!! $detail->url_ios !!}" target="_blank" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i> iOS</a>
+								@endif
+								@if($detail->url_android)
+								<a href="{!! $detail->url_android !!}" target="_blank" class="btn btn_down" title="For Android"><i class="fa fa-android"></i> Android</a>
+								@endif
+								@if($detail->url_wp)
+								<a href="{!! $detail->url_wp !!}" target="_blank" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i> Window</a>
+								@endif
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="clearfix">
-					<div class="down_btn">
-						@if($detail->url_ios)
-						<a href="{!! $detail->url_ios !!}" target="_blank" class="btn btn_down" title="For iOS"><i class="fa fa-apple"></i> iOS</a>
-						@endif
-						@if($detail->url_android)
-						<a href="{!! $detail->url_android !!}" target="_blank" class="btn btn_down" title="For Android"><i class="fa fa-android"></i> Android</a>
-						@endif
-						@if($detail->url_wp)
-						<a href="{!! $detail->url_wp !!}" target="_blank" class="btn btn_down" title="For Window"><i class="fa fa-windows"></i> Window</a>
-						@endif
-					</div>
-				</div>
+				</div>				
 				<!--<div class="block_safe-link">
 					<a title="Using APKPure App to upgrade Digital World, fast, free and save your internet data." href="#">Using APKPure App to upgrade, fast, free and save your internet data.</a>
 				</div>-->

@@ -22,7 +22,7 @@
     <meta property="og:title" content="<?php echo $__env->yieldContent('title'); ?>" />
     <meta property="og:description" content="<?php echo $__env->yieldContent('site_description'); ?>" />
     <meta property="og:url" content="<?php echo e(url()->current()); ?>" />
-    <meta property="og:site_name" content="Bao bì Hòa Hợp Phát" />
+    <meta property="og:site_name" content="Bao bì DOWNLOAD GAME" />
     <?php $socialImage = isset($socialImage) ? $socialImage : $settingArr['banner']; ?>
     <meta property="og:image" content="<?php echo e(Helper::showImage($socialImage)); ?>" />
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
