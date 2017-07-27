@@ -98,8 +98,20 @@
 					</div>
 				</div>
 			</div><!-- /product_box -->
+			@if(count($tagSelected) > 0)
+			<?php $countTag = count($tagSelected);?>
+			<article class="block block-news-with-region" style="margin : 10px;padding : 10px;">
+				<u>Tags</u>:
+				<?php $i = 0; ?>
+				@foreach($tagSelected as $tag)
+				<?php $i++; ?>
+				<a href="{{ route('tag', $tag->slug) }}" title="{!! $tag['name'] !!}">{!! $tag['name'] !!}</a>@if($i< $countTag), @endif
+				@endforeach		
+			</article>
+			@endif
 		</div>
 	</div><!-- /block -->	
+
 	<div class="block block_commom block_shadow block_related">
 		<div class="block_title">
 			<p class="block_title_small">Similar Or Related</p>

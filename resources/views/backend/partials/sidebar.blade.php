@@ -65,7 +65,7 @@
           <li {{ in_array(\Request::route()->getName(), ['articles.create']) ? "class=active" : "" }} ><a href="{{ route('articles.create', ['cate_id' => 1]) }}"><i class="fa fa-circle-o"></i> Thêm bài viết</a></li>
           
         </ul>
-       <!--
+       
       </li>      
         <li {{ in_array(\Request::route()->getName(), ['tag.edit', 'tag.index']) ? "class=active" : "" }}>
           <a href="{{ route('tag.index') }}">
@@ -73,7 +73,7 @@
             <span>Tags</span>          
           </a>       
         </li>
-        
+        <!--
       @if(Auth::user()->role > 1)
       <li {{ in_array(\Request::route()->getName(), ['newsletter.edit', 'newsletter.index']) ? "class=active" : "" }}>
         <a href="{{ route('newsletter.index') }}">

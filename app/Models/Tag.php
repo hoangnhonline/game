@@ -23,7 +23,7 @@ class Tag extends Model  {
      *
      * @var array
      */
-    protected $fillable = ['meta_id', 'name', 'slug', 'type', 'description', 'alias', 'created_user', 'updated_user', 'district_id'];
+    protected $fillable = ['meta_id', 'name', 'slug', 'type', 'description', 'alias', 'created_user', 'updated_user'];
 
     public function objects()
     {
